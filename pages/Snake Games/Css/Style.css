@@ -1,0 +1,70 @@
+﻿				.board{
+               width: 399px;
+               background-color: lightgrey;
+               border: 1px solid gray;
+               position: relative;
+               margin-left: 0;
+               margin-top: 0;
+               }
+               #board{
+               height: 399px;
+               border-bottom: 0px;
+               }
+               #apple{
+               position: absolute;
+               background-color: red;
+               height: 7px;
+               width: 7px;
+               overflow: hidden;
+               }
+               .snake{
+               position: absolute;
+               top: 200px;
+               left: 200px;
+               background-color: black;
+               height: 7px;
+               width: 7px;
+               overflow: hidden;
+               }
+               .snake2{
+               position: absolute;
+               top: -10px;
+               left: -10px;
+               background-color: black;
+               height: 7px;
+               width: 7px;
+               overflow: hidden;
+               }
+               #score{
+               height: 50px;
+               margin-top: 0px;
+               }
+               #cscore{
+               color: black;
+               padding-left: 10px;
+               float: left;
+               width: 25%;
+               font-size: xx-large;
+               }
+               #buttons{
+               float: right;
+               width: 50%;
+               text-align: right;
+               padding-top: 10px;
+               }
+               #notice{
+               position: absolute;
+               top: 1em;
+               left: 1em;
+               right: 1em;
+               text-align: center;
+               font-size: 150%;
+               }
+               #i2{
+               position: absolute;
+               bottom: 1em;
+               left: 1em;
+               right: 1em;
+               text-align: center;
+               font-size: 95%;
+               }
