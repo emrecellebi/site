@@ -1,0 +1,279 @@
+<html>
+<head>
+
+	<title>Google Drive</title>
+	<link rel="Stylesheet" type="text/css" href="css/jPicker-1.1.6.min.css" />
+	<link rel="Stylesheet" type="text/css" href="css/jPicker.css" />
+	<script src="js/jquery-1.4.4.min.js" type="text/javascript"></script>
+	<script src="js/jpicker-1.1.6.min.js" type="text/javascript"></script>
+	
+	
+
+</head>
+<body>
+
+<script type="text/javascript">
+    $(function()
+      {
+        $.fn.jPicker.defaults.images.clientPath='images/';
+        var LiveCallbackElement = $('#Live'),
+            LiveCallbackButton = $('#LiveButton');
+        $('#Inline').jPicker({window:{title:'Beğendiyseniz sayfamıza destek olun ;)'}});
+        $('#Expandable').jPicker({window:{expandable:true,title:'Expandable Example'}});
+        $('#Alpha').jPicker({window:{expandable:true,title:'Alpha (Transparency) Example)',alphaSupport:true},color:{active:new $.jPicker.Color({ahex:'99330099'})}});
+        $('#Binded').jPicker({window:{title:'Binded Example'},color:{active:new $.jPicker.Color({ahex:'993300ff'})}});
+        $('.Multiple').jPicker({window:{title:'Multiple Binded Example'}});
+        $('#Callbacks').jPicker(
+          {window:{title:'Callback Example'}},
+          function(color, context)
+          {
+            var all = color.val('all');
+            alert('Color chosen - hex: ' + (all && '#' + all.hex || 'none') + ' - alpha: ' + (all && all.a + '%' || 'none'));
+            $('#Commit').css({ backgroundColor: all && '#' + all.hex || 'transparent' });
+          },
+          function(color, context)
+          {
+            if (context == LiveCallbackButton.get(0)) alert('Color set from button');
+            var hex = color.val('hex');
+            LiveCallbackElement.css({ backgroundColor: hex && '#' + hex || 'transparent' });
+          },
+          function(color, context)
+          {
+            alert('"Cancel" Button Clicked');
+          });
+        $('#LiveButton').click(
+          function()
+          {
+            $.jPicker.List[7].color.active.val('hex', 'e2ddcf', this);
+          });
+        $('#AlterColors').jPicker({window:{title:'Color Interaction Example'}});
+        $('#GetActiveColor').click(
+          function()
+          {
+            alert($.jPicker.List[8].color.active.val('ahex'));
+          });
+        $('#GetRG').click(
+          function()
+          {
+            var rg=$.jPicker.List[8].color.active.val('rg');
+            alert('red: ' + rg.r + ', green: ' + rg.g);
+          });
+        $('#SetHue').click(
+          function()
+          {
+            $.jPicker.List[8].color.active.val('h', 133);
+          });
+        $('#SetValue').click(
+          function()
+          {
+            $.jPicker.List[8].color.active.val('v', 38);
+          });
+        $('#SetRG').click(
+          function()
+          {
+            $.jPicker.List[8].color.active.val('rg', { r: 213, g: 118 });
+          });
+      });
+  </script>
+  
+  <script type="text/javascript">        
+  $(document).ready(
+    function()
+    {
+      $('#Inline').jPicker();
+    });
+</script>
+
+<div id="Inline" class="jPicker Container">
+	<table class="jPicker" cellpadding="0" cellspacing="0">
+		<tbody>
+			<tr>
+				<td rowspan="9">
+					<h2 class="Title">Renk Seçmek İçin İmleci Sürükleyin</h2>
+					<div class="Map" style="background-color: transparent;">
+						<span class="Map1" style="background-image: url(&quot;images/Maps.png&quot;); top: -260px; visibility: visible;">&nbsp;</span>
+						<span class="Map2" style="background-image: url(&quot;images/Maps.png&quot;); top: -520px; visibility: visible;">&nbsp;</span>
+						<span class="Map3" style="background-image: url(&quot;images/map-opacity.png&quot;); visibility: hidden;">&nbsp;</span>
+						<img src="images/mappoint.gif" class="Arrow" style="left: -7px; top: 249px;">
+					</div>
+				</td>
+				<td rowspan="9">
+					<div class="Bar" style="background-color: rgb(0, 0, 0);">
+						<span class="Map1" style="background-image: url(&quot;images/Bars.png&quot;); top: -260px; visibility: visible;">&nbsp;</span>
+						<span class="Map2" style="background-image: url(&quot;images/Bars.png&quot;); top: -520px; visibility: visible;">&nbsp;</span>
+						<span class="Map3" style="background-image: url(&quot;images/Bars.png&quot;); top: 260px; visibility: visible;">&nbsp;</span>
+						<span class="Map4" style="background-image: url(&quot;images/Bars.png&quot;); top: 260px; visibility: visible;">&nbsp;</span>
+						<span class="Map5" style="background-image: url(&quot;images/bar-opacity.png&quot;); visibility: hidden;">&nbsp;</span>
+						<span class="Map6" style="background-image: url(&quot;images/AlphaBar.png&quot;); top: 260px; visibility: visible;">&nbsp;</span>
+						<img src="images/rangearrows.gif" class="Arrow" style="left: 0px; top: 253px;">
+					</div>
+				</td>
+				<td colspan="2" class="Preview">Yeni Renk
+					<div style="background-image: url(&quot;images/preview-opacity.png&quot;);">
+						<span class="Active" title="Yeni Renk - Seçmek İçin “Tamam”a Tıklayın" style="background-color: rgb(0, 0, 0); visibility: visible;">&nbsp;</span>
+						<span class="Current" title="Eski Renge Dönmek İçin Tıklayın" style="background-color: rgb(52, 4, 107); visibility: visible;">&nbsp;</span>
+					</div>Geçerli Renk
+				</td>
+				<td rowspan="9" class="Button">
+					<a href="#">http://www.emrecelebi.net</a>
+					<br>
+					<input type="button" class="Ok" value="Tamam" title="Bu Rengi Seçmek için Tıklayın">
+					<input type="button" class="Cancel" value="İptal" title="İptal Et Ve Eski Renge Geri Çevir">
+					<hr>
+					<div class="Grid" style="background-image: url(&quot;images/bar-opacity.png&quot;);">
+						<span class="QuickColor" title="#ffaaaaff" style="background-color:#ffaaaa;">&nbsp;</span>
+						<span class="QuickColor" title="#ff5656ff" style="background-color:#ff5656;">&nbsp;</span>
+						<span class="QuickColor" title="#ff0000ff" style="background-color:#ff0000;">&nbsp;</span>
+						<span class="QuickColor" title="#bf0000ff" style="background-color:#bf0000;">&nbsp;</span>
+						<span class="QuickColor" title="#7f0000ff" style="background-color:#7f0000;">&nbsp;</span>
+						<span class="QuickColor" title="#ffffffff" style="background-color:#ffffff;">&nbsp;</span>
+						<span class="QuickColor" title="#ffd4aaff" style="background-color:#ffd4aa;">&nbsp;</span>
+						<span class="QuickColor" title="#ffaa56ff" style="background-color:#ffaa56;">&nbsp;</span>
+						<span class="QuickColor" title="#ff7f00ff" style="background-color:#ff7f00;">&nbsp;</span>
+						<span class="QuickColor" title="#bf5f00ff" style="background-color:#bf5f00;">&nbsp;</span>
+						<span class="QuickColor" title="#7f3f00ff" style="background-color:#7f3f00;">&nbsp;</span>
+						<span class="QuickColor" title="#e5e5e5ff" style="background-color:#e5e5e5;">&nbsp;</span>
+						<span class="QuickColor" title="#ffffaaff" style="background-color:#ffffaa;">&nbsp;</span>
+						<span class="QuickColor" title="#ffff56ff" style="background-color:#ffff56;">&nbsp;</span>
+						<span class="QuickColor" title="#ffff00ff" style="background-color:#ffff00;">&nbsp;</span>
+						<span class="QuickColor" title="#bfbf00ff" style="background-color:#bfbf00;">&nbsp;</span>
+						<span class="QuickColor" title="#7f7f00ff" style="background-color:#7f7f00;">&nbsp;</span>
+						<span class="QuickColor" title="#ccccccff" style="background-color:#cccccc;">&nbsp;</span>
+						<span class="QuickColor" title="#d4ffaaff" style="background-color:#d4ffaa;">&nbsp;</span>
+						<span class="QuickColor" title="#aaff56ff" style="background-color:#aaff56;">&nbsp;</span>
+						<span class="QuickColor" title="#7fff00ff" style="background-color:#7fff00;">&nbsp;</span>
+						<span class="QuickColor" title="#5fbf00ff" style="background-color:#5fbf00;">&nbsp;</span>
+						<span class="QuickColor" title="#3f7f00ff" style="background-color:#3f7f00;">&nbsp;</span>
+						<span class="QuickColor" title="#b2b2b2ff" style="background-color:#b2b2b2;">&nbsp;</span>
+						<span class="QuickColor" title="#aaffaaff" style="background-color:#aaffaa;">&nbsp;</span>
+						<span class="QuickColor" title="#56ff56ff" style="background-color:#56ff56;">&nbsp;</span>
+						<span class="QuickColor" title="#00ff00ff" style="background-color:#00ff00;">&nbsp;</span>
+						<span class="QuickColor" title="#00bf00ff" style="background-color:#00bf00;">&nbsp;</span>
+						<span class="QuickColor" title="#007f00ff" style="background-color:#007f00;">&nbsp;</span>
+						<span class="QuickColor" title="#999999ff" style="background-color:#999999;">&nbsp;</span>
+						<span class="QuickColor" title="#aaffd4ff" style="background-color:#aaffd4;">&nbsp;</span>
+						<span class="QuickColor" title="#56ffaaff" style="background-color:#56ffaa;">&nbsp;</span>
+						<span class="QuickColor" title="#00ff7fff" style="background-color:#00ff7f;">&nbsp;</span>
+						<span class="QuickColor" title="#00bf5fff" style="background-color:#00bf5f;">&nbsp;</span>
+						<span class="QuickColor" title="#007f3fff" style="background-color:#007f3f;">&nbsp;</span>
+						<span class="QuickColor" title="#7f7f7fff" style="background-color:#7f7f7f;">&nbsp;</span>
+						<span class="QuickColor" title="#aaffffff" style="background-color:#aaffff;">&nbsp;</span>
+						<span class="QuickColor" title="#56ffffff" style="background-color:#56ffff;">&nbsp;</span>
+						<span class="QuickColor" title="#00ffffff" style="background-color:#00ffff;">&nbsp;</span>
+						<span class="QuickColor" title="#00bfbfff" style="background-color:#00bfbf;">&nbsp;</span>
+						<span class="QuickColor" title="#007f7fff" style="background-color:#007f7f;">&nbsp;</span>
+						<span class="QuickColor" title="#666666ff" style="background-color:#666666;">&nbsp;</span>
+						<span class="QuickColor" title="#aad4ffff" style="background-color:#aad4ff;">&nbsp;</span>
+						<span class="QuickColor" title="#56aaffff" style="background-color:#56aaff;">&nbsp;</span>
+						<span class="QuickColor" title="#007fffff" style="background-color:#007fff;">&nbsp;</span>
+						<span class="QuickColor" title="#005fbfff" style="background-color:#005fbf;">&nbsp;</span>
+						<span class="QuickColor" title="#003f7fff" style="background-color:#003f7f;">&nbsp;</span>
+						<span class="QuickColor" title="#4c4c4cff" style="background-color:#4c4c4c;">&nbsp;</span>
+						<span class="QuickColor" title="#aaaaffff" style="background-color:#aaaaff;">&nbsp;</span>
+						<span class="QuickColor" title="#5656ffff" style="background-color:#5656ff;">&nbsp;</span>
+						<span class="QuickColor" title="#0000ffff" style="background-color:#0000ff;">&nbsp;</span>
+						<span class="QuickColor" title="#0000bfff" style="background-color:#0000bf;">&nbsp;</span>
+						<span class="QuickColor" title="#00007fff" style="background-color:#00007f;">&nbsp;</span>
+						<span class="QuickColor" title="#333333ff" style="background-color:#333333;">&nbsp;</span>
+						<span class="QuickColor" title="#d4aaffff" style="background-color:#d4aaff;">&nbsp;</span>
+						<span class="QuickColor" title="#aa56ffff" style="background-color:#aa56ff;">&nbsp;</span>
+						<span class="QuickColor" title="#7f00ffff" style="background-color:#7f00ff;">&nbsp;</span>
+						<span class="QuickColor" title="#5f00bfff" style="background-color:#5f00bf;">&nbsp;</span>
+						<span class="QuickColor" title="#3f007fff" style="background-color:#3f007f;">&nbsp;</span>
+						<span class="QuickColor" title="#191919ff" style="background-color:#191919;">&nbsp;</span>
+						<span class="QuickColor" title="#ffaaffff" style="background-color:#ffaaff;">&nbsp;</span>
+						<span class="QuickColor" title="#ff56ffff" style="background-color:#ff56ff;">&nbsp;</span>
+						<span class="QuickColor" title="#ff00ffff" style="background-color:#ff00ff;">&nbsp;</span>
+						<span class="QuickColor" title="#bf00bfff" style="background-color:#bf00bf;">&nbsp;</span>
+						<span class="QuickColor" title="#7f007fff" style="background-color:#7f007f;">&nbsp;</span>
+						<span class="QuickColor" title="#000000ff" style="background-color:#000000;">&nbsp;</span>
+						<span class="QuickColor" title="#ffaad4ff" style="background-color:#ffaad4;">&nbsp;</span>
+						<span class="QuickColor" title="#ff56aaff" style="background-color:#ff56aa;">&nbsp;</span>
+						<span class="QuickColor" title="#ff007fff" style="background-color:#ff007f;">&nbsp;</span>
+						<span class="QuickColor" title="#bf005fff" style="background-color:#bf005f;">&nbsp;</span>
+						<span class="QuickColor" title="#7f003fff" style="background-color:#7f003f;">&nbsp;</span>
+						<span class="QuickColor" style="background-color:;background-image:url(images/NoColor.png)">&nbsp;</span>
+					</div>
+				</td>
+			</tr>
+			<tr class="Hue">
+				<td class="Radio">
+					<label title="“Renk” Moduna Geç">
+						<input type="radio" value="h">H:
+					</label>
+				</td>
+				<td class="Text">
+					<input type="text" maxlength="3" value="130" title="Bir “Renk” Değeri Girin (0-360°)">&nbsp;°
+				</td>
+			</tr>
+			<tr class="Saturation">
+				<td class="Radio">
+					<label title="“Doygunluk” Renk Moduna Geç">
+						<input type="radio" value="s" checked="checked">S:
+					</label>
+				</td>
+				<td class="Text">
+					<input type="text" maxlength="3" value="96" title="Bir “Doygunluk” Değeri Girin (0-100%)">&nbsp;%
+				</td>
+			</tr>
+			<tr class="Value">
+				<td class="Radio">
+					<label title="“Parlaklık” Renk Moduna Geç">
+						<input type="radio" value="v">B:
+					</label>
+					<br>
+					<br>
+				</td>
+				<td class="Text">
+					<input type="text" maxlength="3" value="47" title="Bir “Parlaklık” Değeri Girin (0-100%)">&nbsp;%
+					<br>
+					<br>
+				</td>
+			</tr>
+			<tr class="Red">
+				<td class="Radio">
+					<label title="“Kırmızı” Renk Moduna Geç">
+						<input type="radio" value="r">R:
+					</label>
+				</td>
+				<td class="Text">
+					<input type="text" maxlength="3" value="4" title="Bir “Kırmızı” Değer Girin (0-255)">
+				</td>
+			</tr>
+			<tr class="Green">
+				<td class="Radio">
+					<label title="“Yeşil” Renk Moduna Geç">
+						<input type="radio" value="g">G:
+					</label>
+				</td>
+				<td class="Text">
+					<input type="text" maxlength="3" value="122" title="Bir “Yeşil” Değer Girin (0-255)">
+				</td>
+			</tr>
+			<tr class="Blue">
+				<td class="Radio">
+					<label title="“Mavi” Renk Moduna Geç">
+						<input type="radio" value="b">B:
+					</label>
+				</td>
+				<td class="Text">
+					<input type="text" maxlength="3" value="24" title="Bir “Mavi” Değer Girin (0-255)">
+				</td>
+			</tr>
+			<tr class="Alpha">
+				<td class="Radio">&nbsp;</td>
+				<td class="Text">&nbsp;</td>
+			</tr>
+			<tr class="Hex">
+				<td colspan="2" class="Text">
+					<label title="Bir “Hex” Değer Girin (#000000-#ffffff)">#:
+						<input type="text" maxlength="6" class="Hex" value="047a18">
+					</label>&nbsp;
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</body>
+</html>
