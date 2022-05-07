@@ -1,0 +1,205 @@
+/* webkit only (so far) */
+@-webkit-keyframes spin {
+	from {-webkit-transform:rotateY(0) rotateX(-90deg)}
+	to {-webkit-transform:rotateY(-360deg) rotateX(270deg)}
+}
+/* Default container positioning (bottom right coner of page) */
+#minecraft-container {position:fixed;bottom:12px;right:12px;z-index:128}
+/* You may change the container ID in the plugin options and style your own positioning if you'd like */
+.minecraft {
+	height:32px;
+	width:32px;
+	margin:32px;
+	border-radius:32px;
+	-webkit-border-radius:32px;
+	-moz-border-radius:32px;
+	-webkit-perspective:800
+	}
+.cube {
+	position:relative;
+	height:32px;
+	width:32px;
+	-webkit-animation:spin 8s infinite linear;
+	-webkit-transform-style:preserve-3d;
+	}
+.cube a {display:block;height:32px;width:32px}
+.cube .face {
+	position:absolute;
+	height:32px;
+	width:32px;
+	-webkit-backface-visibility:hidden
+	}
+.cube .one {
+	-webkit-transform: rotateX(90deg) translateZ(16px);
+	-moz-transform: rotate(-45deg) skew(15deg, 15deg) translate(12px, -12px) scale(0.75);
+	-ms-transform: rotate(-45deg) skew(15deg, 15deg) translate(12px, -12px) scale(0.75)
+	}
+.cube .two {
+	-webkit-transform: translateZ(16px);
+	-moz-transform: rotate(15deg) skew(15deg, 15deg) translate(-12px, 12px) scale(0.75);
+	-ms-transform: rotate(15deg) skew(15deg, 15deg) translate(-12px, 12px) scale(0.75)
+	}
+.cube .three {
+	-webkit-transform: rotateY(90deg) translateZ(16px);
+	-moz-transform: rotate(-15deg) skew(-15deg, -15deg) translate(12px, 12px) scale(0.75);
+	-ms-transform: rotate(-15deg) skew(-15deg, -15deg) translate(12px, 12px) scale(0.75)
+	}
+.cube .four {
+	-webkit-transform: rotateY(180deg) translateZ(16px);
+	-moz-transform: rotate(15deg) skew(15deg, 15deg) translate(12px, -12px) scale(0.75);
+	-ms-transform: rotate(15deg) skew(15deg, 15deg) translate(12px, -12px) scale(0.75)
+	}
+.cube .five {
+	-webkit-transform: rotateY(-90deg) translateZ(16px);
+	-moz-transform: rotate(-15deg) skew(-15deg, -15deg) translate(-12px, -12px) scale(0.75);
+	-ms-transform: rotate(-15deg) skew(-15deg, -15deg) translate(-12px, -12px) scale(0.75)
+	}
+.cube .six {
+	-webkit-transform: rotateX(-90deg) rotate(180deg) translateZ(16px);
+	-moz-transform: rotate(-45deg) skew(15deg, 15deg) translate(-12px, 12px) scale(0.75);
+	-ms-transform: rotate(-45deg) skew(15deg, 15deg) translate(-12px, 12px) scale(0.75)
+	}
+.minecraft.diamond,.minecraft.player,.minecraft.table,.minecraft.glass {
+	background:rgba(0,152,164,0.4);
+	box-shadow:0 0 32px rgba(0,152,164,1);
+	-webkit-box-shadow:0 0 32px rgba(0,152,164,1);
+	-moz-box-shadow:0 0 32px rgba(0,152,164,1)
+	}
+.minecraft.gold,.minecraft.chest {
+	background:rgba(252,238,76,0.4);
+	box-shadow:0 0 32px rgba(252,238,76,1);
+	-webkit-box-shadow:0 0 32px rgba(252,238,76,1);
+	-moz-box-shadow:0 0 32px rgba(252,238,76,1)
+	}
+.minecraft.iron,.minecraft.gravel {
+	background:rgba(188,154,128,0.4);
+	box-shadow:0 0 32px rgba(188,154,128,1);
+	-webkit-box-shadow:0 0 32px rgba(188,154,128,1);
+	-moz-box-shadow:0 0 32px rgba(188,154,128,1)
+	}
+.minecraft.coal,.minecraft.bedrock {
+	background:rgba(56,56,56,0.4);
+	box-shadow:0 0 32px rgba(56,56,56,1);
+	-webkit-box-shadow:0 0 32px rgba(56,56,56,1);
+	-moz-box-shadow:0 0 32px rgba(56,56,56,1)
+	}
+.minecraft.stone,.minecraft.skeleton,.minecraft.cobblestone {
+	background:rgba(128,128,128,0.4);
+	box-shadow:0 0 32px rgba(128,128,128,1);
+	-webkit-box-shadow:0 0 32px rgba(128,128,128,1);
+	-moz-box-shadow:0 0 32px rgba(128,128,128,1)
+	}
+.minecraft.grass,.minecraft.creeper,.minecraft.mossy {
+	background:rgba(98,162,56,0.4);
+	box-shadow:0 0 32px rgba(98,162,56,1);
+	-webkit-box-shadow:0 0 32px rgba(98,162,56,1);
+	-moz-box-shadow:0 0 32px rgba(98,162,56,1)
+	}
+.minecraft.dirt,.minecraft.wood {
+	background:rgba(120,86,58,0.4);
+	box-shadow:0 0 32px rgba(120,86,58,1);
+	-webkit-box-shadow:0 0 32px rgba(120,86,58,1);
+	-moz-box-shadow:0 0 32px rgba(120,86,58,1)
+	}
+.minecraft.pig {
+	background:rgba(242,172,170,0.4);
+	box-shadow:0 0 32px rgba(242,172,170,1);
+	-webkit-box-shadow:0 0 32px rgba(242,172,170,1);
+	-moz-box-shadow:0 0 32px rgba(242,172,170,1)
+	}
+.minecraft.tnt,.minecraft.redstone {
+	background:rgba(220,68,26,0.4);
+	box-shadow:0 0 32px rgba(220,68,26,1);
+	-webkit-box-shadow:0 0 32px rgba(220,68,26,1);
+	-moz-box-shadow:0 0 32px rgba(220,68,26,1)
+	}
+.minecraft.lapis {
+	background:rgba(20,64,204,0.4);
+	box-shadow:0 0 32px rgba(20,64,204,1);
+	-webkit-box-shadow:0 0 32px rgba(20,64,204,1);
+	-moz-box-shadow:0 0 32px rgba(20,64,204,1)
+	}
+.minecraft.brick {
+	background:rgba(164,90,70,0.4);
+	box-shadow:0 0 32px rgba(164,90,70,1);
+	-webkit-box-shadow:0 0 32px rgba(164,90,70,1);
+	-moz-box-shadow:0 0 32px rgba(164,90,70,1)
+	}
+.minecraft.sand,.minecraft.sandstone {
+	background:rgba(236,228,180,0.4);
+	box-shadow:0 0 32px rgba(236,228,180,1);
+	-webkit-box-shadow:0 0 32px rgba(236,228,180,1);
+	-moz-box-shadow:0 0 32px rgba(236,228,180,1)
+	}
+.minecraft.plank,.minecraft.bookshelf {
+	background:rgba(188,152,98,0.4);
+	box-shadow:0 0 32px rgba(188,152,98,1);
+	-webkit-box-shadow:0 0 32px rgba(188,152,98,1);
+	-moz-box-shadow:0 0 32px rgba(188,152,98,1)
+}
+.minecraft.obsidian {
+	background:rgba(60,48,86,0.4);
+	box-shadow:0 0 32px rgba(60,48,86,1);
+	-webkit-box-shadow:0 0 32px rgba(60,48,86,1);
+	-moz-box-shadow:0 0 32px rgba(60,48,86,1)
+	}
+.minecraft.diamond .cube .face {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/diamond_ore.png)}   
+.minecraft.gold .cube .face {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/gold_ore.png)}   
+.minecraft.redstone .cube .face {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/redstone_ore.png)}   
+.minecraft.iron .cube .face {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/iron_ore.png)}   
+.minecraft.lapis .cube .face {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/lapis_ore.png)}   
+.minecraft.coal .cube .face {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/coal_ore.png)}   
+.minecraft.stone .cube .face {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/stone.png)}   
+.minecraft.cobblestone .cube .face {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/cobblestone.png)}   
+.minecraft.mossy .cube .face {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/mossy.png)}   
+.minecraft.dirt .cube .face {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/dirt.png)}
+.minecraft.gravel .cube .face {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/gravel.png)}
+.minecraft.sand .cube .face {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/sand.png)}
+.minecraft.plank .cube .face {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/plank.png)}   
+.minecraft.brick .cube .face {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/brick.png)}   
+.minecraft.obsidian .cube .face {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/obsidian.png)}   
+.minecraft.bedrock .cube .face {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/bedrock.png)}   
+.minecraft.glass .cube .face {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/glass.png)}   
+.minecraft.grass .cube .face.one {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/grass_top.png)}   
+.minecraft.grass .cube .face.two,.minecraft.grass .cube .face.three,.minecraft.grass .cube .face.four,.minecraft.grass .cube .face.five {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/grass_sides.png)}   
+.minecraft.grass .cube .face.six {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/dirt.png)}   
+.minecraft.sandstone .cube .face.one {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/sandstone_top.png)}   
+.minecraft.sandstone .cube .face.two,.minecraft.sandstone .cube .face.three,.minecraft.sandstone .cube .face.four,.minecraft.sandstone .cube .face.five {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/sandstone_sides.png)}   
+.minecraft.sandstone .cube .face.six {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/sandstone_bottom.png)}   
+.minecraft.tnt .cube .face.one {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/tnt_top.png)}   
+.minecraft.tnt .cube .face.two,.minecraft.tnt .cube .face.three,.minecraft.tnt .cube .face.four,.minecraft.tnt .cube .face.five {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/tnt_sides.png)}   
+.minecraft.tnt .cube .face.six {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/tnt_bottom.png)}   
+.minecraft.wood .cube .face.one,.minecraft.wood .cube .face.six {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/wood_grain.png)}   
+.minecraft.wood .cube .face.two,.minecraft.wood .cube .face.three,.minecraft.wood .cube .face.four,.minecraft.wood .cube .face.five {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/wood_bark.png)}   
+.minecraft.bookshelf .cube .face.one,.minecraft.bookshelf .cube .face.six {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/plank.png)}
+.minecraft.bookshelf .cube .face.two,.minecraft.bookshelf .cube .face.three,.minecraft.bookshelf .cube .face.four,.minecraft.bookshelf .cube .face.five {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/bookshelf.png)}
+.minecraft.chest .cube .face.one,.minecraft.chest .cube .face.six {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/chest_top.png)}
+.minecraft.chest .cube .face.three {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/chest_front.png)}
+.minecraft.chest .cube .face.two,.minecraft.chest .cube .face.four,.minecraft.chest .cube .face.five {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/chest_sides.png)}
+.minecraft.table .cube .face.one,.minecraft.table .cube .face.six {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/table_top.png)}
+.minecraft.table .cube .face.two,.minecraft.table .cube .face.four {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/table_front.png)}
+.minecraft.table .cube .face.three,.minecraft.table .cube .face.five {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/table_sides.png)}
+.minecraft.creeper .cube .face.one {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/creeper_top.png)}
+.minecraft.creeper .cube .face.two {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/creeper_left.png)}
+.minecraft.creeper .cube .face.three {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/creeper_front.png)}
+.minecraft.creeper .cube .face.four {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/creeper_right.png)}
+.minecraft.creeper .cube .face.five {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/creeper_back.png)}
+.minecraft.creeper .cube .face.six {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/creeper_bottom.png)}   
+.minecraft.pig .cube .face.one {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/pig_top.png)}
+.minecraft.pig .cube .face.two {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/pig_right.png)}
+.minecraft.pig .cube .face.three {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/pig_front.png)}
+.minecraft.pig .cube .face.four {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/pig_left.png)}
+.minecraft.pig .cube .face.five {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/pig_back.png)}
+.minecraft.pig .cube .face.six {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/pig_bottom.png)}   
+.minecraft.skeleton .cube .face.one {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/skeleton_top.png)}
+.minecraft.skeleton .cube .face.two {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/skeleton_right.png)}
+.minecraft.skeleton .cube .face.three {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/skeleton_front.png)}
+.minecraft.skeleton .cube .face.four {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/skeleton_left.png)}
+.minecraft.skeleton .cube .face.five {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/skeleton_back.png)}
+.minecraft.skeleton .cube .face.six {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/skeleton_bottom.png)}   
+.minecraft.player .cube .face.one {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/char_top.png)}
+.minecraft.player .cube .face.two {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/char_right.png)}
+.minecraft.player .cube .face.three {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/char_front.png)}
+.minecraft.player .cube .face.four {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/char_left.png)}
+.minecraft.player .cube .face.five {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/char_back.png)}
+.minecraft.player .cube .face.six {background:url(http://minecraftevi.com/wp-content/plugins/minecraft-block/images/char_bottom.png)}   
