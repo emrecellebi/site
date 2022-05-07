@@ -1,0 +1,92 @@
+﻿.container1
+{
+	width:660px; /* Fotoğrafın genişliği yazılır */
+	margin:0 auto;
+	padding:0;
+}
+
+.folio_block
+{
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin:-140px 0 0 -395px;
+}
+
+.main_view
+{
+	float:left;
+	position:relative;
+}
+
+.window
+{
+	height:240px; /* Fotoğrafın yüksekliği yazılır */
+	width:660px; /* Fotoğrafın genişliği yazılır */
+	-moz-box-shadow:0 0 5px #303030;
+	-webkit-box-shadow:0 0 5px #303030;
+	box-shadow:0 0 5px #303030;
+	border:1px solid #000;
+	margin-top:15px;
+	overflow:hidden;
+	position:relative;
+}
+
+.image_reel
+{
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+.image_reel img
+{
+	float:left;
+}
+
+.paging_btrix
+{
+	position:absolute;
+	bottom:10px;
+	right:-7px;
+	width:178px; /* paging.png fotoğrafın genişliği */
+	height:47px; /* paging.png fotoğrafın yüksekliği */
+	z-index:100;
+	text-align:center;
+	line-height:40px;
+	background:url(../img/paging.png) no-repeat;
+	display:none;
+	
+}
+/*
+
+.paging_btrix
+{
+	position:absolute;
+	bottom:10px;
+	text-align:center;
+} 
+
+*/
+
+.paging_btrix a
+{
+	text-decoration:none;
+	color:#fff;
+	padding:5px;
+}
+
+.paging_btrix a.active
+{
+	font-weight:700;
+	background:#920000;
+	border:1px solid #610000;
+	-moz-border-radius:3px;
+	-khtml-border-radius:3px;
+	-webkit-border-radius:3px;
+}
+
+.paging_btrix a:hover
+{
+	font-weight:700;
+}
