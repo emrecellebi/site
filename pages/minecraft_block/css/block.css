@@ -1,4 +1,9 @@
 /* webkit only (so far) */
+
+body{
+	background-color: rgb(175, 177, 175);
+}
+
 @-webkit-keyframes spin {
 	from {-webkit-transform:rotateY(0) rotateX(-90deg)}
 	to {-webkit-transform:rotateY(-360deg) rotateX(270deg)}
