@@ -1,0 +1,124 @@
+﻿body{
+	background: url(../Images/Arka-Plan-Resmi.zd);
+	font-family: "Arial";
+	font-size: 0.9em;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	color: #000000;
+}
+#Sayfa{
+	width:1000px;
+	margin: 0px auto;
+	border: 1px solid #c0c0c0;
+}
+#Menu{
+	background: url(../Images/menu_bg.zd);
+	height: 32px;
+	padding: 5px 5px 5px 15px;
+	border-top: 1px solid #68838b;
+	border-bottom: 1px solid #a0522d;
+}
+#Menu ul{
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+#Menu ul li{
+	float: left;
+}
+.temizle{
+	clear: both;
+}
+#Menu ul li a {
+	display: block;
+	line-height: 28px;
+	border: 1px solid #fff;
+	background: #8b7765;
+	color: #fff;
+	padding: 0px 15px;
+	text-decoration: none;
+	font-weight: bold;
+	margin-right: 5px;
+}
+#Menu ul li a:hover{
+	color: #000;
+	border: 1px solid #000;
+	background: #ffdead;
+}
+#Icerik{
+	background: #dee8ed;
+	padding: 5px;
+}
+#Iceriksol{
+	width: 220px;
+	float: left;
+}
+#Iceriksag{
+	width: 705px;
+	float: left;
+}
+#Iceriksol ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+#Iceriksol ul li a{
+	display: block;
+	line-height: 35px;
+	border: 1px solid #ff0000;
+	background: #008080;
+	color: #000;
+	font-weight: bold;
+	text-decoration: none;
+	margin-bottom: 5px;
+}
+#Iceriksol ul li a:hover{
+	color: #ff0000;
+	border: 1px solid #ecab53;
+	background: #363636;
+}
+.haberkutusu{
+	border: 1px solid #ccc;
+	border-bottom: 2px solid #333;
+	background: #f9fafb;
+	padding: 5px;
+	margin: 0px 5px 5px 0px;
+	font-size: small;
+}
+.haberkutusu h3{
+	margin: 0px;
+}
+.haberkutusu img{
+	float: left;
+	padding: 5px;
+	border: 1px solid #ccc;
+	margin-right: 5px;
+}
+#Iceriksag{
+	background: #fff;
+	padding: 5px;
+	border: 1px solid #ccc;
+}
+#footer {
+	width: 1000px;
+	margin: 0 auto;
+	padding: 15px 0;
+	background: #fff;
+}
+
+#footer p {
+	margin: 0;
+	line-height: normal;
+	font-size: .8em;
+	color: #000;
+}
+
+#footer a {
+	border: none;
+	font-weight: bold;
+	color: #999999;
+}
+
+#footer a:hover {
+	color: #FFFFFF;
+}
