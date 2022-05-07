@@ -1,0 +1,63 @@
+body
+{
+    text-align: center;
+}
+
+pre
+{
+    margin-left: 25px;
+    text-align: left;
+}
+    
+table
+{
+    width: 100%;
+}
+
+#wrapper
+{
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#pixels
+{
+    width: 200px;
+    float: left;
+}
+
+#code
+{
+    width: 200px;
+    float: left;
+}
+
+#pins
+{
+	padding-top: 3em;
+	clear: both;
+}
+ 
+#arduino
+{
+	padding-top: 30px;
+	clear: both;
+}
+
+.pixel
+{
+	width: 20px;
+	height: 20px;
+	border: 1px solid #ccc;
+}
+ 
+.off
+{
+	background: #5EFB6E;
+}
+
+.on
+{
+	background: #484848;
+}
