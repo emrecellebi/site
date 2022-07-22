@@ -67,7 +67,7 @@ function drawBackground(alpha) {
 
 function drawText() {
   ctx.save();
-  let text = "Melek";
+  let text = "MELEK";
   let fontSize = w * 0.23;
   ctx.font = "bold " + fontSize + "px sans-serif";
   ctx.textAlign = "center";
