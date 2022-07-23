@@ -1,0 +1,189 @@
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+body {
+	margin: 11px;
+	padding: 0;
+	background: #FEFCFC url(images/img1.gif) repeat-y;
+	font: normal 11px Tahoma, Arial, Helvetica, sans-serif;
+	color: #727171;
+}
+
+form {
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3 {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header */
+
+#header {
+}
+
+#header h1 {
+	letter-spacing: -2px;
+	font-size: 36px;
+}
+
+#header h2 {
+	position: relative;
+	margin-top: -10px;
+	letter-spacing: -1px;
+	font-size: 18px;
+	font-weight: normal;
+}
+
+#header a {
+	padding-left: 0;
+	background: none;
+	text-transform: lowercase;
+	text-decoration: none;
+	color: #FF7800;
+}
+
+/* Links */
+
+#links {
+	float: left;
+	width: 200px;
+}
+
+/* Archives */
+
+#archives {
+	float: left;
+	width: 180px;
+}
+
+/* Posts */
+
+#posts {
+	margin-left: 400px;
+}
+
+#posts .post {
+	margin-bottom: 20px;
+	padding: 0 20px 20px 20px;
+	background: url(images/img4.gif) no-repeat left bottom;
+}
+
+#posts .title {
+	font-size: 24px;
+	color: #333333;
+}
+
+#posts .posted {
+	font: normal 9px Tahoma, Arial, Helvetica, sans-serif;
+}
+
+#posts .story {
+	line-height: 18px;
+}
+
+#posts a {
+	color: #333333;
+}
+
+#posts a:hover {
+	text-decoration: none;
+	color: #000000;
+}
+
+#posts .category {
+	padding-left: 15px;
+	background: url(images/img8.gif) no-repeat left center;
+}
+
+#posts .comment {
+	padding-left: 15px;
+	background: url(images/img9.gif) no-repeat left center;
+}
+
+/* Orange Box */
+
+.obox {
+	padding: 10px 20px 20px 20px;
+	background: url(images/img2.gif) no-repeat left bottom;
+}
+
+.obox .heading {
+	margin-bottom: 5px;
+	font-size: 14px;
+	color: #FF7800;
+}
+
+.obox ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	line-height: 18px;
+}
+
+.obox li {
+}
+
+.obox a {
+	padding-left: 10px;
+	background: url(images/img5.gif) no-repeat left center;
+	text-decoration: none;
+	color: #FF7800;
+}
+
+.obox a:hover {
+	text-decoration: underline;
+}
+
+/* Blue Box */
+
+.bbox {
+	padding: 10px 20px 20px 20px;
+	background: url(images/img3.gif) no-repeat left bottom;
+}
+
+.bbox .heading {
+	margin-bottom: 5px;
+	font-size: 14px;
+	color: #4BA3D8;
+}
+
+.bbox ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	line-height: 18px;
+}
+
+.bbox li {
+}
+
+.bbox a {
+	padding-left: 10px;
+	background: url(images/img6.gif) no-repeat left center;
+	text-decoration: none;
+	color: #4BA3D8;
+}
+
+.bbox a:hover {
+	text-decoration: underline;
+}
+
+/* Footer */
+
+#footer {
+	clear: both;
+	width: 180px;
+	padding: 20px;
+	font-size: 9px;
+}
+
+#footer a {
+	color: #727171;
+}
