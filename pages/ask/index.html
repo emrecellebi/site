@@ -34,12 +34,14 @@
 		</p>
 	</div>
 	
-	<video id="myVideo" width="480" height="854" controls autoplay>
+	<video id="myVideo" width="480" height="854" controls>
 		<source src="A941920BAC3C173A7E5321096FF44093_video_dashinit.mp4" type="video/mp4">
 	</video>
 	
 	<script>
-		document.getElementById("myVideo").volume = 0.2;
+		var v = document.getElementById("myVideo")
+		v.volume = 0.2;
+		v.autoplay = true;
 	</script>
 </body>
 </html>
