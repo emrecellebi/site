@@ -76,3 +76,8 @@ ul:hover li:nth-child(9)
 {
   transition-delay: .9s;
 }
+
+ul:hover li:nth-child(10)
+{
+  transition-delay: 1s;
+}
