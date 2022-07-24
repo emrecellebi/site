@@ -1,0 +1,67 @@
+﻿<html>
+<head>
+	<title>JavaScript onMouseDown, onMouseMove, onMouseOut, onMouseOver ve 
+onMouseUp Olay tutucuları örneği</title>
+<style type="text/css">
+table.ornek {	
+	width: 300px;
+	border: solid 1px Black; }
+td.ornek {
+	font-weight:bold;
+	text-align:center; }
+</style>
+<script type="text/javascript" language="javascript1.2">
+var kareler = new Array("|", "/", "-", "\\");
+var MouseDownSira = 0;
+var MouseMoveSira = 0;
+var MouseOutSira = 0;
+var MouseOverSira = 0;
+var MouseUpSira = 0;
+function On_MouseDown() {
+	document.getElementById('On_MouseDown').innerHTML = kareler[MouseDownSira].toString();
+	MouseDownSira++;
+	if(MouseDownSira == 4) MouseDownSira = 0; }
+	
+function On_MouseMove() {
+	document.getElementById('On_MouseMove').innerHTML = kareler[MouseMoveSira].toString();
+	MouseMoveSira++;
+	if(MouseMoveSira == 4) MouseMoveSira = 0; }
+	
+function On_MouseOut() {
+	document.getElementById('On_MouseOut').innerHTML = kareler[MouseOutSira].toString();
+	MouseOutSira++;
+	if(MouseOutSira == 4) MouseOutSira = 0; }
+	
+function On_MouseOver() {
+	document.getElementById('On_MouseOver').innerHTML = kareler[MouseOverSira].toString();
+	MouseOverSira++;
+	if(MouseOverSira == 4) MouseOverSira = 0; }
+	
+function On_MouseUp() {
+	document.getElementById('On_MouseUp').innerHTML = kareler[MouseUpSira].toString();
+	MouseUpSira++;
+	if(MouseUpSira == 4) MouseUpSira = 0; }
+</script>
+</head>
+<body>
+<table class="ornek" rules="all" cellpadding="0" cellspacing="0">
+	<thead><tr><th>Faaliyet</th><th>Olay</th><th>Test Alanı</th></tr></thead>
+	<tbody>
+	<tr>
+		<td class="ornek"><div id="On_MouseMove"> </div></td><td>onMouseMove</td><td rowspan="5">
+		<div style="width:130px; height:120px; background-color: #6af;" 
+		onMouseMove="On_MouseMove()"
+		onMouseDown="On_MouseDown()"
+		onMouseOut="On_MouseOut()"
+		onMouseOver="On_MouseOver()"
+		onMouseUp="On_MouseUp()">
+		</div></td>
+	</tr>
+	<tr><td class="ornek"><div id="On_MouseOver"> </div></td><td>onMouseOver</td></tr>
+	<tr><td class="ornek"><div id="On_MouseOut"> </div></td><td>onMouseOut</td></tr>
+	<tr><td class="ornek"><div id="On_MouseDown"> </div></td><td>onMouseDown</td></tr>
+	<tr><td class="ornek"><div id="On_MouseUp"> </div></td><td>onMouseUp</td></tr>
+	</tbody>
+</table>
+</body>
+</html>

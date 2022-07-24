@@ -1,0 +1,100 @@
+﻿*{
+padding:0px;
+margin:0px;
+text-decoration:none;
+}
+
+body{
+background-color:#222222;
+}
+
+#geneldiv{
+width:960px;
+margin:0px auto;
+}
+
+#soltaraf{
+background:url(../images/02.gif) repeat-y;
+width:250px;
+position:fixed;
+height:100%;
+}
+
+#sagtaraf{
+background:url(../images/01.gif) repeat-y;
+width:700px;
+position:relative;
+float:right;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+}
+
+#solturuncu{
+background-color:orange;
+font:12px arial;
+padding:3px;
+font-weight:bold;
+color:white;
+text-align:center;
+}
+
+#sagturuncu{
+background-color:orange;
+font:12px arial;
+padding:3px;
+font-weight:bold;
+color:white;
+text-align:center;
+}
+
+#profil{
+margin:20px;
+padding:5px;
+background-color:gray;
+}
+
+.basliklar{
+background-color:#222222;
+padding:10px;
+width:400px;
+border-top-right-radius:5px;
+border-bottom-right-radius:5px;
+margin-top:10px;
+color:white;
+font:20px tahoma;
+margin-bottom:10px;
+}
+
+.icerik{
+color:gray;
+padding:5px;
+}
+
+.altbaslik{
+color:#4C4FA5;
+border-bottom:1px dotted;
+width:415px;
+font-size:18px;
+text-transform:uppercase;
+font-weight:bold;
+}
+
+.secim{
+list-style-type:circle;
+margin:30px;
+}
+
+#menuler{
+list-style-type:none;
+}
+
+#menuler li{
+padding:5px;
+background-color:#444444;
+color:white;
+}
+
+#menuler li:hover{
+background-color:#555555;
+padding-left:10px;
+}

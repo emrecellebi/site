@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0011)about:blank -->
+<!--
+26 Mart 2008, İstanbul
+anov
+-->
+<html>
+<head><title>Basit zamanlayıcı (timer) örneği</title>
+<script type="text/javascript">
+var pause = false;
+var timeout_id;
+function animasyon()
+{
+	document.getElementById('span_timer').innerHTML = parseInt(document.getElementById('span_timer').innerHTML) + 1;
+	timeout_id = setTimeout(function(){animasyon()},1000);
+	//alert(pause);
+}
+function durum_degistir()
+{
+	pause = !pause;
+	if(pause)
+	{
+		clearTimeout(timeout_id);
+	}
+	else
+	{
+		animasyon();
+	}
+}
+</script>
+</head>
+<body onload="animasyon();">
+<input type="button" value="Duraklat/Devam et" onclick="durum_degistir();"/>
+<hr/>
+<span id="span_timer">1</span>
+</body>
+</html>
