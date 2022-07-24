@@ -1,0 +1,252 @@
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #FFFFFF url(images/img01.gif) repeat-x;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #8E959B;
+}
+
+h1, h2, h3 {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: #E55D13;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* Header */
+
+#header {
+	width: 706px;
+	height: 225px;
+	margin: 0 auto;
+	padding: 12px 0 0 0;
+}
+
+/* Logo */
+
+#logo {
+	float: left;
+	width: 208px;
+	height: 208px;
+	padding: 0 15px 0 0;
+	background: url(images/img02.jpg) no-repeat;
+}
+
+#logo h1 {
+	padding: 120px 20px 0 0;
+	text-transform: lowercase;
+	text-align: right;
+	letter-spacing: -3px;
+	font-size: 40px;
+	font-weight: normal;
+}
+
+#logo h2 {
+	margin-top: -55px;
+	padding-left: 18px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 10px;
+}
+
+#logo a {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+#logo a:hover {
+}
+
+/* Menu */
+
+#menu {
+	float: left;
+	padding: 0 0 0 0;
+}
+
+#menu ul {
+	height: 55px;
+	margin: 0;
+	padding: 23px 0;
+	list-style: none;
+}
+
+#menu li {
+	display: inline;
+}
+
+#menu a {
+	display: block;
+	float: left;
+	width: 120px;
+	height: 43px;
+	padding-top: 12px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: lowercase;
+	letter-spacing: -1px;
+	font-size: 26px;
+	color: #000000;
+}
+
+#menu a:hover, #menu .active a {
+	background: #000000;
+	color: #FFFFFF;
+}
+
+/* Content */
+
+#content {
+	width: 700px;
+	margin: 0 auto;
+}
+
+/* Posts */
+
+#posts {
+	float: right;
+	width: 480px;
+	margin-top: -130px;
+}
+
+.post {
+	padding-bottom: 1em;
+}
+
+.post .title {
+	clear: both;
+	padding-top: 10px;
+	letter-spacing: -2px;
+	font-size: 2em;
+	font-weight: normal;
+	color: #8E959B;
+}
+
+.post .date {
+	height: 20px;
+	border-bottom: 3px solid #000000;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.post .story {
+	padding: 0 20px;
+	line-height: 1.6em;
+}
+
+.post .meta {
+	border-top: 1px solid #000000;
+	padding: 0;
+	font-size: x-small;
+}
+
+.post .meta span {
+}
+
+.post .meta p {
+	margin: 0;
+}
+
+.post .meta a {
+}
+
+.post .meta a:hover {
+}
+
+.post .category {
+}
+
+.post .comments {
+}
+
+/* Bar */
+
+#bar {
+	float: left;
+	width: 200px;
+}
+
+/* Box Style */
+
+.boxed {
+	margin-bottom: 20px;
+	background: #F2F2F2;
+}
+
+.boxed h2 {
+	height: 40px;
+	margin: 0 0 2px 0;
+	padding: 10px 0 0 10px;
+	background: #EB850C;
+	border: 3px solid #000000;
+	border-bottom: none;
+	text-transform: lowercase;
+	letter-spacing: -1px;
+	font-size: 26px;
+	font-weight: normal;
+	color: #FFFFFF;
+}
+
+.boxed ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.boxed li {
+	padding: 10px;
+	font-size: small;
+}
+
+.boxed a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #EB850C;
+}
+
+.boxed a:hover {
+	color: #545C20;
+}
+
+.boxed .active, .boxed .active a {
+	background: #9CF04A;
+	color: #FFFFFF;
+}
+
+/* Footer */
+
+#footer {
+	clear: both;
+	padding: 20px 0 100px 0;
+	background: #9CF04A;
+	border-top: 3px solid #000000;
+	text-align: center;
+	font-size: x-small;
+	color: #FFFFFF;
+}
+
+#footer p {
+	margin: 0;
+}
+
+#footer a {
+	color: #FFFFFF;
+}
+
+#copy {
+}
+
+#feed {
+
