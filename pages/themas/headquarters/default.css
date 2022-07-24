@@ -1,0 +1,165 @@
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+body {
+	margin: 20px;
+	padding: 0;
+	background: #FFFFFF url(images/img1.gif);
+	font: normal small Arial, Helvetica, sans-serif;
+	color: #6F4503;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
+	color: #9E6813;
+}
+
+h1, h2, h3 {
+}
+
+h4, h5, h6 {
+}
+
+p, ul, ol, blockquote {
+	margin-top: 0;
+}
+
+a {
+	color: #6F4503;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+img {
+	border: none;
+}
+
+/* Header */
+
+#header {
+	width: 490px;
+	height: 110px;
+	margin: 0 auto;
+	padding: 35px 0 0 0;
+	background: #FFEE8F url(images/img2.gif) repeat-x;
+	border: 5px solid #FFFFFF;
+	border-bottom: none;
+}
+
+#header h1 {
+	text-align: center;
+	font-size: 3em;
+}
+
+#header h2 {
+	text-align: center;
+	font-size: 1.4em;
+}
+
+#header a {
+	text-decoration: none;
+	color: #9E6813;
+}
+
+/* Menu */
+
+#menu {
+	width: 490px;
+	height: 36px;
+	margin: 0 auto;
+	padding: 0;
+	background: #4E4E4E;
+	border: 5px solid #FFFFFF;
+	border-top: 1px solid #FFFFFF;
+	border-bottom: 1px solid #FFFFFF;;
+}
+
+#menu h2 {
+	display: none;
+}
+
+#menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#menu li {
+	display: inline;
+}
+
+#menu a {
+	display: block;
+	float: left;
+	width: 98px;
+	height: 26px;
+	padding-top: 10px;
+	text-align: center;
+	text-decoration: none;
+	color: #CCCCCC;
+}
+
+#menu a:hover, #menu .active a {
+	background: #000000;
+	color: #FFFFFF;
+}
+
+/* Splash */
+
+#splash {
+	width: 490px;
+	margin: 0 auto;
+	background: #FFFFFF;
+	border-left: 5px solid #FFFFFF;
+	border-right: 5px solid #FFFFFF;
+}
+
+/* Content */
+
+#content {
+	width: 490px;
+	margin: 0 auto;
+	background: #FFFFFF;
+	border: 5px solid #FFFFFF;
+}
+
+#content .title {
+	padding: 10px 20px;
+	background: #FFEE8E url(images/img4.gif) repeat-x left bottom;
+	font-size: 1em;
+}
+
+#content .story {
+	padding: 20px;
+	border: 2px solid #FFEE8E;
+}
+
+/* Footer */
+
+#footer {
+	width: 450px;
+	margin: 0 auto;
+	padding: 10px 20px;
+	background: #4E4E4E;
+	border: 5px solid #FFFFFF;
+	border-top: none;
+}
+
+#footer p {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-size: x-small;
+	color: #CCCCCC;
+}
+
+#footer a {
+	color: #CCCCCC;
+}

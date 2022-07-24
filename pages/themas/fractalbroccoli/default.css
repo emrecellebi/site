@@ -1,0 +1,229 @@
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+body {
+	margin: 20px 0;
+	padding: 0;
+	background: #EFFCF0 url(images/img01.gif);
+	font: normal small Verdana, Arial, Helvetica, sans-serif;
+	line-height: 1.8em;
+	color: #749A75;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: normal;
+	color: #235324;
+}
+
+h2 {
+}
+
+h3 {
+}
+
+p, blockquote, ul, ol {
+	margin-top: 0;
+}
+
+blockquote {
+}
+
+a {
+	color: #235324;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* Menu */
+
+#menu {
+	width: 700px;
+	height: 40px;
+	margin: 0 auto;
+	background: #EFFCF0;
+	border: 10px solid #235324;
+}
+
+#menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#menu li {
+	display: inline;
+}
+
+#menu a {
+	display: block;
+	float: left;
+	height: 32px;
+	padding: 8px 20px 0 20px;
+	border-right: 1px solid #235324;
+	text-decoration: none;
+	font-weight: bold;
+	color: #235324;
+}
+
+#menu a:hover {
+	background: #DAEBDB;
+}
+
+#menu #rss a {
+	float: right;
+	padding-left: 30px;
+	background: url(images/img02.gif) no-repeat 10px 50%;
+	border: none;
+}
+
+#menu #rss a:hover {
+	background-color: #DAEBDB;
+}
+
+/* Header */
+
+#header {
+	width: 700px;
+	height: 180px;
+	margin: 0 auto;
+	background: url(images/img03.jpg);
+	border: 10px solid #235324;
+	border-top: none;
+}
+
+#header h1 {
+	padding: 75px 0 0 20px;
+	font-size: 1.8em;
+}
+
+#header h2 {
+	padding: 0 0 0 20px;
+	font-size: .8em;
+}
+
+#header a {
+	text-decoration: none;
+	color: #DAEBDB;
+}
+
+/* Content */
+
+#content {
+	width: 700px;
+	margin: 0 auto;
+	background: #EFFCF0 url(images/img04.gif) repeat-y;
+	border: 10px solid #235324;
+	border-top: none;
+}
+
+/* Latest Post */
+
+#latest-post {
+	padding: 20px 0;
+	background: #EFFCF0;
+	border-bottom: 10px solid #235324;
+}
+
+#latest-post .title {
+	float: left;
+	width: 230px;
+	padding: 0 20px;
+	text-align: right;
+	line-height: 1.2em;
+	font-size: 2.2em;
+}
+
+#latest-post .story {
+	float: right;
+	width: 389px;
+	padding: 0 20px;
+	border-left: 1px solid #C6DAC7;
+}
+
+#latest-post .meta {
+	clear: both;
+}
+
+/* Posts */
+
+#posts {
+	float: right;
+	width: 390px;
+	padding: 20px;
+}
+
+#posts .post {
+	padding-bottom: 30px;
+}
+
+#posts .story {
+	padding: 15px 20px 0 20px;
+}
+
+#posts .meta {
+	padding: 5px 0 0 20px;
+}
+
+#posts .meta p {
+	margin: 0;
+	line-height: normal;
+	font-size: smaller;
+}
+
+#posts ul {
+}
+
+#posts ul li {
+}
+
+/* Links */
+
+#links {
+	float: left;
+	width: 230px;
+	padding: 20px
+}
+
+#links ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#links li ul {
+	padding: 15px 20px 30px 20px;
+}
+
+#links li li {
+	padding: 3px 0;
+}
+
+#links li a {
+}
+
+#links li i {
+	font-size: smaller;
+}
+
+/* Footer */
+
+#footer {
+}
+
+#footer p {
+	text-align: center;
+	font-size: x-small;
+	color: #FFFFFF;
+}
+
+#footer a {
+	color: #FFFFFF;
+}
