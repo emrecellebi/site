@@ -1,0 +1,169 @@
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+body {
+	margin: 10px 0;
+	padding: 0;
+	font: normal small "Trebuchet MS", Arial, Helvetica, sans-serif;
+	background: #000000;
+	color: #875A00;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #C28D06;
+}
+
+a {
+	color: #C28D06;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #FFB700;
+}
+
+/* Header */
+
+#header {
+	width: 700px;
+	height: 9em;
+	margin: 0 auto;
+	padding: 0 0 0 0;
+	background: url(images/img1.jpg) no-repeat left bottom;
+}
+
+#header * {
+	text-decoration: none;
+	text-transform: lowercase;
+}
+
+#header h1 {
+	letter-spacing: -3px;
+	float: left;
+	margin: 0;
+	font-size: 3em;
+}
+
+#header h2 {
+	float: left;
+	margin: 0;
+	padding: .85em 0 0 0;
+	letter-spacing: -1px;
+	word-spacing: -.25em;
+	font-size: 1.6em;
+	font-weight: normal;
+}
+
+/* Content */
+
+#content {
+	width: 700px;
+	margin: 0 auto;
+}
+
+/* Column One */
+
+#colOne {
+	float: left;
+	width: 440px;
+}
+
+#colOne p, #colOne ol, #colOne ul {
+	text-align: justify;
+	line-height: 180%;
+}
+
+#colOne blockquote {
+	font-style: italic;
+}
+
+#colOne .post {
+	padding: .25em 1em 3em 1em;
+	background: url(images/img1.jpg) no-repeat 50% -3em;
+}
+
+#colOne .title {
+	margin: 0;
+	padding: 0;
+	font-size: 2em;
+	font-weight: normal;
+}
+
+#colOne .posted {
+	margin: 0 -1em;
+	padding: 0 1em 1em 1em;
+	font-size: .7em;
+	color: #875A00;
+	border-bottom: 1px solid #191200;
+}
+
+#colOne .meta {
+	margin: 0 -1em;
+	padding: 1em 1em 0 1em;
+	border-top: 1px solid #191200;
+	font-size: .7em;
+}
+
+#colOne .meta p {
+	margin: 0;
+	padding: 0;
+}
+
+/* Column Two */
+
+#colTwo {
+	float: right;
+	width: 230px;
+}
+
+#colTwo ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#colTwo ul ul {
+	margin-bottom: 2em;
+}
+
+#colTwo li li:hover {
+	background: #191200;
+}
+
+#colTwo li a {
+	padding: 0 0 0 2em;
+	background: url(images/img2.gif) no-repeat 1em 50%;
+	text-decoration: none;
+}
+
+#colTwo li a:hover {
+	text-decoration: underline;
+}
+
+#colTwo h2 {
+	margin: 0 0 1em 0;
+	padding: .5em 1em;
+	background: url(images/img1.jpg) no-repeat center bottom;
+	text-transform: uppercase;
+	letter-spacing: .25em;
+	font-size: .8em;
+}
+
+/* Footer */
+
+#footer {
+	width: 700px;
+	margin: 0 auto;
+	padding: 1em 0;
+	background: url(images/img1.jpg) no-repeat left bottom;
+	text-align: center;
+	font-size: x-small;
+}
+
+#footer p {
+	margin: 0;
+	padding: 0;
+}

@@ -1,0 +1,321 @@
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 20px 0;
+	background: #FFFFFF url(images/img1.gif);
+	font: normal small Verdana, Arial, Helvetica, sans-serif;
+	color: #333333;
+}
+
+h1, h2, h3 {
+	color: #000000;
+}
+
+h2 {
+}
+
+h3 {
+}
+
+p, blockquote, ul, ol {
+	text-align: justify;
+}
+
+p {
+}
+
+blockquote {
+	margin-left: 3em;
+}
+
+ul {
+	margin-left: 3em;
+}
+
+ul li {
+}
+
+ol {
+	margin-left: 3em;
+}
+
+ol li {
+}
+
+a {
+	color: #BC2121;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #FF6600;
+}
+
+img {
+	border: 4px solid #000000;
+}
+
+img.left {
+	float: left;
+	margin: 5px 15px 0 0;
+}
+
+img.right {
+	float: right;
+	margin: 5px 0 0 15px;
+}
+
+/* Boxed Style */
+
+.boxed {
+	margin-bottom: 10px;
+	background: #FFFFFF;
+	border: 10px solid #000000;
+	border-right: none;
+}
+
+.boxed .title {
+	padding: 10px 20px;
+	background: #FFA200;
+	border-bottom: 1px solid #000000;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 10px;
+	font-weight: bold;
+	color: #000000;
+}
+
+.boxed .content {
+	padding: 20px 20px 40px 20px;
+}
+
+/* Post */
+
+.post {
+}
+
+.post .title {
+	padding: 10px 20px;
+	background: #FF7200;
+	border-top: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 10px;
+	font-weight: bold;
+	color: #000000;
+}
+
+.post .date {
+	float: left;
+	width: 100px;
+	height: 25px;
+	padding-top: 15px;
+	background: #EAEB97;
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	text-align: center;
+	font-size: 9px;
+}
+
+.post .date .month {
+}
+
+.post .date .day {
+}
+
+.post .date .year {
+}
+
+.post .meta {
+	float: left;
+	width: 369px;
+	height: 32px;
+	padding: 8px 0 0 20px;
+	background: #F1F2BC;
+	border-bottom: 1px solid #000000;
+	font-size: 9px;
+}
+
+.post .meta p {
+}
+
+.post .story {
+	clear: both;
+	padding: 20px;
+}
+
+.post .story p, .post .story blockquote, .post .story ul, .post .story ol {
+	margin-bottom: 1.5em;
+	line-height: 180%;
+}
+
+/* Logo */
+
+#logo {
+	width: 200px;
+	height: 100px;
+	margin: 0 auto;
+	padding: 0 510px 0 10px;
+	text-align: center;
+}
+
+#logo h1 {
+	padding-top: 30px;
+	text-transform: lowercase;
+	font-size: 36px;
+	font-weight: normal;
+}
+
+#logo h2 {
+	text-transform: uppercase;
+	font-size: 10px;
+}
+
+#logo a {
+	text-decoration: none;
+	color: #000000;
+}
+
+/* Page */
+
+#page {
+	width: 720px;
+	margin: 0 auto;
+}
+
+#extra {
+}
+
+/* Content */
+
+#content {
+	float: right;
+	width: 490px;
+	margin-top: -100px;
+	background: #FFFFFF;
+	border: 10px solid #000000;
+}
+
+/* Sidebar */
+
+#sidebar {
+	float: left;
+	width: 210px;
+}
+
+/* Content > Sidebar > Login */
+
+#login {
+}
+
+#login form {
+}
+
+#login fieldset {
+	border: none;
+}
+
+#login legend {
+	display: none;
+}
+
+#login label {
+	font-size: x-small;
+	font-weight: bold;
+}
+
+#login input {
+	margin-bottom: 5px;
+	padding: 2px 5px;
+	border: 1px solid #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+#inputtext1, #inputtext2 {
+	width: 150px;
+}
+
+#inputsubmit1 {
+	background: #BC2121;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+/* Content > Sidebar > Menu */
+
+#menu {
+}
+
+#menu ul {
+	margin: 0;
+	list-style: none;
+}
+
+#menu li {
+	display: inline;
+}
+
+#menu a {
+	display: block;
+	width: 160px;
+	padding: 10px 20px;
+	border-top: 1px solid #000000;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 10px;
+	font-weight: bold;
+	color: #000000;
+}
+
+#menu a:hover {
+	background: #EAEB97;
+}
+
+#menu .first a {
+	border: none;
+}
+
+#menu .active a {
+	background: #BC2121;
+	color: #FFFFFF;
+}
+
+/* Footer */
+
+#footer {
+	clear: both;
+	width: 660px;
+	margin: 0 auto;
+}
+
+#footer p {
+	margin: 0;
+	text-align: right;
+	font-size: x-small;
+}
+
+/* Footer > Legal */
+
+#legal {
+}
+
+/* Footer > Links */
+
+#links {
+}

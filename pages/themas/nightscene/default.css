@@ -1,0 +1,196 @@
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+	font-size: 13px;
+	color: #666666;
+}
+
+h1, h2, h3 {
+	margin-bottom: 20px;
+	color: #333333;
+}
+
+h1 {
+	font-size: 1.82em;
+}
+
+h2 {
+	font-size: 1.36em;
+}
+
+h3 {
+	font-size: 1em;
+}
+
+p, blockquote, ol, ul {
+	margin-bottom: 20px;
+	line-height: 1.67em;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+ol {
+	margin-left: 3em;
+	list-style: outside decimal;
+}
+
+a {
+	color: #000000;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* Logo */
+
+#logo {
+	padding: 0 0 150px 0;
+	background: url(images/img01.jpg) no-repeat center bottom;
+	border-top: 10px solid #000000;
+	border-bottom: 1px solid #FFFFFF;
+}
+
+#logo h1, #logo h2 {
+	width: 860px;
+	margin: 0 auto;
+	text-transform: uppercase;
+	font-size: 1.22em;
+}
+
+#logo h1 {
+}
+
+#logo h2 {
+	margin-top: -1.22em;
+	text-align: right;
+}
+
+#logo a {
+	text-decoration: none;
+	color: #000000;
+}
+
+/* Page */
+
+#page {
+	width: 860px;
+	margin: 0 auto;
+	background: url(images/img02.jpg) no-repeat;
+}
+
+/* Left */
+
+#left {
+	float: left;
+	width: 160px;
+	padding: 20px;
+}
+
+#left h2 {
+	margin-bottom: 1em;
+	padding-right: 6px;
+	border-right: 4px solid #000000;
+	text-transform: uppercase;
+	text-align: right;
+	font-size: 1em;
+	font-weight: bold;
+	color: #000000;
+}
+
+#left ul {
+	line-height: 1.82em;
+}
+
+#left li {
+	padding-right: 10px;
+	background: url(images/img04.gif) no-repeat right center;
+	text-align: right;
+}
+
+#left a {
+	text-decoration: none;
+	font-size: .85em;
+}
+
+#left a:hover {
+	text-decoration: underline;
+}
+
+/* Center */
+
+#center {
+	float: left;
+	width: 418px;
+	padding: 21px;
+}
+
+/* Right */
+
+#right {
+	float: left;
+	width: 160px;
+	padding: 20px;
+}
+
+#right h2 {
+	margin-bottom: 1em;
+	padding-left: 6px;
+	border-left: 4px solid #000000;
+	text-transform: uppercase;
+	font-size: 1em;
+	font-weight: bold;
+	color: #000000;
+}
+
+#right ul {
+	line-height: 1.82em;
+}
+
+#right li {
+	padding-left: 10px;
+	background: url(images/img04.gif) no-repeat left center;
+}
+
+#right a {
+	text-decoration: none;
+	font-size: .85em;
+}
+
+#right a:hover {
+	text-decoration: underline;
+}
+
+/* Footer */
+
+#footer {
+	height: 100px;
+	padding: 20px;
+	background: #000000 url(images/img03.gif) repeat-x;
+}
+
+#footer p {
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: .125em;
+	font-size: .77em;
+	font-weight: bold;
+	color: #000000;
+}
+
+#footer a {
+	text-decoration: none;
+	color: #000000;
+}

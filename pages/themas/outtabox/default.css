@@ -1,0 +1,202 @@
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 20px 0;
+	background: #859C0E;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #554D49;
+}
+
+h1, h2, h3 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: normal;
+	color: #000000;
+}
+
+h1 {
+	margin-bottom: .75em;
+	font-size: 182%;
+}
+
+p, blockquote, ul, ol {
+	margin-bottom: 1.8em;
+	line-height: 1.6em;
+}
+
+p {
+}
+
+blockquote {
+}
+
+ul, ol {
+	list-style-position: inside;
+}
+
+ul {
+}
+
+ol {
+}
+
+a {
+	color: #859C0E;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* Header */
+
+#header {
+	width: 680px;
+	margin: 0 auto;
+	padding: 0 0 0 0;
+	background: url(images/img01.gif) no-repeat 74px 18px;
+}
+
+#header h1 {
+	margin: 0;
+	padding: 0 196px 0 0;
+	text-transform: uppercase;
+	text-align: right;
+	letter-spacing: 5px;
+	font: normal 36px Georgia, "Times New Roman", Times, serif;
+	color: #000000;
+}
+
+#header h1 a {
+	color: #000000;
+}
+
+#header h2 {
+	margin: -5px 0 0 0;
+	padding: 0 210px 0 0;
+	text-transform: lowercase;
+	text-align: right;
+	font: normal 30px Garamond, "Times New Roman", Times, serif;
+	font-style: italic;
+}
+
+#header a {
+	text-decoration: none;
+}
+
+/* Page */
+
+#page {
+	width: 580px;
+	margin: 0 auto;
+	padding: 0 0 0 100px;
+	background: url(images/img02.gif) repeat-y 100px 0px;
+}
+
+/* Content */
+
+#content {
+	float: left;
+	width: 329px;
+	padding: 40px 30px 0 25px;
+}
+
+#content .image {
+	position: relative;
+	margin: 3px 20px 0 -100px;
+	float: left;
+	border: 5px solid #000000;
+}
+
+#content .image img {
+	border: 5px solid #FFFFFF;
+}
+
+/* Sidebar */
+
+#sidebar {
+	float: right;
+	width: 180px;
+	padding: 50px 0 0 0;
+}
+
+#sidebar ul {
+	margin: 0;
+	padding: 0;
+	list-style: none outside;
+}
+
+#sidebar li {
+	margin-bottom: 15px;
+}
+
+#sidebar li ul {
+}
+
+#sidebar li li {
+	margin: 0;
+	padding: 5px 0;
+	background: url(images/img06.gif) repeat-x left bottom;
+}
+
+#sidebar h2 {
+	margin-bottom: 10px;
+	padding-left: 15px;
+	text-transform: uppercase;
+	background: url(images/img05.gif) no-repeat left center;
+	border-bottom: 1px solid #000000;
+	font-size: 100%;
+	font-weight: bold;
+}
+
+#sidebar h3 {
+	margin: 0;
+	padding-left: 15px;
+	font-size: 85%;
+}
+
+#sidebar p {
+	margin: 0;
+	line-height: normal;
+}
+
+#sidebar a {
+	padding-left: 15px;
+	background: url(images/img07.gif) no-repeat 5px 50%;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+#sidebar a:hover {
+	text-decoration: underline;
+}
+
+/* Footer */
+
+#footer {
+	width: 470px;
+	height: 60px;
+	margin: 0 auto;
+	padding: 15px 210px 0 0;
+	background: url(images/img04.gif) no-repeat 100px 0px;
+}
+
+#footer p {
+	margin: 0;
+	text-align: right;
+	font-size: 77%;
+	color: #FFFFFF;
+}
+
+#footer a {
+	color: #FFFFFF;
+}

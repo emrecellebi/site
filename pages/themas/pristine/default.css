@@ -1,0 +1,283 @@
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	background: #000000;
+	text-align: justify;
+	font-size: 13px;
+	color: #666666;
+}
+
+h1, h2, h3 {
+	margin-bottom: 1.5em;
+	text-transform: uppercase;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #29351E;
+}
+
+h1 {
+	letter-spacing: -1px;
+	font-size: 136%;
+	font-weight: normal;
+}
+
+h2 { font-size: 122%; }
+
+h3 {
+	letter-spacing: 2px;
+	font-size: 85%;
+}
+
+p, blockquote, ul, ol {
+	margin-bottom: 1.5em;
+}
+
+blockquote {
+	padding-left: 2em;
+	background: url(images/img06.gif) no-repeat;
+	font-style: italic;
+}
+
+ul {
+	list-style: none;
+}
+
+ul li {
+	margin-left: 1em;
+	padding-left: 1em;
+	background: url(images/img07.gif) no-repeat 0 9px;
+}
+
+ol {
+	margin-left: 2em;
+}
+
+a {
+	border-bottom: 1px dotted #919F48;
+	text-decoration: none;
+	color: #4E58BE;
+}
+
+a:hover {
+	border: none;
+}
+
+/* Boxed */
+
+.boxed {
+	padding-top: 20px;
+}
+
+.boxed .title {
+	margin: 0 15px;
+	padding: 0 0 0 10px;
+	background: url(images/img08.gif) no-repeat left center;
+	font-size: 100%;
+}
+
+.boxed .content {
+	padding: 15px;
+	border-bottom: 1px solid #919F48;
+}
+
+.boxed ul li {
+	margin: 0 0 10px 0;
+	padding: 0;
+	background: none;
+	font-size: 85%;
+}
+
+/* Page */
+
+#page {
+	width: 760px;
+	height: 100%;
+	min-height: 100%;
+	margin: 0 auto;
+	background: #000000 url(images/img01.gif) repeat-y center top;
+}
+
+html>body #page {
+	height: auto;
+}
+
+#col-one {
+	float: left;
+	width: 340px;
+}
+
+#col-two {
+	float: right;
+	width: 210px;
+}
+
+#col-three {
+	float: left;
+	width: 210px;
+}
+
+/* Logo */
+
+#logo {
+	height: 371px;
+	background: #919F48 url(images/img02.jpg) no-repeat;
+}
+
+#logo h1 {
+	margin: 0;
+	padding: 305px 0 0 13px;
+	font-size: 36px;
+}
+
+#logo h2 {
+	margin: -10px 0 0 0;
+	padding: 0 0 0 15px;
+	font-size: 11px;
+}
+
+#logo a {
+	border: none;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+/* Menu */
+
+#menu {
+	padding: 15px;
+	border-bottom: 1px solid #FFFFFF;
+}
+
+#menu ul {
+	margin: 0;
+	padding: 0;
+}
+
+#menu ul li {
+	margin: 0;
+	padding: 10px;
+	background: url(images/img09.gif) repeat-x left top;
+}
+
+#menu li.first {
+	background: none;
+}
+
+#menu a {
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+#menu a:hover b {
+	text-decoration: underline;
+}
+
+/* Search */
+
+#search {
+	padding: 15px;
+}
+
+#search fieldset {
+	border: none;
+}
+
+#search legend {
+	display: none;
+}
+
+#search #text1 {
+	width: 175px;
+	margin-bottom: 10px;
+}
+
+/* Featured Post */
+
+#featured-post {
+	height: 336px;
+	padding: 35px 20px 0px 20px;
+	background: #29351E url(images/img03.jpg) no-repeat left bottom;
+	color: #8CA575;
+}
+
+#featured-post h1 {
+	margin: 0 0 5px 0;
+	padding: 6px 0 0 35px;
+	background: url(images/img04.jpg) no-repeat;
+	color: #FFFFFF;
+}
+
+#featured-post a {
+	color: #FFFFFF;
+}
+
+/* Latest Posts */
+
+#latest-posts {
+}
+
+.post {
+}
+
+.post .title {
+	margin: 0 20px;
+	padding: 20px 0 0 0;
+	background: url(images/img04.jpg) no-repeat right bottom;
+	border-bottom: 1px solid #919F48;
+}
+
+.post .title a {
+	border: none;
+	color: #29351E;
+}
+
+.post .meta {
+	margin: 0 20px 20px 20px;
+	padding: 10px 0;
+	background: url(images/img05.gif) repeat-x left bottom;
+	text-transform: none;
+	letter-spacing: normal;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #999999;
+}
+
+.post .meta a {
+	color: #999999;
+}
+
+.post .story {
+	padding: 0 20px 20px 20px;
+}
+
+/* Footer */
+
+#footer {
+	padding: 20px;
+	background: #FFFFFF;
+	border-top: 1px solid #919F48;
+}
+
+#footer p {
+	margin: 0;
+	padding: 0;
+	font-size: 77%;
+	color: #919F48;
+}
+
+#footer a {
+	color: #919F48;
+}

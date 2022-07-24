@@ -1,0 +1,297 @@
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #374536 url(images/img01.gif);
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #666666; 
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+	color: #333333;
+}
+
+h1 {
+	letter-spacing: -2px;
+	font-size: 182%;
+}
+
+h2 {
+	letter-spacing: -1px;
+	font-size: 152%;
+}
+
+h3 {
+	font-size: 100%;
+	font-weight: bold;
+}
+
+p, blockquote, ul, ol {
+	margin-bottom: 1.6em;
+	line-height: 180%;
+}
+
+p {
+}
+
+blockquote {
+	margin-left: 3em;
+	font-style: italic;
+}
+
+ul {
+	margin-left: 3em;
+}
+
+ol {
+	margin-left: 3em;
+}
+
+a {
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+small {
+}
+
+hr {
+	display: none;
+}
+
+img {
+	border: none;
+}
+
+img.left {
+	float: left;
+	margin: 0 15px 0 0;
+}
+
+img.right {
+	float: left;
+	margin: 0 0 0 15px;
+}
+
+/* Wrapper */
+
+#wrapper {
+	background: url(images/img02.gif) repeat-x;
+}
+
+/* Header */
+
+#header {
+	padding: 30px 0;
+}
+
+#header h1, #header h2 {
+	text-align: center;
+}
+
+#header h1 {
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-size: 28px;
+	font-weight: normal;
+}
+
+#header h1 a {
+	color: #FFFFFF;
+}
+
+#header h2 {
+	text-transform: lowercase;
+	letter-spacing: 2px;
+	font-size: 12px;
+	font-style: italic;
+}
+
+#header h2 a {
+	color: #DDEEFF;
+}
+
+#header a {
+	text-decoration: none;
+}
+
+/* Menu */
+
+#menu {
+	width: 540px;
+	height: 40px;
+	margin: 0 auto;
+	background: url(images/img03.gif) repeat-x;
+}
+
+#menu ul {
+	width: 540px;
+	height: 40px;
+	margin: 0;
+	padding: 0;
+	background: url(images/img04.gif) no-repeat right top;
+	list-style: none;
+	line-height: normal;
+}
+
+#menu li {
+	display: inline;
+}
+
+#menu a {
+	display: block;
+	float: left;
+	height: 27px;
+	padding: 13px 20px 0 22px;
+	background: url(images/img04.gif) no-repeat;
+	text-decoration: none;
+	font-size: 85%;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+#menu a:hover {
+	text-decoration: underline;
+}
+
+/* Page */
+
+#page {
+	width: 940px;
+	margin: 0 auto;
+}
+
+/* Ads */
+
+#ads {
+	float: right;
+	width: 180px;
+	padding: 0 0 0 20px;
+}
+
+#ads h2 {
+	margin-bottom: 20px;
+	padding: 15px 0 1px 0;
+	background: url(images/img06.gif) repeat-x left bottom;
+	text-transform: lowercase;
+	letter-spacing: 1px;
+	font-size: 18px;
+	font-style: italic;
+	color: #FFFFFF;
+}
+
+/* Content */
+
+#content {
+	float: right;
+	width: 540px;
+	background: #FFFFFF url(images/img05.gif) repeat-x;
+}
+
+#content .post {
+	padding: 20px;
+	border-bottom: 1px solid #CCCCCC;
+}
+
+#content .date {
+	margin-bottom: 20px;
+	line-height: normal;
+}
+
+#content .story {
+}
+
+#content .more {
+	clear: both;
+	margin: 0;
+	text-align: right;
+	font-weight: bold;
+}
+
+#content a {
+	color: #1777B1;
+}
+
+#content a:hover {
+	color: #C90404;
+}
+
+/* Sidebar */
+
+#sidebar {
+	float: right;
+	width: 180px;
+	padding: 0 20px 0 0;
+}
+
+#sidebar ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#sidebar li {
+}
+
+#sidebar li ul {
+	margin-left: 20px;
+	line-height: 180%;
+}
+
+#sidebar li li {
+}
+
+#sidebar li h2 {
+	margin-bottom: 20px;
+	padding: 15px 0 1px 0;
+	background: url(images/img06.gif) repeat-x left bottom;
+	text-transform: lowercase;
+	letter-spacing: 1px;
+	font-size: 18px;
+	font-style: italic;
+	color: #FFFFFF;
+}
+
+#sidebar a {
+	color: #CCCCCC;
+}
+
+#sidebar a:hover {
+	color: #FFFFFF;
+}
+
+#sidebar li li a {
+}
+
+/* Footer */
+
+#footer {
+	clear: both;
+	width: 540px;
+	margin: 0 auto;
+	padding: 20px 0;
+	background: url(images/img06.gif) repeat-x 0px 1px;
+	text-align: center;
+	font-size: 85%;
+}
+
+#footer p {
+	margin: 0;
+	line-height: normal;
+}
+
+#footer a {
+	color: #666666;
+}

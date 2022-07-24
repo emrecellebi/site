@@ -1,0 +1,196 @@
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+body {
+	margin: 20px;
+	padding: 0;
+	background: #B8BBC2 url(images/img1.jpg);
+	font: normal small Verdana, Arial, Helvetica, sans-serif;
+	color: #555A63;
+}
+
+form {
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3 {
+	margin: 0;
+	padding: 0;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-weight: normal;
+}
+
+p, blockquote, ul, ol {
+	line-height: 160%;
+}
+
+a {
+	text-decoration: none;
+	color: #365191;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* Wrapper */
+
+#wrapper {
+	width: 776px;
+	margin: 0 auto;
+}
+
+/* Header */
+
+#header {
+	float: left;
+	width: 388px;
+	height: 50px;
+	text-transform: lowercase;
+}
+
+#header h1 {
+	float: left;
+	font-size: 3em;
+}
+
+#header h2 {
+	float: left;
+	padding: .8em 0 0 .1em;
+	font-size: 1.6em;
+}
+
+#header a {
+	color: #BCBFC5;
+}
+
+/* Pages */
+
+#pages {
+	float: right;
+	width: 388px;
+	height: 50px;
+}
+
+#pages h2 {
+	display: none;
+}
+
+#pages ul {
+	float: right;
+	margin: 0;
+	padding: 1.6em 0 0 0;
+	list-style: none;
+}
+
+#pages li {
+	display: inline;
+}
+
+#pages a {
+	padding: 0 0 0 2em;
+	color: #BCBFC5;
+}
+
+/* Content */
+
+#content {
+	clear: both;
+	padding: 0 1px;
+	background: url(images/img2.jpg) repeat-y;
+	border-bottom: 1px solid #9EA3AC;
+}
+
+/* Posts */
+
+#posts {
+	float: left;
+	width: 374px;
+}
+
+.post {
+	background: url(images/img3.jpg) no-repeat left bottom;
+}
+
+.title {
+	height: 27px;
+	padding: 7px 0 0 10px;
+	background: url(images/img4.gif) repeat-x;
+	text-transform: lowercase;
+	font-size: 1.3em;
+	color: #000000;
+}
+
+.posted {
+	padding: 5px 10px;
+	font: bold 9px Verdana, Arial, Helvetica, sans-serif;
+}
+
+.story {
+	padding: 0 20px 10px 20px;
+}
+
+.meta {
+}
+
+.meta p {
+	margin: 0;
+	padding: 10px;
+	text-align: right;
+	font: bold 9px Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* Boxed */
+
+.boxed {
+	float: left;
+	width: 198px;
+	margin: 0 0 0 2px;
+}
+
+.heading {
+	height: 27px;
+	padding: 7px 0 0 10px;
+	background: url(images/img4.gif) repeat-x;
+	text-transform: lowercase;
+	font-size: 1.3em;
+	color: #000000;
+}
+
+.content {
+	padding: 10px 10px 70px 10px;
+	background: url(images/img3.jpg) no-repeat left bottom;
+}
+
+.links {
+	margin: 0;
+	padding: 0;
+	list-style: inside square;
+}
+
+#textfield1 {
+	width: 170px;
+}
+
+#submit1 {
+	display: none;
+}
+
+/* Footer */
+
+#footer {
+}
+
+#footer p {
+	margin: 0;
+	padding: 0;
+	font-size: 9px;
+}
+
+#footer a {
+	color: #555A63;
+}
