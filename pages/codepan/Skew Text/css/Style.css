@@ -1,0 +1,157 @@
+body
+{
+  background: #ff90b3;
+  margin: 0px;
+  padding: 0px;
+  
+}
+
+.text
+{
+  margin: 250px 300px;
+  text-align: center;
+  display: inline-block;
+  transition: .5s;
+}
+
+.text span
+{
+  background: #ffffff;
+  width: 80px;
+  height: 80px;
+  display: block;
+  line-height: 80px;
+  font-family: arial;
+  font-weight: bold;
+  color: #a0a0a0;
+  font-size: 40px;
+  float: left;
+  transition: .5s;
+}
+
+.text span:nth-child(1)
+{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.text span:nth-child(1)
+{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.text span:nth-child(2)
+{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.text span:nth-child(2)
+{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.text span:nth-child(3)
+{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.text span:nth-child(3)
+{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.text span:nth-child(4)
+{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.text span:nth-child(4)
+{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.text span:nth-child(5)
+{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.text span:nth-child(5)
+{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.text span:nth-child(6)
+{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.text span:nth-child(6)
+{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.text span:nth-child(7)
+{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.text span:nth-child(7)
+{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.text span:nth-child(8)
+{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.text span:nth-child(8)
+{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.text span:nth-child(9)
+{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.text span:nth-child(9)
+{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.text:hover span:nth-child(odd)
+{
+  transform: skewY(-15deg);
+  color: #b5b5b5;
+  box-shadow: 0 60px 20px rgba(0, 0, 0, .1); 
+}
+
+.text:hover span:nth-child(even)
+{
+  transform: skewY(15deg);
+  color: #b5b5b5;
+  box-shadow: 0 60px 20px rgba(0, 0, 0, .1), inset 0px 0 30px rgba(0, 0, 0, .2); 
+}
+
+.text:hover
+{
+  transform: rotateX(35deg);
+}

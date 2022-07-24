@@ -1,0 +1,21 @@
+body
+{
+  padding: 0px;
+  margin: 0px;
+  background: #000000;
+}
+
+h1
+{
+  color: #ffffff;
+  font-size: 5em;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  font-family: arial;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  
+}
