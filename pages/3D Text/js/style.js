@@ -67,7 +67,7 @@ function drawBackground(alpha) {
 
 function drawText() {
   ctx.save();
-  let text = "Meleğim";
+  let text = "3D Text";
   let fontSize = w * 0.23;
   ctx.font = "bold " + fontSize + "px sans-serif";
   ctx.textAlign = "center";
