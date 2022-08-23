@@ -5,7 +5,7 @@ function setcountup(theyear,themonth,theday)
 	da = theday;
 }
 	
-setcountup(2022, 07, 24);
+setcountup(2022, 08, 29);
 	
 var displaymessage = "(we are growing every second)";
 var countupwidth = '95%';
