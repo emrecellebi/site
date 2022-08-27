@@ -5,7 +5,7 @@ function setcountup(theyear,themonth,theday)
 	da = theday;
 }
 	
-setcountup(2022, 08, 29);
+setcountup(2022, 08, 26);
 	
 // var displaymessage = "(we are growing every second)";
 var displaymessage = "(Melek Şentürk - Farktör Yazılım Danışmanlık)";
