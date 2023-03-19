@@ -1,0 +1,11 @@
+Usage:
+  g3dviewer [OPTION…] [<filename>] - inspect 3D models
+
+Help Options:
+  -h, --help           Show help options
+
+Application Options:
+  -t, --debug-tree     show hierarchical debugging data in info window
+  -d, --debug-data     show additional debugging data in info window
+  -p, --parse-only     only parse model and quit (deprecated, use g3d-stat)
+

@@ -1,0 +1,138 @@
+<html>
+<head>
+
+	<title>ls - version: 9.1</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boosted/5.1.3/css/boosted.min.css" integrity="sha512-yMFYKV/fYcBmS8Msa22Kd7WiEdg88JlAdMNtUu+oFS1YVpVI7DGddGCh3aBUFVMfE+BhZ5EOiWzBDuDVuberNg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+	
+	
+	<div class="container">
+		<h3><center>ls - Linux Temel Komutu</center></h3>
+		<p class="font-weight-normal text-center">Dosyalar hakkında bilgi alabilmek için kullanılır. <a href="help/ls.txt" target="_blank">ls.txt</a></p>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Args</th>
+					<th scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row">-a, --all</th>
+					<td>Tüm dosya ve klasörleri listeler. (Gizli dahil)</td>
+				</tr>
+				<tr>
+					<th scope="row">-h, --human-readable</th>
+					<td>İnsan tarafından okuna bilir dosyaları liste.</td>
+				</tr>
+				<tr>
+					<th scope="row">-i, --inode</th>
+					<td>Her dosyanın index numarasını yazar.</td>
+				</tr>
+				<tr>
+					<th scope="row">-l</th>
+					<td>Uzun formatta bir listeleme yapar.(Ayrıntılı)</td>
+				</tr>
+				<tr>
+					<th scope="row">-m</th>
+					<td>Klasörler ve dosyalar arasında virgül ile ayır.</td>
+				</tr>
+				<tr>
+					<th scope="row">-r, --reverse</th>
+					<td>Sırlama sırasında ters sıralama yapar</td>
+				</tr>
+				<tr>
+					<th scope="row">-s, --size</th>
+					<td>Her dosyanın boyutunu block halinde verir.</td>
+				</tr>
+				<tr>
+					<th scope="row">-t</th>
+					<td>Son Değiştirilmiş zamana göre sırala önce en yenisi. (Ayrıca --time)</td>
+				</tr>
+				<tr>
+					<th scope="row">--help</th>
+					<td>Yardım döküman listesi</td>
+				</tr>
+				<tr>
+					<th scope="row">--version</th>
+					<td>Versiyon numarası</td>
+				</tr>
+				
+			</tbody>
+		</table>
+		
+		<p class="font-weight-normal text-center">Ayrıntılı listeleme yaptığımız zaman bazı kısaltmaların olduğunu görürüz.</p>
+		<samp>drwx — — — 35 ubuntu ubuntu 1120 Dec 27 19:54 Desktop</samp><br />
+		<samp>-rwxrw-r — 65 ubuntu ubuntu 1120 Dec 28 18:36 test.txt</samp><br />
+		<samp>lrwxr-x — — 65 ubuntu ubuntu 1120 Dec 28 18:36 file.lnk</samp><br />
+	
+		<h3><center>Shortcuts</center></h3>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Command</th>
+					<th scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row">d</th>
+					<td>Dizin - Directory</td>
+				</tr>
+				<tr>
+					<th scope="row">-</th>
+					<td>Normal Dosya - Regular File</td>
+				</tr>
+				<tr>
+					<th scope="row">l</th>
+					<td>Sembolic Link</td>
+				</tr>
+				<tr>
+					<th scope="row">r</th>
+					<td>Okuma İzni - Read Permission</td>
+				</tr>
+				<tr>
+					<th scope="row">w</th>
+					<td>Yazma İzni - Write Permission</td>
+				</tr>
+				<tr>
+					<th scope="row">x</th>
+					<td>Çalıştırma İzni - Execute Permission</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<h3><center>Examples Commands</center></h3>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Usage</th>
+					<th scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row">ls [OPTION] [FILE]</th>
+					<td>Varargs Syntax</td>
+				</tr>
+				<tr>
+					<th scope="row">ls --help</th>
+					<td>Yardım listesini getir.</td>
+				</tr>
+				<tr>
+					<th scope="row">ls --version</th>
+					<td>Versiyon numarsını getir.</td>
+				</tr>
+				<tr>
+					<th scope="row">ls -la</th>
+					<td>Tüm dosyaları uzun formatta getir.(Komutları birleştirip kullana biliriz.)</td>
+				</tr>
+			</tbody>
+		</table>
+		
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,2 @@
+Usage: service < option > | --status-all | [ service_name [ command | --full-restart ] ]
+
