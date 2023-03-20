@@ -51,11 +51,15 @@
 					<td>Tüma ana bilgisyarı çevrim içi olarak kabul et</td>
 				</tr>
 				<tr>
+					<th scope="row">--script</th>
+					<td>Script taraması yapar.</td>
+				</tr>
+				<tr>
 					<th scope="row">--help</th>
 					<td>Yardım döküman listesi</td>
 				</tr>
 				<tr>
-					<th scope="row">--version</th>
+					<th scope="row">-V</th>
 					<td>Versiyon numarası</td>
 				</tr>
 				
@@ -80,16 +84,32 @@
 					<td>Yardım listesini getir.</td>
 				</tr>
 				<tr>
-					<th scope="row">nmap --version</th>
+					<th scope="row">nmap -V</th>
 					<td>Versiyon numarsını getir.</td>
 				</tr>
 				<tr>
 					<th scope="row">nmap -p- 192.168.1.43</th>
 					<td>Tüm portları tara</td>
 				</tr>
+			</tbody>
+		</table>
+		
+		<h3><center>En Çok Kullanılan Komutlar</center></h3>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Usage</th>
+					<th scope="col">Description</th>
+				</tr>
+			</thead>
+			<tbody>
 				<tr>
 					<th scope="row">nmap -sV -O -A -T 4 -Pn 192.168.1.43</th>
-					<td>...</td>
+					<td>Servis ve versiyon, Os dedtection ve OS versiyon, Script taraması ve Trace yolunu, Tarama hınızını, Tüm ana bilgisyarı çevrim içi olarak tara hiç bir şeye takılmadan</td>
+				</tr>
+				<tr>
+					<th scope="row">nmap -v --script vuln 192.168.1.43</th>
+					<td>Detaylı olarak bilgiver aynı zanmanda vuln açıkları varmı kontorol et</td>
 				</tr>
 			</tbody>
 		</table>
