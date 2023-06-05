@@ -1,0 +1,83 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/doc.css">
+	<title>Bölüm 1 - Web Uygulama Güvenliği</title>
+</head>
+<body>
+	<h1>Web Uygulama Güvenliği</h1>
+	<p>Web uygulama güvenliği, şüphesiz günümüzde önemli ve güncel bir konudur. İlgili taraflar için bahisler yüksektir: İnternet ticaretinden 
+	artan gelir elde eden işletmeler için, hassas bilgileri web uygulamalarına güvenen kullanıcılar için ve ödeme detaylarını çalarak veya 
+	banka hesaplarını tehlikeye atarak büyük para kazanabilen suçlular için. İtibar önemli bir rol oynar. Güvensiz bir web sitesiyle iş 
+	yapmak isteyen az insan olduğu gibi, az sayıda organizasyon da kendi güvenlik açıkları veya ihlalleri hakkında detayları açıklamak istemez. 
+	Bu nedenle, bugün web uygulama güvenliği durumu hakkında güvenilir bilgilere ulaşmak kolay bir görev değildir.</p>
+	
+	<p>Bu bölüm, web uygulamalarının nasıl evrim geçirdiğine ve sundukları birçok faydaya kısaca göz atar. Yazarların doğrudan deneyimlerinden 
+	elde edilen mevcut web uygulamalarındaki güvenlik açıkları hakkında bazı metrikleri sunarak, çoğu uygulamanın güvende olmaktan uzak 
+	olduğunu gösterir. Web uygulamalarının karşı karşıya olduğu temel güvenlik sorununu - kullanıcıların keyfi girdi sağlayabilmesini - ve 
+	zayıf güvenlik durumlarına katkıda bulunan çeşitli faktörleri açıklar. Son olarak, web uygulama güvenliğindeki son trendleri ve bunların 
+	yakın gelecekte nasıl gelişebileceğini açıklar.</p>
+	
+	<h2>Web Uygulamalarının Evrimi</h2>
+	<p>İnternetin ilk günlerinde, Dünya Çapında Ağ sadece web sitelerinden oluşuyordu. Bunlar, temelde statik belgelere sahip bilgi depolarıydı. 
+	Web tarayıcıları, bu belgeleri almak ve görüntülemek için bir araç olarak icat edildi, Şekil 1-1'de gösterildiği gibi. İlginç bilginin 
+	akışı, sunucudan tarayıcıya tek yönlüydü. Çoğu site kullanıcıları kimlik doğrulamıyordu çünkü buna gerek yoktu. Her kullanıcı aynı şekilde 
+	işlem görür ve aynı bilgilerle karşılaştırılırdı. Bir web sitesini barındırmaktan kaynaklanan güvenlik tehditleri genellikle web sunucusu 
+	yazılımındaki açıklarla ilgiliydi (ki bunların sayısı çoktu). Bir saldırgan bir web sunucusunu ele geçirirse genellikle hassas bilgilere 
+	erişemezdi çünkü sunucuda bulunan bilgiler zaten herkese açıktı. Bunun yerine, bir saldırgan genellikle sunucudaki dosyaları değiştirerek 
+	web sitesinin içeriğini bozar veya sunucunun depolama alanını ve bant genişliğini "<em>warez</em>" dağıtmak için kullanırdı.</p>
+	
+	<center>
+		<img src="img/1.1.png" alt="">
+		<p><b>Şekil 1.1</b> Statik bilgi içeren geleneksel bir web sitesi</p>
+	</center>
+	
+	<p>Bugün, World Wide Web geçmişteki halinden neredeyse tanınmaz hale gelmiştir. Web'deki sitelerin çoğu aslında uygulamalardır (Şekil 1-2'ye 
+	bakın). Bu uygulamalar son derece işlevseldir ve sunucu ile tarayıcı arasında iki yönlü bilgi akışına dayanır. Kullanıcıların kaydolmasını 
+	ve giriş yapmasını, finansal işlemleri, arama yapmayı ve kullanıcıların içerik oluşturmasını desteklerler. Kullanıcılara sunulan içerik 
+	canlı olarak üretilir ve genellikle her kullanıcıya özel olarak uyarlanır. İşlenen bilgilerin büyük bir kısmı özel ve son derece hassastır. 
+	Bu nedenle, güvenlik büyük bir sorundur. Kimse bilgilerinin yetkisiz kişilere açıklanacağı bir web uygulaması kullanmak istemez.</p>
+	
+	<center>
+		<img src="img/1.2.png" alt="">
+		<p><b>Şekil 1.2</b> Tipik bir web uygulaması</p>
+	</center>
+	
+	<p>Web uygulamaları beraberinde yeni ve önemli güvenlik tehditleri getirir. Her uygulama farklıdır ve benzersiz zayıflıklar içerebilir. 
+	Çoğu uygulama yerinde geliştirilir - çoğu zaman kodu üreten geliştiricilerin güvenlik sorunlarının kısmi bir anlayışına sahip oldukları 
+	geliştiriciler tarafından. Temel işlevselliğini sağlamak için web uygulamaları genellikle hassas veriler içeren ve güçlü işlevlere sahip 
+	dahili bilgisayar sistemlerine bağlantı gerektirir. On beş yıl önce para transferi yapmak isterseniz bankanızı ziyaret eder, veznedar size 
+	transferi gerçekleştirirdi; bugün bir web uygulamasını ziyaret edebilir ve transferi kendiniz gerçekleştirebilirsiniz. Bir saldırgan bir 
+	web uygulamasını ele geçirirse kişisel bilgileri çalabilir, mali dolandırıcılık yapabilir ve diğer kullanıcılara karşı kötü niyetli 
+	eylemler gerçekleştirebilir.</p>
+	
+	<h2>Ortak Web Uygulama İşlevleri</h2>
+	<p></p>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
