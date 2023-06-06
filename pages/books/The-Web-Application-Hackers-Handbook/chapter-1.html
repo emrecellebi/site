@@ -52,10 +52,336 @@
 	eylemler gerçekleştirebilir.</p>
 	
 	<h2>Ortak Web Uygulama İşlevleri</h2>
+	<p>Son yıllarda neredeyse her türlü çevrimiçi işlevi gerçekleştirmek için web uygulamaları oluşturulmuştur. İşte son yıllarda öne çıkan 
+	bazı web uygulama işlevleri:</p>
+	
+	<ul>
+		<li>Alışveriş (Amazon)</li>
+		<li>Sosyal ağ (Facebook)</li>
+		<li>Bankacılık (Citibank)</li>
+		<li>Web arama (Google)</li>
+		<li>Müzayede (eBay)</li>
+		<li>Kumar oyunları (Betfair)</li>
+		<li>Web günlükleri (Blogger)</li>
+		<li>Web posta (Gmail)</li>
+		<li>Etkileşimli bilgi (Wikipedia)</li>
+	</ul>
+	
+	<p>Bir bilgisayar tarayıcısı kullanılarak erişilen uygulamalar, artan bir şekilde akıllı telefon veya tablet gibi cihazlar kullanılarak 
+	erişilen mobil uygulamalarla örtüşmektedir. Çoğu mobil uygulama, ya bir tarayıcı ya da sunucuyla iletişim kurmak için HTTP tabanlı 
+	API'ları kullanan özelleştirilmiş bir istemci kullanır. Uygulama işlevleri ve verileri genellikle uygulamanın farklı kullanıcı 
+	platformlarına sunduğu çeşitli arayüzler arasında paylaşılır.</p>
+	
+	<p>Halka açık İnternet'in yanı sıra, web uygulamaları örgütler içinde yaygın olarak benimsenmiş olup temel işlevleri desteklemek için 
+	kullanılmaktadır. Bunlardan birçoğu son derece hassas veri ve işlevselliğe erişim sağlar:</p>
+	
+	<ul>
+		<li>Kullanıcıların maaş bilgilerine erişmesine, performans geri bildirimi verip almasına ve işe alım ve disiplin prosedürlerini 
+		yönetmesine izin veren İK uygulamaları.</li>
+		<li>Web ve posta sunucuları, kullanıcı iş istasyonları ve sanal makine yönetimi gibi temel altyapıların yönetim arabirimleri.</li>
+		<li>Belge paylaşımı, iş akışı ve projeleri yönetme ve sorunları izleme için kullanılan işbirliği yazılımları. Bu tür işlevsellikler 
+		genellikle kritik güvenlik ve yönetişim konularını içerir ve organizasyonlar genellikle web uygulamalarının içine yerleştirilen 
+		kontrollere tamamen güvenirler.</li>
+		<li>Kurumsal kaynak planlaması (ERP) yazılımı gibi iş uygulamaları, önceden bir yazılım istemcisini kullanarak erişilen bir şekilde şimdi 
+		web tarayıcısı kullanılarak erişilebilir hale gelmiştir.</li>
+		<li>Önceden ayrı bir e-posta istemcisi gerektiren e-posta gibi yazılım hizmetleri, Outlook Web Access gibi web arayüzleri aracılığıyla 
+		erişilebilir hale gelmiştir.</li>
+		<li>Kelime işlemcileri ve elektronik tablolar gibi geleneksel masaüstü ofis uygulamaları, Google Apps ve Microsoft Office Live gibi 
+		hizmetler aracılığıyla web uygulamalarına taşınmıştır.</li>
+	</ul>
+	
+	<p>Bu örneklerin tamamında, "<em>internal</em>" olarak algılanan uygulamalar maliyetleri düşürmek için kuruluşlar dış hizmet sağlayıcılara geçtikçe 
+	giderek daha fazla dış kaynaklarda barındırılmaktadır. Bu "<em>bulut çözümleri</em>" olarak adlandırılan çözümlerde, iş kritik işlevsellik 
+	ve veriler daha geniş bir saldırgan yelpazeye açılmakta ve organizasyonlar kontrolü dışında olan güvenlik savunmalarının bütünlüğüne 
+	daha fazla bağımlı hale gelmektedir.</p>
+	
+	<p>Yakında çoğu bilgisayar kullanıcısının ihtiyaç duyduğu tek istemci yazılımının bir web tarayıcısı olduğu bir dönem yaklaşıyor. Bir 
+	dizi protokol ve teknoloji kullanılarak çeşitli işlevler uygulanacak ve bununla birlikte belirli bir aralıkta ortak güvenlik açıkları 
+	miras alınmış olacak.</p>
+	
+	<h2>Web Uygulamalarının Faydaları</h2>
+	<p>Web uygulamalarının neden bu kadar önem kazandığını anlamak zor değildir. İnternet'i nasıl kullandığımızda gerçekleşen devrimi 
+	tetikleyen açık ticari teşviklerin yanı sıra birkaç teknik faktör de etkili olmuştur:</p>
+	
+	<ul>
+		<li>Dünya Çapında Web'e erişim için kullanılan temel iletişim protokolü olan HTTP, hafif ve bağlantısızdır. Bu, iletişim hatalarında 
+		dayanıklılık sağlar ve sunucunun her kullanıcı için ağ bağlantısını açık tutma ihtiyacını ortadan kaldırır. Bu özellik önceden 
+		kullanılan birçok istemci/sunucu uygulamasında geçerliydi. HTTP ayrıca diğer protokoller üzerinden proxy ve tünel olarak kullanılabilir, 
+		böylece herhangi bir ağ yapılandırmasında güvenli iletişim sağlanabilir.</li>
+		<li>Her web kullanıcısının zaten bilgisayarında ve mobil cihazında bir tarayıcı yüklüdür. Web uygulamaları, kullanıcı arayüzlerini 
+		dinamik olarak tarayıcıya dağıtır, ayrı istemci yazılımını dağıtma ve yönetme ihtiyacını ortadan kaldırır. Arayüzde yapılan 
+		değişiklikler sadece bir kez, sunucuda uygulanır ve hemen etkili olur.</li>
+		<li>Günümüz tarayıcıları son derece işlevseldir, zengin ve tatmin edici kullanıcı arayüzlerinin oluşturulmasını sağlar. Web arayüzleri, 
+		kullanıcılara tanıdık olan standart gezinme ve giriş kontrollerini kullanır, böylece her bir uygulamanın nasıl çalıştığını öğrenme 
+		gereksinimini ortadan kaldırır. İstemci tarafı betimleme, uygulamaların işlemlerinin bir kısmını istemci tarafına itmesine olanak 
+		sağlar ve tarayıcıların yetenekleri gerektiğinde tarayıcı uzantı teknolojileri kullanılarak keyfi şekillerde genişletilebilir.</li>
+		<li>Web uygulamalarını geliştirmek için kullanılan temel teknolojiler ve diller oldukça basittir. Güçlü uygulamaların görece acemiler 
+		tarafından geliştirilmesini kolaylaştırmak için geniş bir platform ve geliştirme araçları yelpazesi mevcuttur ve özel olarak 
+		geliştirilen uygulamalara entegre edilebilecek açık kaynak kodu ve diğer kaynaklar bol miktarda bulunmaktadır.</li>
+	</ul>
+	
+	<h2>Web Uygulama Güvenliği</h2>
+	<p>Her yeni teknoloji sınıfında olduğu gibi, web uygulamaları da beraberinde yeni bir güvenlik açığı yelpazesi getirmiştir. 
+	En sık karşılaşılan hataların kümesi zaman içinde evrim geçirmiştir. Mevcut uygulamalar geliştirilirken düşünülmeyen yeni 
+	saldırılar ortaya çıkmıştır. Bazı sorunlar farkındalığın artmasıyla daha az yaygın hale gelmiştir. Yeni teknolojiler geliştirilmiş 
+	ve bunlar yeni sömürü olasılıkları sunmuştur. Web tarayıcı yazılımlarındaki değişiklikler sonucunda bazı hata kategorileri büyük 
+	ölçüde ortadan kalkmıştır.</p>
+	
+	<p>Web uygulamalarına karşı yapılan en ciddi saldırılar, hassas verilerin ortaya çıkmasına veya uygulamanın çalıştığı arka sistemlere 
+	sınırsız erişim elde edilmesine yol açan saldırılardır. Bu tür yüksek profilli saldırılar hala sıkça gerçekleşmektedir. Bununla birlikte, 
+	birçok organizasyon için sistem süresizliğe yol açan herhangi bir saldırı önemli bir olaydır. Uygulama düzeyinde hizmet reddi saldırıları, 
+	altyapıya yönelik geleneksel kaynak tüketimi saldırılarıyla aynı sonuçları elde etmek için kullanılabilir. Ancak, genellikle daha ince 
+	teknikler ve amaçlarla kullanılırlar. Finansal işlemler, oyun oynama, online teklif verme ve bilet rezervasyonları gibi alanlarda 
+	rakiplere karşı rekabet avantajı elde etmek veya belirli bir kullanıcıyı veya hizmeti engellemek için kullanılabilirler.</p>
+	
+	<p>Bu evrim sürecinde, önde gelen web uygulamalarının güvenlik açıklarının haberlerde kalmaya devam ettiği görülmüştür. Bu güvenlik 
+	sorunlarının azalmaya başladığına dair bir işaret yoktur. Bir ölçüde, web uygulama güvenliği, bilgisayar kaynakları ve verileri korumak 
+	isteyenler ile saldırganlar arasındaki en önemli mücadele alanıdır ve önümüzdeki dönemde muhtemelen böyle kalacaktır.</p>
+	
+	<h2>Bu Site Güvenlidir</h2>
+	<p>Web uygulamaları için güvenliğin bir sorun olduğu konusunda genel bir farkındalık vardır. 
+	Tipik bir uygulamanın SSS sayfasını kontrol ederseniz, gerçekten güvende olduğu konusunda güvence verildiğini göreceksiniz.</p>
+	
+	<p>Çoğu uygulama, SSL kullandığı için güvende olduklarını belirtir. Örneğin:</p>
+	
+	<em>Bu site kesinlikle güvendedir. Yetkisiz kullanıcıların bilgilerinizi görmesini engellemek için 128-bit Secure 
+	Socket Layer (SSL) teknolojisini kullanacak şekilde tasarlanmıştır. Verilerinizin bizimle güvende olduğu konusunda 
+	endişe etmeden bu siteyi kullanabilirsiniz.</em>
+	
+	<p>Kullanıcılara sık sık, sitenin sertifikasını doğrulamaları, kullanılan gelişmiş şifreleme protokollerini 
+	takdir etmeleri ve bu temelde kişisel bilgilerini güvenle paylaşmaları istenir.</p>
+	
+	<p>Gün geçtikçe, organizasyonlar ayrıca Payment Card Industry (PCI) standartlarına uyumlarını da belirterek kullanıcıları 
+	güvence altında olduklarını söylemektedir. Örneğin:</p>
+	
+	<em>Güvenliğe çok önem veriyoruz. Web sitemiz, günlük taranır ve PCI uyumlu olduğumuzu ve hacker saldırılarından korunmamızı sağlar. 
+	Son tarama tarihini aşağıdaki logoda görebilirsiniz ve web sitemizin güvenli olduğuna garanti veriyoruz.</em>
+	
+	<p>Aslında, SSL teknolojisinin yaygın olarak kullanılması ve düzenli PCI taramalarının benimsenmesine rağmen, çoğu web uygulaması 
+	güvensizdir. Bu kitabın yazarları son yıllarda yüzlerce web uygulamasını test etmişlerdir. Şekil 1-3, 2007 ve 2011 yılları arasında 
+	test edilen uygulamaların hangi yaygın kategoriye ait güvenlik açıklarıyla etkilendiğini göstermektedir:</p>
+	
+	<ul>
+		<li><b>Broken Authentication (62%)</b>: Bu kategori, uygulamanın giriş mekanizmasında meydana gelen çeşitli hataları kapsar ve saldırganın zayıf 
+		şifreleri tahmin etmesine, brute-force saldırısı başlatmasına veya girişi atlamasına olanak sağlayabilir.</li>
+		<li><b>Broken Access Controls (71%)</b>: Bu durumda uygulama, veri ve işlevlerine erişimi düzgün bir şekilde koruyamaz ve saldırganın sunucuda 
+		tutulan diğer kullanıcıların hassas verilerini görüntülemesine veya yetkili eylemler gerçekleştirmesine olanak tanır.</li>
+		<li><b>SQL Injection (32%)</b>: Bu güvenlik açığı, saldırganın uygulamanın arka plandaki veritabanıyla etkileşimini bozmak için özel olarak 
+		oluşturulmuş girişleri sunmasını sağlar. Saldırgan, uygulamadan keyfi veri alabilir, mantığını etkileyebilir veya veritabanı 
+		sunucusunda komutlar çalıştırabilir.</li>
+		<li><b>Cross-Site Scripting (94%)</b>: Bu güvenlik açığı, saldırganın uygulama kullanıcılarının verilerine erişebileceği, yetkisiz eylemler 
+		gerçekleştirebileceği veya onlara karşı saldırılar düzenleyebileceği şekilde diğer kullanıcıları hedef almasını sağlar.</li>
+		<li><b>Information Leakage (78%)</b>: Bu durum, uygulamanın hatalı hata işleme veya diğer davranışlar aracılığıyla saldırgana uygulama karşı bir 
+		saldırı geliştirmek için kullanılabilecek hassas bilgileri ifşa ettiği durumları kapsar.</li>
+		<li><b>Cross-Site Request Forgery (92%)</b>: Bu hata, uygulama kullanıcılarının kullanıcı bağlamı ve yetki düzeyi içinde istenmeyen eylemler 
+		yapmasına neden olur. Bu güvenlik açığı, kurban kullanıcının ziyaret ettiği kötü niyetli bir web sitesinin, kullanıcının niyet etmediği 
+		eylemleri gerçekleştirmek için uygulama ile etkileşime girmesine olanak tanır.</li>
+	</ul>
+	
+	<center>
+		<img src="img/1.3.png" alt="">
+		<p><b>Şekil 1.3</b> Yazarlar tarafından test edilen uygulamaların (100'den fazla örneğe dayanan bir örneğe göre) bazı yaygın web uygulaması güvenlik açıklarının yaygınlığı.</p>
+	</center>
+	
+	<p>SSL (Secure Socket Layer) gerçekten kullanıcının tarayıcısı ile web sunucusu arasında iletilen verilerin gizliliğini ve bütünlüğünü 
+	koruyan mükemmel bir teknolojidir. Dinleyicilere karşı koruma sağlar ve kullanıcıya işlem yaptığı web sunucusunun kimliği konusunda 
+	güvence sağlayabilir. Ancak, çoğu başarılı saldırı gibi, doğrudan uygulamanın sunucu veya istemci bileşenlerine hedeflenen saldırıları 
+	durdurmaz. Özellikle, yukarıda listelenen güvenlik açıklarının hiçbirini veya bir uygulamayı saldırılara karşı kritik bir şekilde açık 
+	hale getirebilen diğer birçok güvenlik açığını engellemez. SSL (Secure Socket Layer) kullanılsın ya da kullanılmasın, çoğu web uygulamasında hala güvenlik 
+	açıkları bulunmaktadır.</p>
+	
+	<h2>Temel Güvenlik Sorunu: Kullanıcılar Tarafından Gönderebilir Keyfi Giriş</h2>
+	<p>Çoğu dağıtık uygulama gibi, web uygulamaları da güvenli olabilmek için ele alınması gereken temel bir sorunla karşı karşıyadır. 
+	Çünkü istemci uygulamanın kontrolü dışındadır ve kullanıcılar sunucu tarafındaki uygulamaya keyfi girdi gönderebilirler. Uygulama, 
+	tüm girdilerin potansiyel olarak kötü niyetli olabileceğini varsaymalıdır. Bu nedenle, saldırganların hazırlanan girdileri kullanarak 
+	uygulamayı etkileyerek mantık ve davranışına müdahale etmelerini, bu şekilde yetkisiz erişim elde ederek veri ve işlevselliğine zarar 
+	vermelerini engellemek için adımlar atmalıdır.</p>
+	
+	<p>Bu temel sorun çeşitli şekillerde kendini gösterir:</p>
+	
+	<ul>
+		<li>Kullanıcılar istemci ve sunucu arasında iletilen herhangi bir veri parçasına, talep parametrelerine, çerezlere ve HTTP başlıklarına 
+		müdahale edebilir. İstemci tarafında uygulanan herhangi bir güvenlik kontrolü, giriş doğrulama kontrolleri gibi, kolayca atlatılabilir.</li>
+		<li>Kullanıcılar isteği beklenenden farklı bir aşamada, birden fazla kez veya hiç göndererek istekleri istedikleri sırada gönderebilirler. 
+		Geliştiricilerin kullanıcıların uygulama ile nasıl etkileşimde bulunacaklarını varsayması bozulabilir.</li>
+		<li>Kullanıcılar uygulamaya erişmek için yalnızca bir web tarayıcısı kullanmakla sınırlı değillerdir. Tarayıcıya ek olarak, web uygulamalarına 
+		saldırmaya yardımcı olan birçok geniş çapta kullanılan araç mevcuttur. Bu araçlar, tarayıcıların normalde yapmayacağı isteklerde 
+		bulunabilir ve sorunları tespit edip kullanmak için hızlı bir şekilde büyük miktarda istek oluşturabilirler.</li>
+	</ul>
+	
+	<p>Web uygulamalarına karşı gerçekleştirilen saldırıların çoğu, uygulamanın tasarımcısı tarafından beklenmeyen veya istenmeyen bir 
+	olaya neden olmak için sunucuya gönderilen şekillendirilmiş girdilerle gerçekleşir. İşte bu amaca ulaşmak için şekillendirilmiş 
+	girdi gönderme örneklerinden bazıları:</p>
+	
+	<ul>
+		<li>Sahte bir şekilde ürünü daha ucuza satın almak için gizli bir HTML (HyperText Markup Language) form alanında iletilen ürünün fiyatını değiştirme</li>
+		<li>Başka bir kimlik doğrulama yapılmış kullanıcının oturumunu ele geçirmek için bir HTTP (Hyper Text Transfer Protocol) çerezinde iletilen oturum bilgisini değiştirme</li>
+		<li>Uygulamanın işleme sürecinde mantıksal bir hatayı sömürmek için normalde gönderilen belirli parametreleri kaldırma</li>
+		<li>Hassas verilere erişmek için arka planda bir veritabanını işleyecek olan bazı girdileri değiştirerek kötü niyetli bir veritabanı sorgusu enjekte etme</li>
+	</ul>
+	
+	<p>SSL (Secure Socket Layer), saldırganın şekillendirilmiş girdileri sunucuya göndermesini engellemek için hiçbir şey yapmaz. Uygulama SSL (Secure Socket Layer) kullanıyorsa, bu 
+	sadece ağdaki diğer kullanıcıların saldırganın verilerini iletebileceği veya değiştirebileceği anlamına gelmez. Saldırgan SSL (Secure Socket Layer)
+	tünelinin kendi tarafını kontrol ettiği için, bu tünel aracılığıyla istediği her şeyi sunucuya gönderebilir. Yukarıda bahsedilen 
+	saldırılardan herhangi biri başarılı olursa, uygulama kesinlikle savunmasız hale gelir, ne olursa olsun FAQ (Frequently Asked Questions) sayfasında ne yazdığına 
+	bakılmaksızın.</p>
+	
+	<h2>Temel Sorun Faktörleri</h2>
+	<p>Web uygulamalarının karşılaştığı temel güvenlik sorunu, bir uygulamanın güvensiz verileri kabul etmesi ve işlemesi durumunda ortaya çıkar.
+	Ancak, web uygulamaları söz konusu olduğunda, birkaç faktör bir araya gelerek bu sorunu daha da kötüleştirmiş ve internet üzerindeki 
+	birçok web uygulamasının bununla ilgili yetersiz kaldığını açıklamaktadır.</p>
+	
+	<h2>Az Gelişmiş Güvenlik Bilinci</h2>
+	<p>Son yıllarda web uygulama güvenlik sorunlarının farkındalığı artmasına rağmen, ağlar ve işletim sistemleri gibi daha uzun süredir var 
+	olan alanlardaki kadar iyi gelişmemiştir. Bilgi teknolojileri güvenliği alanında çalışan çoğu kişi, ağları güvence altına alma ve 
+	sunucuları güçlendirme konularında temel bilgilere sahip olsa da, web uygulama güvenliğiyle ilgili birçok temel kavram hakkında hala 
+	yaygın bir karışıklık ve yanlış anlama bulunmaktadır. Web uygulama geliştiricilerinin çalışmaları giderek daha çok üçüncü taraf paketi 
+	bir araya getirmeyi gerektirir ve bu paketlerin hepsi geliştiricinin altta yatan teknolojilerden uzaklaşmasını sağlamak amacıyla 
+	tasarlanmıştır. Deneyimli web uygulama geliştiricileriyle karşılaşmak sıkça rastlanan bir durumdur ve bu geliştiriciler, programlama 
+	çerçevesinin sağladığı güvenlik konusunda önemli varsayımlar yaparlar ve birçok temel hata türünün açıklanması onlar için bir aydınlanma 
+	olabilir.</p>
+	
+	<h2>Özel Geliştirme</h2>
+	<p>Çoğu web uygulaması, bir organizasyonun kendi personeli veya üçüncü taraf yüklenicileri tarafından içeride geliştirilir. Hatta 
+	iyi bilinen bileşenler kullanılsa bile, genellikle bu bileşenler özelleştirilir veya yeni kod kullanılarak bir araya getirilir. 
+	Bu durumda, her uygulama farklıdır ve kendi benzersiz hatalarını içerebilir. Bu, tipik altyapı dağıtımından farklıdır, çünkü bir 
+	organizasyon, sektör standartlarına uygun olarak en iyi ürünü satın alıp kurabilir.</p>
+	
+	<h2>Aldatıcı Sadelik</h2>
+	<p>Bugünün web uygulama platformları ve geliştirme araçları ile bir acemi programcının kısa sürede sıfırdan güçlü bir uygulama 
+	oluşturması mümkün olsa da, işlevsel kod ile güvenli kod arasında büyük bir fark vardır. Birçok web uygulaması, güvenlik sorunlarının 
+	ortaya çıkabileceği konuları belirleme konusunda bilgi ve deneyim eksikliği olan iyi niyetli kişiler tarafından oluşturulur.</p>
+	
+	<p>Son yıllarda belirgin bir trend, kimlik doğrulama, sayfa şablonları, mesaj panoları ve yaygın back-end altyapı bileşenleriyle entegrasyon 
+	gibi birçok ortak işlev alanında hazır kod bileşenleri sunan uygulama çerçevelerinin kullanılması olmuştur. Bu çerçevelerin örnekleri 
+	arasında Liferay ve Appfuse bulunur. Bu ürünler, uygulamaların nasıl çalıştığına veya içerdikleri potansiyel risklere teknik bir anlayış 
+	gerektirmeden çalışan uygulamalar oluşturmayı hızlı ve kolay hale getirir. Ayrıca birçok şirketin aynı çerçeveleri kullanması da demektir. 
+	Bu nedenle, bir zayıflık keşfedildiğinde, birbirleriyle ilgisi olmayan birçok uygulamayı etkiler.</p>
+	
+	<h2>Hızla Gelişen Tehdit Profili</h2>
+	<p>Web uygulama saldırıları ve savunmaları üzerine yapılan araştırmalar, eski teknolojilere göre daha hızlı bir şekilde yeni kavramlar ve 
+	tehditlerin ortaya çıktığı canlı bir alandır. Özellikle istemci tarafında, belirli bir saldırıya karşı kabul edilen savunmaların, yeni bir 
+	saldırı tekniğini gösteren araştırmalar tarafından zayıflatılması yaygındır. Bir projeye tam olarak mevcut tehditler hakkında bilgi sahibi 
+	olarak başlayan bir geliştirme ekibi, uygulama tamamlandığında ve dağıtıldığında bu statüyü kaybetmiş olabilir.</p>
+	
+	<h2>Kaynak ve Zaman Kısıtlamaları</h2>
+	<p>Çoğu web uygulama geliştirme projesi, kurumsal kaynakların ve zamanın sınırlı olduğu, tek seferlik projelerin ekonomik gereklilikleri 
+	nedeniyle sıkı kısıtlamalara tabidir. Birçok organizasyonda, tasarım veya geliştirme ekiplerinde güvenlik uzmanları istihdam etmek mümkün 
+	olmayabilir. Proje gecikmeleri nedeniyle, güvenlik testleri genellikle projenin son aşamalarına kadar ertelenir. Farklı öncelikler arasında 
+	denge sağlanırken, bir süre içinde kararlı ve işlevsel bir uygulama üretme ihtiyacı genellikle daha belirsiz güvenlik düşüncelerinin 
+	üzerine çıkar. Tipik bir küçük organizasyon, yeni bir uygulamayı değerlendirmek için sadece birkaç kişi-günü danışmanlık süresine ödeme 
+	yapmaya istekli olabilir. Hızlı bir penetrasyon testi genellikle açıkça görülen güvenlik zafiyetlerini bulabilir, ancak daha ince 
+	detaylarda zaman ve sabır gerektiren daha karmaşık zafiyetleri atlayabilir.</p>
+	
+	<h2>Genişletilmiş Teknolojiler</h2>
+	<p>Web uygulamalarında kullanılan birçok temel teknoloji, World Wide Web'in pek çok farklı olduğu dönemde ortaya çıkmıştır. O 
+	zamandan beri, özellikle AJAX tabanlı uygulamalarda veri iletimi için JavaScript'in kullanımı gibi, bu teknolojiler orijinal 
+	olarak tasarlandıkları amaçların çok ötesine geçmiştir. Web uygulaması işlevselliğine yönelik beklentiler hızla gelişirken, bu 
+	işlevselliği uygulamak için kullanılan teknolojiler geride kalmış ve eski teknolojiler yeni gereksinimleri karşılamak için gerilmiş 
+	ve adapte edilmiştir. Beklenmedik yan etkiler ortaya çıktıkça, bu durum güvenlik zafiyetlerine yol açmıştır.</p>
+	
+	<h2>İşlevselliğe İlişkin Artan Talepler</h2>
+	<p>Web uygulamaları genellikle işlevsellik ve kullanılabilirlik odaklı olarak tasarlanır. Eskiden statik olan kullanıcı profilleri şimdi 
+	sosyal ağ özelliklerini içerecek şekilde tasarlanır, resim yükleme ve wiki benzeri sayfa düzenleme gibi özelliklere olanak tanır. Birkaç 
+	yıl önce, bir uygulama tasarımcısı giriş işlevselliğini oluşturmak için kullanıcı adı ve şifreyle doğrulama yapmayı yeterli bulabilirdi. 
+	Modern siteler, şifre kurtarma, kullanıcı adı kurtarma, şifre ipuçları ve gelecekteki ziyaretlerde kullanıcı adını ve şifreyi hatırlama 
+	seçeneği gibi özellikler içerebilir. Bu tür bir site, pek çok güvenlik özelliğine sahip olduğu şeklinde tanıtılabilir, ancak her biri 
+	aslında siteye yönelik saldırı yüzeyini artıran self-servis özelliklerdir.</p>
+	
+	<h2>Yeni Güvenlik Çevresi</h2>
+	<p>Web uygulamalarının yükselişinden önce, organizasyonların dış saldırılara karşı kendilerini güvence altına alma çabaları genellikle ağ 
+	çeperine odaklanmaktaydı. Bu çeperin savunulması, sunmak istediği hizmetlerin güvenliğini sağlamak ve diğerlerine erişimi duvarlamakla 
+	ilgiliydi.</p>
+	
+	<p>Web uygulamaları bunu değiştirdi. Bir uygulamanın kullanıcıları tarafından erişilebilir olabilmesi için, çeperdeki güvenlik duvarı 
+	HTTP (Hyper Text Transfer Protocol) veya HTTPS (Secure Hyper Text Transfer Protocol) üzerinden sunucuya gelen bağlantılara izin vermek zorundadır. Ve uygulamanın işlev görmesi için sunucunun veritabanları, 
+	ana bilgisayarlar, finansal ve lojistik sistemler gibi destekleyici back-end sistemlere bağlanmasına izin verilmelidir. Bu sistemler 
+	genellikle organizasyonun operasyonlarının merkezinde yer alır ve birkaç kat ağ düzeyindeki savunmaların ardında bulunur.</p>
+	
+	<p>Bir web uygulamasında bir güvenlik açığı bulunuyorsa, internet üzerindeki bir saldırgan, web tarayıcısından oluşturduğu düzenlenmiş 
+	veriyle organizasyonun temel back-end sistemlerini sadece kendi başına ele geçirebilir. Bu veri, organizasyonun tüm ağ savunmalarının 
+	önünden geçer ve web uygulamasına yönelik olağan, zararsız trafiğin geçtiği gibi ilerler.</p>
+	
+	<p>Web uygulamalarının yaygın olarak kullanılması, tipik bir organizasyonun güvenlik çeperinin hareket ettiği anlamına gelir. Bu çeperin 
+	bir kısmı hala güvenlik duvarlarında ve koruma noktalarında temsil edilir. Ancak önemli bir kısmı artık organizasyonun web uygulamaları 
+	tarafından işgal edilir. Web uygulamalarının kullanıcı girişi almak için çeşitli yolları ve bu veriyi hassas back-end sistemlere aktarması 
+	nedeniyle, potansiyel olarak birçok saldırı için kapılar haline gelir ve bu saldırılara karşı savunmalar uygulamaların içine 
+	yerleştirilmelidir. Tek bir web uygulamasındaki bir hatalı kod satırı, bir organizasyonun iç sistemlerini savunmasız hale getirebilir. 
+	Ayrıca, mash-up uygulamalarının, üçüncü taraf widget'larının ve diğer çapraz alan entegrasyon tekniklerinin yükselmesiyle birlikte, 
+	sunucu tarafı güvenlik çeperi sık sık organizasyonun ötesine uzanır. Harici uygulama ve hizmetlerin hizmetlerine zımni bir güvenilirlik 
+	yerleştirilir. Önceden bahsedilen bu yeni güvenlik çeperindeki zayıflıkların yaygınlık istatistikleri, her organizasyonun düşünmek için 
+	duraklamasını gerektirmektedir.</p>
+	
+	<p><b>NOT: Bir organizasyona yönelik saldırı düzenleyen bir saldırgan için ağa erişim sağlamak veya sunucularda keyfi komutlar yürütmek istemek 
+	istediği şey olmayabilir. Saldırganın gerçekten istediği genellikle bir uygulama düzeyinde bir eylem gerçekleştirmek, kişisel bilgileri 
+	çalmak, fon transferi yapmak veya ucuz alışverişler yapmaktır. Ve güvenlik çeperinin uygulama katmanına taşınması, saldırganın bu 
+	hedeflere ulaşmasına büyük ölçüde yardımcı olabilir.</b></p>
+	
+	<p><b>Örneğin, bir saldırganın bir bankanın sistemlerine sızmayı ve kullanıcıların hesaplarından para çalmayı istediğini düşünelim. Bankanın
+	bir web uygulaması dağıtmasından önce, saldırganın genellikle halka açık bir hizmette bir güvenlik açığı bulması, bankanın (Demilitarized Zone) DMZ'sinde 
+	bir kavrama tutunmak için bunu kullanması, iç sistemlere erişimi sınırlayan güvenlik duvarını aşması, ana bilgisayarı bulmak için ağı 
+	haritalaması, ona erişmek için kullanılan gizemli protokolü çözmesi ve giriş yapmak için bazı kimlik bilgilerini tahmin etmesi
+	gerekebilirdi. Ancak, banka şimdi savunmasız bir web uygulaması kullanıyorsa, saldırgan, bir HTML (Hyper Text Transfer Protocol) formunun gizli bir alanında bir 
+	hesap numarasını değiştirerek aynı sonuca ulaşabilir.</b></p>
+	
+	<p>Web uygulamalarının güvenlik çeperini taşımasıyla ortaya çıkan ikinci bir durum, kullanıcıların kendi eriştiği bir güvenlik açığına 
+	maruz kalmasından kaynaklanan tehditlerdir. Kötü niyetli bir saldırgan, zararlı ama savunmasız bir web uygulamasını kullanarak ziyaret 
+	eden herhangi bir kullanıcıyı hedef alabilir. Eğer bu kullanıcı, iç kurumsal bir ağda bulunuyorsa, saldırgan, kullanıcının tarayıcısını 
+	kullanarak kullanıcının güvendiği konumdan yerel ağa saldırı başlatmak için kullanabilir. Kullanıcının işbirliği olmadan, saldırgan, 
+	kullanıcının kendisi kötü niyetli olsaydı gerçekleştirebileceği herhangi bir eylemi gerçekleştirebilir. Tarayıcı eklentisi teknolojileri 
+	ve eklentilerinin yaygınlaşmasıyla, istemci tarafındaki saldırı yüzeyi önemli ölçüde artmıştır.</p>
+	
+	<p>Ağ yöneticileri, kullanıcılarının kötü niyetli web sitelerini ziyaret etmesini engelleme fikrine aşinadır ve son kullanıcılar da bu 
+	tehditin farkına gitgide daha fazla var olmaktadırlar. Ancak web uygulamalarının güvenlik açıklarının doğası, savunmasız bir uygulamanın, 
+	açıkça kötü niyetli bir web sitesinden daha az bir tehdit sunabileceği anlamına gelir. Buna karşılık, yeni güvenlik çeperi, tüm uygulama 
+	sahiplerine, kullanıcılarına karşı bu uygulama aracılığıyla gerçekleştirilen saldırılardan koruma sorumluluğu getirir.</p>
+	
+	<p>Güvenlik çeperinin müşteri tarafına kısmen taşınmasının bir başka nedeni, e-postanın genişletilmiş kimlik doğrulama mekanizması 
+	yaygın olarak kullanılmasıdır. Bugünün birçok uygulaması, kayıtlı bir adrese hesap kurtarma e-postası oluşturabilen "<em>forgotten password</em>" 
+	işlevlerini içermektedir ve bu başka bir kullanıcıya özgü bilgi gerektirmez. Bu, saldırganın bir kullanıcının web posta hesabını ele 
+	geçirmesi durumunda saldırıyı kolayca yükseltmesine ve kurbanın kayıtlı olduğu web uygulamalarının çoğunu etkilemesine izin verir.</p>
+	
+	<h2>Web Uygulama Güvenliğinin Geleceği</h2>
 	<p></p>
+	
 	
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
