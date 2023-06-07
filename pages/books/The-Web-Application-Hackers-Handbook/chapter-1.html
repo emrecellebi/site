@@ -342,68 +342,57 @@
 	geçirmesi durumunda saldırıyı kolayca yükseltmesine ve kurbanın kayıtlı olduğu web uygulamalarının çoğunu etkilemesine izin verir.</p>
 	
 	<h2>Web Uygulama Güvenliğinin Geleceği</h2>
-	<p></p>
+	<p>On yıldan fazla bir süre sonra, bugün internet üzerindeki web uygulamaları hala zayıflıklarla doludur. Web uygulamalarını tehdit 
+	eden güvenlik tehditlerini anlama ve bu tehditlerle etkin bir şekilde başa çıkmanın yolları hala sektör içinde yeterince gelişmemiştir. 
+	Bu bölümde anlatılan sorun faktörlerinin yakın gelecekte ortadan kalkacağına dair pek bir işaret bulunmamaktadır.</p>
 	
+	<p>Ancak, web uygulaması güvenliği peyzajının ayrıntıları sabit değildir. SQL enjeksiyonu gibi eski ve iyi anlaşılan zayıflıklar hala ortaya 
+	çıksa da, yaygınlıkları giderek azalmaktadır. Ayrıca, kalan örnekler bulunması ve sömürülmesi daha zor hale gelmektedir. Bu alanlardaki 
+	yeni araştırmalar genellikle sadece bir tarayıcı kullanarak kolayca tespit edilebilen ve sömürülebilen zayıflıkların daha ince 
+	gösterimlerini hedefleyen gelişmiş teknikler geliştirmeye odaklanmaktadır.</p>
+	
+	<p>İkinci bir önemli eğilim, saldırıların uygulama sunucusu tarafına yönelik saldırılardan kullanıcıları hedefleyen saldırılara kaymasıdır. 
+	Bu tür saldırılar hala uygulamanın kendisindeki kusurları kullanırken, genellikle savunmasız uygulama ile etkileşim içinde olan başka 
+	bir kullanıcıyı etkilemek için gerçekleştirilir. Bu, yazılım güvenliği diğer alanlarında da tekrarlanan bir trenddir. Güvenlik tehditleri 
+	hakkındaki farkındalık olgunlaştıkça, sunucu tarafındaki hatalar daha iyi anlaşılıp çözülürken, öğrenme süreci devam ettiği için istemci 
+	tarafı önemli bir savaş alanı haline gelmektedir. Bu kitapta anlatılan saldırıların içinde, diğer kullanıcılara yönelik olanlar en hızlı 
+	evrimleşenlerdir ve son yıllarda yapılan çoğu araştırmanın odak noktası olmuşlardır.</p>
+	
+	<p>Teknolojideki çeşitli yeni trendler, web uygulamalarının peyzajını biraz değiştirmiştir. Bu trendler hakkındaki popüler bilinç, çeşitli 
+	yanıltıcı kavramlar aracılığıyla oluşturulmuştur ve en belirgin olanları şunlardır:</p>
+	
+	<ul>
+		<li><b>Web 2.0</b> - Bu terim, kullanıcı tarafından oluşturulan içeriği ve bilgi paylaşımını mümkün kılan işlevlerin daha fazla kullanılmasını ve 
+		ayrıca bunu genel olarak destekleyen çeşitli teknolojilerin, asenkron HTTP isteklerinin ve çapraz etki alanı entegrasyonunun benimsenmesini 
+		ifade eder.</li>
+		<li><b>Bulut bilişim</b> - Bu terim, uygulama yazılımı, uygulama platformları, web sunucusu yazılımı, veritabanları ve donanım gibi teknoloji 
+		yığınının çeşitli bölümleri için harici hizmet sağlayıcılarının daha fazla kullanılmasını ifade eder. Aynı zamanda barındırma ortamlarında 
+		sanallaştırma teknolojilerinin artan kullanımını da içerir.</li>
+	</ul>
+	
+	<p>Teknolojideki diğer değişiklikler gibi, bu trendler yeni saldırıları ve mevcut saldırıların varyasyonlarını beraberinde getirmiştir. 
+	Hype'a rağmen, ortaya çıkan sorunlar başlangıçta olduğu kadar devrim niteliği taşımamaktadır. Bu kitap boyunca, bu ve diğer son trendlerin 
+	güvenlik yansımalarını uygun yerlerde inceleyeceğiz.</p>
+	
+	<p>Web uygulamalarında gerçekleşen tüm değişikliklere rağmen, bazı "klasik" zayıflık kategorileri azalma belirtisi göstermemektedir. Bunlar, 
+	iş mantığında kusurlar, erişim kontrollerinin düzgün uygulanmaması ve diğer tasarım sorunları gibi, web'in ilk günlerinde olduğu gibi 
+	neredeyse aynı formda ortaya çıkmaya devam etmektedir. Uygulama bileşenlerinin birleştirildiği ve her şeyin bir hizmet olarak sunulduğu 
+	bir dünyada bile, bu zamansız sorunların yaygın olmaya devam etmesi muhtemeldir.</p>
+	
+	
+	<h2>Özet</h2>
+	<p>Biraz daha 10 yıl içinde, World Wide Web, sadece statik bilgi depolarından, hassas verileri işleyen ve gerçek dünya sonuçlarına 
+	sahip güçlü eylemler gerçekleştiren son derece işlevsel uygulamalara dönüşmüştür. Bu gelişme sürecinde, bugünün çoğu web uygulamasının 
+	gösterdiği zayıf güvenlik durumunu ortaya çıkaran birkaç faktör bir araya gelmiştir.</p>
+	
+	<p>Çoğu uygulama, kullanıcıların keyfi girişler gönderebileceği temel güvenlik sorunuyla karşı karşıyadır. Kullanıcının uygulamayla 
+	etkileşimi, kanıtlanana kadar kötü niyetli olarak kabul edilmeli ve bu şekilde ele alınmalıdır. Bu sorunu düzgün bir şekilde ele 
+	almamanın, uygulamaları çeşitli yollarla saldırılara karşı savunmasız bırakabileceği unutulmamalıdır.</p>
+	
+	<p>Web uygulama güvenliğinin mevcut durumuyla ilgili tüm kanıtlar, bazı güvenlik yönlerinin gerçekten iyileştiğini gösterse de, bunların 
+	yerini tamamen yeni tehditlerin aldığını ortaya koymaktadır. Genel sorun herhangi bir önemli ölçekte çözülmüş değildir. Web uygulamalarına 
+	yönelik saldırılar, hem uygulamaları dağıtan kuruluşlar için hem de bunlara erişen kullanıcılar için ciddi bir tehdit oluşturmaya devam 
+	etmektedir.</p>
 	
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

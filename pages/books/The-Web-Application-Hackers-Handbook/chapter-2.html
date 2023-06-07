@@ -1,0 +1,154 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/doc.css">
+	<title>Bölüm 2 - Temel Savunma Mekanizmaları</title>
+</head>
+<body>
+	<h1>Temel Savunma Mekanizmaları</h1>
+	<p>Web uygulamalarının temel güvenlik sorunu olan - tüm kullanıcı girişlerinin güvensiz olması - uygulamaların kendilerini saldırılara 
+	karşı korumak için kullandığı bir dizi güvenlik mekanizmasını ortaya çıkarır. Hemen hemen tüm uygulamalar, kavramsal olarak benzer 
+	olan mekanizmaları kullanırken, tasarımın detayları ve uygulamanın etkinliği büyük ölçüde değişmektedir.</p>
+	
+	<p>Web uygulamaları tarafından kullanılan savunma mekanizmaları aşağıdaki temel unsurlardan oluşur:</p>
+	
+	<ul>
+		<li>Kullanıcıların yetkisiz erişimini engellemek için uygulamanın veri ve işlevlerine erişimi kontrol etme</li>
+		<li>Kullanıcı girişlerini işlemek ve hatalı biçimlendirilmiş girişlerin istenmeyen davranışlara neden olmasını önlemek</li>
+		<li>Saldırganları işlemek ve uygulamanın doğrudan hedef alındığında uygun savunma ve saldırı önlemleri alarak saldırıyı engellemek</li>
+		<li>Uygulamayı yönetmek, yöneticilerin faaliyetlerini izlemelerine ve işlevselliğini yapılandırmalarına olanak tanımak</li>
+	</ul>
+	
+	<p>Bu mekanizmalar, temel güvenlik sorununu ele alma konusundaki merkezi rolleri nedeniyle tipik bir uygulamanın saldırı yüzeyinin 
+	büyük bir kısmını oluşturur. Düşmanınızı tanımanın savaşın ilk kuralı olduğu düşünülürse, bu mekanizmaları tam olarak anlamak, 
+	uygulamalara etkili saldırı yapabilmenin temel ön koşuludur. Web uygulamalarını hacklemeye yeni başlıyorsanız (ve hatta başlamış 
+	olsanız bile), karşılaştığınız her uygulamadaki bu temel mekanizmaların nasıl çalıştığını anlamaya zaman ayırmalı ve onları saldırılara 
+	karşı savunmasız bırakan zayıf noktaları belirlemelisiniz.</p>
+	
+	<h2>Kullanıcı Erişimini Yönetme</h2>
+	<p>Hemen hemen her uygulamanın karşılaması gereken merkezi bir güvenlik gereksinimi, kullanıcıların veri ve işlevlere erişimini kontrol 
+	etmektir. Tipik bir durumda, anonim kullanıcılar, yetkilendirilmiş kullanıcılar ve yönetici kullanıcılar gibi farklı kullanıcı kategorileri 
+	bulunur. Ayrıca, birçok durumda farklı kullanıcılara farklı veri kümesine erişim izin verilir. Örneğin, bir web posta uygulamasının 
+	kullanıcıları kendi e-postalarını okuyabilmeli, ancak diğer insanların e-postalarına erişim izni verilmemelidir.</p>
+	
+	<p>Çoğu web uygulaması, erişimi üç ilişkili güvenlik mekanizmasıyla yönetir:</p>
+	
+	<ul>
+		<li>(Authentication) Kimlik doğrulama</li>
+		<li>(Session management) Oturum yönetimi</li>
+		<li>(Access control) Erişim kontrolü</li>
+	</ul>
+	
+	<p>Bu mekanizmaların her biri, bir uygulamanın saldırı yüzeyinin önemli bir alanını temsil eder ve genel güvenlik duruşunun temelini 
+	oluşturur. Bu mekanizmalar arasındaki bağımlılıklar nedeniyle, mekanizmalar tarafından sağlanan toplam güvenlik, zincirin en zayıf 
+	halkası kadar güçlü olur. Herhangi bir bileşenin hatalı olması, bir saldırganın uygulamanın işlevselliğine ve verilerine kısıtlama 
+	olmaksızın erişebilmesine olanak tanıyabilir.</p>
+	
+	<h2>Kimlik doğrulama (Authentication)</h2>
+	<p>Kimlik doğrulama mekanizması, bir uygulamanın kullanıcı erişimini ele almasında mantıksal olarak en temel bağımlılıktır. Bir 
+	kullanıcının kimlik doğrulaması, kullanıcının iddia ettiği gibi gerçekten kim olduğunun belirlenmesini içerir. Bu özellik olmadan, 
+	uygulama tüm kullanıcıları anonim olarak kabul etmek zorunda kalır - en düşük güven seviyesi.</p>
+	
+	<p>Bugünün çoğu web uygulaması, kullanıcının geçerlilik kontrolünü yapmak için kullanıcı adı ve şifre gönderdiği geleneksel kimlik 
+	doğrulama modelini kullanır. Şekil 2-1, tipik bir giriş işlevini göstermektedir. Online bankalar tarafından kullanılan güvenlik 
+	açısından kritik uygulamalarda, bu temel model genellikle ek kimlik bilgileri ve çoklu aşamalı bir giriş süreci ile desteklenir. 
+	Güvenlik gereksinimleri daha da yüksek olduğunda, istemci sertifikalarına, akıllı kartlara veya meydan okuma-yanıt jetonlarına dayalı 
+	farklı kimlik doğrulama modelleri kullanılabilir. Kimlik doğrulama sürecinin yanı sıra, kimlik doğrulama mekanizmaları genellikle kayıt 
+	olma, hesap kurtarma ve şifre değiştirme gibi diğer destekleyici işlevleri de içerir.</p>
+	
+	<center>
+		<img src="img/2.1.png" alt="">
+		<p><b>Şekil 2.1</b> Tipik bir giriş işlevi</p>
+	</center>
+	
+	<p>Görünüşte basitliklerine rağmen, kimlik doğrulama mekanizmaları tasarım ve uygulama açısından geniş bir yelpazede hatalara sahiptir. 
+	Ortak sorunlar, bir saldırganın diğer kullanıcıların kullanıcı adlarını belirlemesine, şifrelerini tahmin etmesine veya mantıksal 
+	hataları istismar ederek giriş işlevini atlamasına olanak tanıyabilir. Bir web uygulamasını saldırırken, genellikle bu işlevlerdeki 
+	çeşitli kimlik doğrulama ile ilgili hatalara büyük bir dikkat harcamalısınız. Şaşırtıcı bir şekilde, bu işlevlerdeki hatalar genellikle 
+	yetkisiz erişim sağlamanıza ve hassas verilere ve işlevlere erişmenize olanak tanır.</p>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
