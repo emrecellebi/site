@@ -49,7 +49,7 @@
 	kullanıcının kimlik doğrulaması, kullanıcının iddia ettiği gibi gerçekten kim olduğunun belirlenmesini içerir. Bu özellik olmadan, 
 	uygulama tüm kullanıcıları anonim olarak kabul etmek zorunda kalır - en düşük güven seviyesi.</p>
 	
-	<p>Bugünün çoğu web uygulaması, kullanıcının geçerlilik kontrolünü yapmak için kullanıcı adı ve şifre gönderdiği geleneksel kimlik 
+	<p>Bu günün çoğu web uygulaması, kullanıcının geçerlilik kontrolünü yapmak için kullanıcı adı ve şifre gönderdiği geleneksel kimlik 
 	doğrulama modelini kullanır. Şekil 2-1, tipik bir giriş işlevini göstermektedir. Online bankalar tarafından kullanılan güvenlik 
 	açısından kritik uygulamalarda, bu temel model genellikle ek kimlik bilgileri ve çoklu aşamalı bir giriş süreci ile desteklenir. 
 	Güvenlik gereksinimleri daha da yüksek olduğunda, istemci sertifikalarına, akıllı kartlara veya meydan okuma-yanıt jetonlarına dayalı 
@@ -67,8 +67,194 @@
 	çeşitli kimlik doğrulama ile ilgili hatalara büyük bir dikkat harcamalısınız. Şaşırtıcı bir şekilde, bu işlevlerdeki hatalar genellikle 
 	yetkisiz erişim sağlamanıza ve hassas verilere ve işlevlere erişmenize olanak tanır.</p>
 	
+	<h2>Oturum yönetimi (Session management)</h2>
+	<p>Kullanıcı erişimini yönetme sürecindeki bir sonraki mantıklı görev, kimlik doğrulaması yapılmış kullanıcının oturumunu yönetmektir. 
+	Kullanıcı başarılı bir şekilde uygulamaya giriş yaptıktan sonra tarayıcısından çeşitli sayfalara ve işlevlere erişir ve bir dizi HTTP 
+	isteği yapar. Aynı zamanda, uygulama farklı kullanıcılardan gelen sayısız başka istek alır, bazıları kimlik doğrulanmışken bazıları 
+	anonimdir. Etkili erişim kontrolü sağlamak için, uygulamanın her benzersiz kullanıcıdan kaynaklanan istek serisini tanımlayıp işlemesi 
+	gerekmektedir.</p>
+	
+	<p>Neredeyse tüm web uygulamaları, her kullanıcı için bir oturum oluşturarak ve kullanıcıya bir oturumu tanımlayan bir belirteç vererek bu 
+	gereksinimi karşılar. Oturum kendisi, kullanıcının uygulamayla etkileşimi durumunu izleyen sunucuda tutulan bir dizi veri yapısıdır. 
+	Belirteç ise, uygulamanın oturumu bu kullanıcıyla ilişkilendirmesini sağlayan benzersiz bir dizedir. Kullanıcı bir belirteç aldığında, 
+	tarayıcı bunu her sonraki HTTP isteğinde otomatik olarak sunucuya gönderir, böylece uygulama isteği o kullanıcıyla ilişkilendirir. HTTP 
+	çerezleri, oturum belirteçlerini iletmek için standart yöntemdir, ancak birçok uygulama bunun için gizli form alanları veya URL sorgu 
+	dizgisi kullanır. Bir kullanıcı belirli bir süre boyunca istekte bulunmazsa, oturum ideal olarak sona erer, Şekil 2-2'de gösterildiği gibi.</p>
+	
+	<center>
+		<img src="img/2.2.png" alt="">
+		<p><b>Şekil 2.2</b> Bir oturumun zaman aşımını uygulayan uygulama</p>
+	</center>
+	
+	<p>Saldırı yüzeyi açısından, oturum yönetimi mekanizması belirteçlerin güvenliğine son derece bağımlıdır. Bununla ilgili saldırıların çoğu, 
+	diğer kullanıcılara verilen belirteçleri tehlikeye atmaya yöneliktir. Bu mümkün olduğunda, bir saldırgan kurban kullanıcı gibi taklit 
+	yapabilir ve gerçekten o kullanıcı olarak oturum açmış gibi uygulamayı kullanabilir. Başlıca güvenlik açıkları, belirteçlerin nasıl 
+	oluşturulduğunda ve sonrasında nasıl işlendiğinde ortaya çıkar ve saldırganın diğer kullanıcıların belirteçlerini ele geçirmesine olanak tanır.</p>
+	
+	<p>Birkaç uygulama, oturum belirteçlerine ihtiyaç duymadan kullanıcıları çoklu istekler arasında yeniden tanımlama için başka yöntemler 
+	kullanır. Eğer HTTP'nin yerleşik kimlik doğrulama mekanizması kullanılıyorsa, tarayıcı her istekte kullanıcının kimlik bilgilerini 
+	otomatik olarak tekrar gönderir, böylece uygulama kullanıcıyı doğrudan bunlardan tanımlayabilir. Diğer durumlarda, uygulama durum 
+	bilgilerini sunucu yerine genellikle şifrelenmiş olarak istemci tarafında saklar, bu sayede müdahaleyi önler.</p>
+	
+	<h2>Erişim kontrolü (Access control)</h2>
+	<p>Kullanıcı erişiminin işlenmesi sürecindeki son mantıklı adım, her bir isteğin izin verilip verilmemesi gerektiği konusunda doğru kararlar 
+	almak ve bunları uygulamaktır. Yukarıda açıklanan mekanizmalar doğru şekilde çalışıyorsa, uygulama her isteği kimden aldığını bilir. 
+	Bu temelde, istenen eylemi veya veriye erişimi bu kullanıcının yapma yetkisine sahip olup olmadığına karar vermesi gerekmektedir, 
+	Şekil 2-3'te gösterildiği gibi.</p>
+	
+	<p>Erişim kontrol mekanizması genellikle farklı alanlara ve işlev türlerine ilişkin farklı düşüncelerin dikkate alındığı ayrıntılı bir mantık 
+	uygulamak zorundadır. Bir uygulama, özel yeteneklerin farklı kombinasyonlarını içeren çok sayıda kullanıcı rolünü destekleyebilir. 
+	Bireysel kullanıcılara uygulama içindeki toplam verilerin bir alt kümesine erişim izni verilebilir. Belirli işlevler, işlem sınırlamalarını 
+	ve diğer kontrolleri uygulayabilir ve bunların hepsi kullanıcının kimliğine dayalı olarak doğru şekilde uygulanmalıdır.</p>
+	
+	<p>Tipik erişim kontrol gereksinimlerinin karmaşık doğası nedeniyle, bu mekanizma, saldırganın yetkisiz erişim sağlamasına olanak tanıyan 
+	güvenlik açıklarının sıkça kaynağıdır. Geliştiriciler genellikle kullanıcıların uygulama ile nasıl etkileşimde bulunacağına dair hatalı 
+	varsayımlar yaparlar ve bazı uygulama işlevlerinden erişim kontrolü kontrollerini atlayarak gözden kaçırmalar yaparlar. Bu güvenlik 
+	açıklarını araştırmak sıklıkla zahmetli olabilir, çünkü temel olarak aynı kontroller her işlev için tekrarlanmak zorundadır. Bununla 
+	birlikte, erişim kontrol hatalarının yaygınlığı nedeniyle, bir web uygulamasına saldırdığınızda bu çaba her zaman yapılması 
+	gereken bir yatırımdır. 8. bölüm, sıkı bir erişim kontrolü testi gerçekleştirmede yer alan çabanın bazılarını 
+	otomatikleştirebileceğinizi açıklar.</p>
+	
+	<center>
+		<img src="img/2.3.png" alt="">
+		<p><b>Şekil 2.3</b> Erişim kontrolünü zorunlu kılan bir uygulama</p>
+	</center>
+	
+	<h2>Kullanıcı Girişini İşleme</h2>
+	<p>Birinci bölümde anlatılan temel güvenlik sorununu hatırlayalım: Tüm kullanıcı girdileri güvenilmezdir. Web uygulamalarına yönelik 
+	birçok saldırı, beklenmeyen ve uygulamanın tasarımcıları tarafından amaçlanmayan davranışlara neden olacak şekilde düzenlenmiş 
+	girdilerin gönderilmesini içerir. Bu nedenle, bir uygulamanın güvenlik savunmaları için önemli bir gereklilik, kullanıcı girdilerini 
+	güvenli bir şekilde işlemesidir.</p>
+	
+	<p>Girişe dayalı zayıflıklar, bir uygulamanın işlevselliği içinde herhangi bir yerde ve yaygın olarak kullanılan neredeyse her tür 
+	teknolojiyle ilgili olarak ortaya çıkabilir. "<em>Giriş doğrulama</em>" genellikle bu saldırılara karşı gerekli savunma olarak belirtilir. 
+	Ancak, her yerde tek bir koruma mekanizması kullanılamaz ve kötü niyetli girişlere karşı korunmak her zaman kolay olmayabilir.</p>
+	
+	<h2>Input Çeşitleri</h2>
+	<p>Tipik bir web uygulaması, kullanıcı tarafından sağlanan verileri birçok farklı biçimde işler. Ancak bazı giriş doğrulama yöntemleri, 
+	tüm bu giriş biçimleri için uygun veya istenilen olmayabilir. Şekil 2-4, genellikle bir kullanıcı kayıt işlevi tarafından gerçekleştirilen 
+	giriş doğrulamayı göstermektedir.</p>
+	
+	<center>
+		<img src="img/2.4.png" alt="">
+		<p><b>Şekil 2.4</b> Giriş doğrulama yapan bir uygulama</p>
+	</center>
+	
+	<p>Birçok durumda, bir uygulama belirli bir giriş öğesi üzerinde çok katı doğrulama kontrolleri uygulayabilir. Örneğin, bir giriş işlevine 
+	gönderilen bir kullanıcı adının en fazla sekiz karakter uzunluğunda olması ve yalnızca alfabetik karakterler içermesi istenebilir.</p>
+	
+	<p>Diğer durumlarda, uygulama daha geniş bir giriş aralığına katlanmak zorunda kalabilir. Örneğin, bir kişisel detaylar sayfasına gönderilen 
+	bir adres alanı, mantıklı olarak harfler, rakamlar, boşluklar, tireler, apostroflar ve diğer karakterleri içerebilir. Ancak, bu öğe için 
+	kısıtlamalar yine de uygulanabilir olmalıdır. Veri makul bir uzunluk sınırını (örneğin, 50 karakter) aşmamalı ve herhangi bir HTML 
+	işaretlemesi içermemelidir.</p>
+	
+	<p>Bazı durumlarda, bir uygulama kullanıcılardan keyfi giriş kabul etmek zorunda kalabilir. Örneğin, bir blog uygulamasının kullanıcısı, 
+	konusu web uygulaması hackleme olan bir blog oluşturabilir. Bloga yapılan gönderiler ve yorumlar, tartışılan açık saldırı dizelerini 
+	içerebilir. Uygulama bu girişi bir veritabanına kaydetmeli, diske yazmalı ve kullanıcılara güvenli bir şekilde geri göstermelidir. 
+	Kullanıcının gönderdiği girişi sadece potansiyel olarak kötü niyetli göründüğü için reddedemez, aksi halde uygulamanın bazı kullanıcılarına 
+	büyük ölçüde değer kaybedebilir.</p>
+	
+	<p>Tarayıcı arayüzü kullanarak kullanıcıların girdiği çeşitli girişlerin yanı sıra, tipik bir uygulama sunucuda başlayan ve istemciye 
+	gönderilen ve istemcinin sonraki isteklerde bunları sunucuya iletebilmesi için gereken birçok veri alır. Bu, kullanıcıların normalde 
+	uygulamanın görmediği ancak bir saldırganın görüp değiştirebileceği çerezler ve gizli form alanları gibi öğeleri içerir. Bu durumlarda, 
+	uygulamalar genellikle alınan verinin çok özel bir doğrulamasını yapabilir. Örneğin, bir parametrenin belirli bir küme bilinen değerden 
+	birine sahip olması (örneğin, kullanıcının tercih ettiği dilin belirtilen bir çerez olması) veya belirli bir formatta olması (örneğin, 
+	bir müşteri kimlik numarası) gerekebilir. Ayrıca, bir uygulama, sunucu tarafından oluşturulan verinin standart bir tarayıcıya sahip 
+	sıradan bir kullanıcı tarafından mümkün olmayan şekilde değiştirildiğini tespit ettiğinde, bu genellikle kullanıcının uygulamayı 
+	zayıflıklar için test etmeye çalıştığını gösterir. Bu durumlarda, uygulama isteği reddetmeli ve olası bir soruşturma için olayı 
+	kaydetmelidir (bu bölümün ilerisinde "Saldırganları İşlemek" bölümüne bakın).</p>
+	
+	<h2>Input İşleme Yaklaşımları</h2>
+	<p>Kullanıcı girişiyle ilgili sorunu çözmek için genellikle farklı genel yaklaşımlar benimsenir. Farklı yaklaşımlar 
+	genellikle farklı durumlar ve farklı giriş türleri için tercih edilebilir ve bazen birleşik bir yaklaşım istenebilir.</p>
+	
+	<h2>Kötü Bilinenleri Reddet</h2>
+	<p>Bu yaklaşım genellikle, saldırılarda kullanıldığı bilinen belirli dize veya desenleri içeren bir karaliste kullanır. 
+	Doğrulama mekanizması, karalisteyle eşleşen herhangi bir veriyi engeller ve diğer tüm verilere izin verir.</p>
+	
+	<p>Genel olarak, bu, kullanıcı girişini doğrulamak için en az etkili yaklaşım olarak kabul edilir ve bunun iki temel nedeni vardır. 
+	İlk olarak, bir web uygulamasındaki tipik bir güvenlik açığı, çeşitli şekillerde kodlanan veya temsil edilen geniş bir giriş yoluyla 
+	sömürülebilir. Basit durumlar hariç, bir karaliste muhtemelen uygulamaya saldırmak için kullanılabilecek bazı giriş desenlerini 
+	atlayacaktır. İkinci olarak, sömürü teknikleri sürekli olarak gelişmektedir. Var olan güvenlik açığı kategorilerini sömürme için yeni 
+	yöntemler, mevcut karalisteler tarafından engellenmeyecektir.</p>
+	
+	<p>Birçok karaliste tabanlı filtre, engellenen girişin basit ayarlamalarıyla neredeyse utanç verici derecede kolay bir şekilde atlatılabilir. 
+	Örneğin:</p>
+	
+	<ul>
+		<li><code>SELECT</code> engellendiyse <code>SeLeCt</code> deneyin</li>
+		<li><code>or 1=1--</code> engellendiyse <code>or 2=2--</code> deneyin</li>
+		<li><code>or alert(‘xss’)</code> engellendiyse <code>prompt(‘xss’)</code> deneyin</li>
+	</ul>
+	
+	<p>Diğer durumlarda, belirli anahtar kelimeleri engellemek için tasarlanan filtreler, uygulama tarafından yapılan parçalama 
+	işlemini bozmak için ifadeler arasında standart olmayan karakterler kullanılarak atlatılabilir. Örneğin:</p>
+	
+	<blockquote>
+		<code>
+			<pre>
+				SELECT/*foo*/username,password/*foo*/FROM/*foo*/users
+				&lt;img%09onerror=alert(1) src=a&gt;
+			</pre>
+		</code>
+	</blockquote>
+	
+	<p>Son olarak, birçok karaliste tabanlı filtre, özellikle web uygulama güvenlik duvarlarında uygulananlar, NULL bayt 
+	saldırılarına karşı savunmasız olmuştur. Yönetilen ve yönetilmeyen yürütme bağlamlarında dizelerin nasıl işlendiği farklı 
+	olduğu için, engellenmiş bir ifadenin önüne herhangi bir yerde bir NULL bayt eklemek, bazı filtrelerin girdiyi işlemeyi durdurmasına 
+	ve dolayısıyla ifadeyi tanımlamamasına neden olabilir. Örneğin:</p>
+	
+	<blockquote>
+		<code>
+			<pre>
+				SELECT/*foo*/username,password/*foo*/FROM/*foo*/users
+				%00&lt;script&gt;alert(1)&lt;/script&gt;
+			</pre>
+		</code>
+	</blockquote>
+	
+	<p>Web uygulama güvenlik duvarlarını hedef alan çeşitli saldırı teknikleri, 18. bölümde açıklanmaktadır.</p>
+	
+	<p><b>NOTE: NULL baytlarının işlenmesini istismar eden saldırılar, web uygulama güvenliği alanında birçok alanda ortaya çıkar. NULL baytının 
+	bir dize ayırıcı olarak işlev gördüğü bağlamlarda, bir dosya adını veya bir back-end bileşenine yönelik bir sorguyu sonlandırmak 
+	için kullanılabilir. NULL baytlarının hoş görüldüğü ve yok sayıldığı bağlamlarda (örneğin, bazı tarayıcılarda HTML içinde), 
+	engellenen ifadelerin içine rasgele NULL baytları eklenerek bazı karaliste tabanlı filtrelerin etkisiz hale getirilmesi mümkündür. 
+	Bu tür saldırılar daha sonraki bölümlerde detaylı olarak ele alınmaktadır.</b></p>
+	
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
