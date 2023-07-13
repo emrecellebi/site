@@ -95,7 +95,7 @@
 	ve veriler daha geniş bir saldırgan yelpazeye açılmakta ve organizasyonlar kontrolü dışında olan güvenlik savunmalarının bütünlüğüne 
 	daha fazla bağımlı hale gelmektedir.</p>
 	
-	<p>Yakında çoğu bilgisayar kullanıcısının ihtiyaç duyduğu tek istemci yazılımının bir web tarayıcısı olduğu bir dönem yaklaşıyor. Bir 
+	<p>Yakında çoğu bilgisayar kullanıcısının ihtiyaç duyduğu tek client yazılımının bir web tarayıcısı olduğu bir dönem yaklaşıyor. Bir 
 	dizi protokol ve teknoloji kullanılarak çeşitli işlevler uygulanacak ve bununla birlikte belirli bir aralıkta ortak güvenlik açıkları 
 	miras alınmış olacak.</p>
 	
@@ -106,16 +106,16 @@
 	<ul>
 		<li>Dünya Çapında Web'e erişim için kullanılan temel iletişim protokolü olan HTTP, hafif ve bağlantısızdır. Bu, iletişim hatalarında 
 		dayanıklılık sağlar ve sunucunun her kullanıcı için ağ bağlantısını açık tutma ihtiyacını ortadan kaldırır. Bu özellik önceden 
-		kullanılan birçok istemci/sunucu uygulamasında geçerliydi. HTTP ayrıca diğer protokoller üzerinden proxy ve tünel olarak kullanılabilir, 
+		kullanılan birçok client/server uygulamasında geçerliydi. HTTP ayrıca diğer protokoller üzerinden proxy ve tünel olarak kullanılabilir, 
 		böylece herhangi bir ağ yapılandırmasında güvenli iletişim sağlanabilir.</li>
 		<li>Her web kullanıcısının zaten bilgisayarında ve mobil cihazında bir tarayıcı yüklüdür. Web uygulamaları, kullanıcı arayüzlerini 
-		dinamik olarak tarayıcıya dağıtır, ayrı istemci yazılımını dağıtma ve yönetme ihtiyacını ortadan kaldırır. Arayüzde yapılan 
+		dinamik olarak tarayıcıya dağıtır, ayrı client yazılımını dağıtma ve yönetme ihtiyacını ortadan kaldırır. Arayüzde yapılan 
 		değişiklikler sadece bir kez, sunucuda uygulanır ve hemen etkili olur.</li>
 		<li>Günümüz tarayıcıları son derece işlevseldir, zengin ve tatmin edici kullanıcı arayüzlerinin oluşturulmasını sağlar. Web arayüzleri, 
 		kullanıcılara tanıdık olan standart gezinme ve giriş kontrollerini kullanır, böylece her bir uygulamanın nasıl çalıştığını öğrenme 
-		gereksinimini ortadan kaldırır. İstemci tarafı betimleme, uygulamaların işlemlerinin bir kısmını istemci tarafına itmesine olanak 
+		gereksinimini ortadan kaldırır. Client tarafı betimleme, uygulamaların işlemlerinin bir kısmını client tarafına itmesine olanak 
 		sağlar ve tarayıcıların yetenekleri gerektiğinde tarayıcı uzantı teknolojileri kullanılarak keyfi şekillerde genişletilebilir.</li>
-		<li>Web uygulamalarını geliştirmek için kullanılan temel teknolojiler ve diller oldukça basittir. Güçlü uygulamaların görece acemiler 
+		<li>Web uygulamalarını geliştirmek için kullanılan temel teknolojiler ve diller oldukça basittir. Güçlü uygulamaların göreceli acemiler 
 		tarafından geliştirilmesini kolaylaştırmak için geniş bir platform ve geliştirme araçları yelpazesi mevcuttur ve özel olarak 
 		geliştirilen uygulamalara entegre edilebilecek açık kaynak kodu ve diğer kaynaklar bol miktarda bulunmaktadır.</li>
 	</ul>
@@ -124,12 +124,12 @@
 	<p>Her yeni teknoloji sınıfında olduğu gibi, web uygulamaları da beraberinde yeni bir güvenlik açığı yelpazesi getirmiştir. 
 	En sık karşılaşılan hataların kümesi zaman içinde evrim geçirmiştir. Mevcut uygulamalar geliştirilirken düşünülmeyen yeni 
 	saldırılar ortaya çıkmıştır. Bazı sorunlar farkındalığın artmasıyla daha az yaygın hale gelmiştir. Yeni teknolojiler geliştirilmiş 
-	ve bunlar yeni sömürü olasılıkları sunmuştur. Web tarayıcı yazılımlarındaki değişiklikler sonucunda bazı hata kategorileri büyük 
+	ve bunlar yeni olasılıklar sunmuştur. Web tarayıcı yazılımlarındaki değişiklikler sonucunda bazı hata kategorileri büyük 
 	ölçüde ortadan kalkmıştır.</p>
 	
 	<p>Web uygulamalarına karşı yapılan en ciddi saldırılar, hassas verilerin ortaya çıkmasına veya uygulamanın çalıştığı arka sistemlere 
 	sınırsız erişim elde edilmesine yol açan saldırılardır. Bu tür yüksek profilli saldırılar hala sıkça gerçekleşmektedir. Bununla birlikte, 
-	birçok organizasyon için sistem süresizliğe yol açan herhangi bir saldırı önemli bir olaydır. Uygulama düzeyinde hizmet reddi saldırıları, 
+	birçok organizasyon için sistem süresizliğe yol açan herhangi bir saldırı önemli bir olaydır. Uygulama düzeyinde hizmet reddi saldırıları (Denial of Service Attacks), 
 	altyapıya yönelik geleneksel kaynak tüketimi saldırılarıyla aynı sonuçları elde etmek için kullanılabilir. Ancak, genellikle daha ince 
 	teknikler ve amaçlarla kullanılırlar. Finansal işlemler, oyun oynama, online teklif verme ve bilet rezervasyonları gibi alanlarda 
 	rakiplere karşı rekabet avantajı elde etmek veya belirli bir kullanıcıyı veya hizmeti engellemek için kullanılabilirler.</p>
@@ -185,14 +185,14 @@
 	
 	<p>SSL (Secure Socket Layer) gerçekten kullanıcının tarayıcısı ile web sunucusu arasında iletilen verilerin gizliliğini ve bütünlüğünü 
 	koruyan mükemmel bir teknolojidir. Dinleyicilere karşı koruma sağlar ve kullanıcıya işlem yaptığı web sunucusunun kimliği konusunda 
-	güvence sağlayabilir. Ancak, çoğu başarılı saldırı gibi, doğrudan uygulamanın sunucu veya istemci bileşenlerine hedeflenen saldırıları 
+	güvence sağlayabilir. Ancak, çoğu başarılı saldırı gibi, doğrudan uygulamanın server veya client bileşenlerine hedeflenen saldırıları 
 	durdurmaz. Özellikle, yukarıda listelenen güvenlik açıklarının hiçbirini veya bir uygulamayı saldırılara karşı kritik bir şekilde açık 
 	hale getirebilen diğer birçok güvenlik açığını engellemez. SSL (Secure Socket Layer) kullanılsın ya da kullanılmasın, çoğu web uygulamasında hala güvenlik 
 	açıkları bulunmaktadır.</p>
 	
 	<h2>Temel Güvenlik Sorunu: Kullanıcılar Tarafından Gönderebilir Keyfi Giriş</h2>
 	<p>Çoğu dağıtık uygulama gibi, web uygulamaları da güvenli olabilmek için ele alınması gereken temel bir sorunla karşı karşıyadır. 
-	Çünkü istemci uygulamanın kontrolü dışındadır ve kullanıcılar sunucu tarafındaki uygulamaya keyfi girdi gönderebilirler. Uygulama, 
+	Çünkü client uygulamanın kontrolü dışındadır ve kullanıcılar server tarafındaki uygulamaya keyfi girdi gönderebilirler. Uygulama, 
 	tüm girdilerin potansiyel olarak kötü niyetli olabileceğini varsaymalıdır. Bu nedenle, saldırganların hazırlanan girdileri kullanarak 
 	uygulamayı etkileyerek mantık ve davranışına müdahale etmelerini, bu şekilde yetkisiz erişim elde ederek veri ve işlevselliğine zarar 
 	vermelerini engellemek için adımlar atmalıdır.</p>
@@ -200,8 +200,8 @@
 	<p>Bu temel sorun çeşitli şekillerde kendini gösterir:</p>
 	
 	<ul>
-		<li>Kullanıcılar istemci ve sunucu arasında iletilen herhangi bir veri parçasına, talep parametrelerine, çerezlere ve HTTP başlıklarına 
-		müdahale edebilir. İstemci tarafında uygulanan herhangi bir güvenlik kontrolü, giriş doğrulama kontrolleri gibi, kolayca atlatılabilir.</li>
+		<li>Kullanıcılar client ve server arasında iletilen herhangi bir veri parçasına, talep parametrelerine, çerezlere ve HTTP başlıklarına 
+		müdahale edebilir. Client tarafında uygulanan herhangi bir güvenlik kontrolü, giriş doğrulama kontrolleri gibi, kolayca atlatılabilir.</li>
 		<li>Kullanıcılar isteği beklenenden farklı bir aşamada, birden fazla kez veya hiç göndererek istekleri istedikleri sırada gönderebilirler. 
 		Geliştiricilerin kullanıcıların uygulama ile nasıl etkileşimde bulunacaklarını varsayması bozulabilir.</li>
 		<li>Kullanıcılar uygulamaya erişmek için yalnızca bir web tarayıcısı kullanmakla sınırlı değillerdir. Tarayıcıya ek olarak, web uygulamalarına 
@@ -223,8 +223,7 @@
 	<p>SSL (Secure Socket Layer), saldırganın şekillendirilmiş girdileri sunucuya göndermesini engellemek için hiçbir şey yapmaz. Uygulama SSL (Secure Socket Layer) kullanıyorsa, bu 
 	sadece ağdaki diğer kullanıcıların saldırganın verilerini iletebileceği veya değiştirebileceği anlamına gelmez. Saldırgan SSL (Secure Socket Layer)
 	tünelinin kendi tarafını kontrol ettiği için, bu tünel aracılığıyla istediği her şeyi sunucuya gönderebilir. Yukarıda bahsedilen 
-	saldırılardan herhangi biri başarılı olursa, uygulama kesinlikle savunmasız hale gelir, ne olursa olsun FAQ (Frequently Asked Questions) sayfasında ne yazdığına 
-	bakılmaksızın.</p>
+	saldırılardan herhangi biri başarılı olursa, uygulama kesinlikle savunmasız hale gelir.</p>
 	
 	<h2>Temel Sorun Faktörleri</h2>
 	<p>Web uygulamalarının karşılaştığı temel güvenlik sorunu, bir uygulamanın güvensiz verileri kabul etmesi ve işlemesi durumunda ortaya çıkar.
@@ -269,7 +268,7 @@
 	nedeniyle sıkı kısıtlamalara tabidir. Birçok organizasyonda, tasarım veya geliştirme ekiplerinde güvenlik uzmanları istihdam etmek mümkün 
 	olmayabilir. Proje gecikmeleri nedeniyle, güvenlik testleri genellikle projenin son aşamalarına kadar ertelenir. Farklı öncelikler arasında 
 	denge sağlanırken, bir süre içinde kararlı ve işlevsel bir uygulama üretme ihtiyacı genellikle daha belirsiz güvenlik düşüncelerinin 
-	üzerine çıkar. Tipik bir küçük organizasyon, yeni bir uygulamayı değerlendirmek için sadece birkaç kişi-günü danışmanlık süresine ödeme 
+	üzerine çıkar. Tipik bir küçük organizasyon, yeni bir uygulamayı değerlendirmek için sadece birkaç iş günü danışmanlık süresine ödeme 
 	yapmaya istekli olabilir. Hızlı bir penetrasyon testi genellikle açıkça görülen güvenlik zafiyetlerini bulabilir, ancak daha ince 
 	detaylarda zaman ve sabır gerektiren daha karmaşık zafiyetleri atlayabilir.</p>
 	
