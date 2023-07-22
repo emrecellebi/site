@@ -49,10 +49,10 @@
 	kullanıcının kimlik doğrulaması, kullanıcının iddia ettiği gibi gerçekten kim olduğunun belirlenmesini içerir. Bu özellik olmadan, 
 	uygulama tüm kullanıcıları anonim olarak kabul etmek zorunda kalır - en düşük güven seviyesi.</p>
 	
-	<p>Bu günün çoğu web uygulaması, kullanıcının geçerlilik kontrolünü yapmak için kullanıcı adı ve şifre gönderdiği geleneksel kimlik 
+	<p>Çoğu web uygulaması, kullanıcının geçerlilik kontrolünü yapmak için kullanıcı adı ve şifre gönderdiği geleneksel kimlik 
 	doğrulama modelini kullanır. Şekil 2-1, tipik bir giriş işlevini göstermektedir. Online bankalar tarafından kullanılan güvenlik 
 	açısından kritik uygulamalarda, bu temel model genellikle ek kimlik bilgileri ve çoklu aşamalı bir giriş süreci ile desteklenir. 
-	Güvenlik gereksinimleri daha da yüksek olduğunda, istemci sertifikalarına, akıllı kartlara veya meydan okuma-yanıt jetonlarına dayalı 
+	Güvenlik gereksinimleri daha da yüksek olduğunda, client sertifikalarına, akıllı kartlara dayalı 
 	farklı kimlik doğrulama modelleri kullanılabilir. Kimlik doğrulama sürecinin yanı sıra, kimlik doğrulama mekanizmaları genellikle kayıt 
 	olma, hesap kurtarma ve şifre değiştirme gibi diğer destekleyici işlevleri de içerir.</p>
 	
@@ -67,10 +67,10 @@
 	çeşitli kimlik doğrulama ile ilgili hatalara büyük bir dikkat harcamalısınız. Şaşırtıcı bir şekilde, bu işlevlerdeki hatalar genellikle 
 	yetkisiz erişim sağlamanıza ve hassas verilere ve işlevlere erişmenize olanak tanır.</p>
 	
-	<h2>Oturum yönetimi (Session management)</h2>
+	<h2>Oturum yönetimi (Session Management)</h2>
 	<p>Kullanıcı erişimini yönetme sürecindeki bir sonraki mantıklı görev, kimlik doğrulaması yapılmış kullanıcının oturumunu yönetmektir. 
 	Kullanıcı başarılı bir şekilde uygulamaya giriş yaptıktan sonra tarayıcısından çeşitli sayfalara ve işlevlere erişir ve bir dizi HTTP 
-	isteği yapar. Aynı zamanda, uygulama farklı kullanıcılardan gelen sayısız başka istek alır, bazıları kimlik doğrulanmışken bazıları 
+	isteği yapar. Aynı zamanda, uygulama farklı kullanıcılardan gelen sayısız başka istekler alır, bazıları kimlik doğrulanmışken bazıları 
 	anonimdir. Etkili erişim kontrolü sağlamak için, uygulamanın her benzersiz kullanıcıdan kaynaklanan istek serisini tanımlayıp işlemesi 
 	gerekmektedir.</p>
 	
@@ -94,9 +94,9 @@
 	<p>Birkaç uygulama, oturum belirteçlerine ihtiyaç duymadan kullanıcıları çoklu istekler arasında yeniden tanımlama için başka yöntemler 
 	kullanır. Eğer HTTP'nin yerleşik kimlik doğrulama mekanizması kullanılıyorsa, tarayıcı her istekte kullanıcının kimlik bilgilerini 
 	otomatik olarak tekrar gönderir, böylece uygulama kullanıcıyı doğrudan bunlardan tanımlayabilir. Diğer durumlarda, uygulama durum 
-	bilgilerini sunucu yerine genellikle şifrelenmiş olarak istemci tarafında saklar, bu sayede müdahaleyi önler.</p>
+	bilgilerini sunucu yerine genellikle şifrelenmiş olarak client tarafında saklar, bu sayede müdahaleyi önler.</p>
 	
-	<h2>Erişim kontrolü (Access control)</h2>
+	<h2>Erişim kontrolü (Access Control)</h2>
 	<p>Kullanıcı erişiminin işlenmesi sürecindeki son mantıklı adım, her bir isteğin izin verilip verilmemesi gerektiği konusunda doğru kararlar 
 	almak ve bunları uygulamaktır. Yukarıda açıklanan mekanizmalar doğru şekilde çalışıyorsa, uygulama her isteği kimden aldığını bilir. 
 	Bu temelde, istenen eylemi veya veriye erişimi bu kullanıcının yapma yetkisine sahip olup olmadığına karar vermesi gerekmektedir, 
@@ -112,8 +112,7 @@
 	varsayımlar yaparlar ve bazı uygulama işlevlerinden erişim kontrolü kontrollerini atlayarak gözden kaçırmalar yaparlar. Bu güvenlik 
 	açıklarını araştırmak sıklıkla zahmetli olabilir, çünkü temel olarak aynı kontroller her işlev için tekrarlanmak zorundadır. Bununla 
 	birlikte, erişim kontrol hatalarının yaygınlığı nedeniyle, bir web uygulamasına saldırdığınızda bu çaba her zaman yapılması 
-	gereken bir yatırımdır. 8. bölüm, sıkı bir erişim kontrolü testi gerçekleştirmede yer alan çabanın bazılarını 
-	otomatikleştirebileceğinizi açıklar.</p>
+	gereken bir yatırımdır.</p>
 	
 	<center>
 		<img src="img/2.3.png" alt="">
@@ -144,7 +143,7 @@
 	gönderilen bir kullanıcı adının en fazla sekiz karakter uzunluğunda olması ve yalnızca alfabetik karakterler içermesi istenebilir.</p>
 	
 	<p>Diğer durumlarda, uygulama daha geniş bir giriş aralığına katlanmak zorunda kalabilir. Örneğin, bir kişisel detaylar sayfasına gönderilen 
-	bir adres alanı, mantıklı olarak harfler, rakamlar, boşluklar, tireler, apostroflar ve diğer karakterleri içerebilir. Ancak, bu öğe için 
+	bir adres alanı, mantıklı olarak harfler, rakamlar, boşluklar, tireler ve diğer karakterleri içerebilir. Ancak, bu öğe için 
 	kısıtlamalar yine de uygulanabilir olmalıdır. Veri makul bir uzunluk sınırını (örneğin, 50 karakter) aşmamalı ve herhangi bir HTML 
 	işaretlemesi içermemelidir.</p>
 	
@@ -162,7 +161,7 @@
 	bir müşteri kimlik numarası) gerekebilir. Ayrıca, bir uygulama, sunucu tarafından oluşturulan verinin standart bir tarayıcıya sahip 
 	sıradan bir kullanıcı tarafından mümkün olmayan şekilde değiştirildiğini tespit ettiğinde, bu genellikle kullanıcının uygulamayı 
 	zayıflıklar için test etmeye çalıştığını gösterir. Bu durumlarda, uygulama isteği reddetmeli ve olası bir soruşturma için olayı 
-	kaydetmelidir (bu bölümün ilerisinde "Saldırganları İşlemek" bölümüne bakın).</p>
+	kaydetmelidir.</p>
 	
 	<h2>Input İşleme Yaklaşımları</h2>
 	<p>Kullanıcı girişiyle ilgili sorunu çözmek için genellikle farklı genel yaklaşımlar benimsenir. Farklı yaklaşımlar 
@@ -213,17 +212,14 @@
 		</code>
 	</blockquote>
 	
-	<p>Web uygulama güvenlik duvarlarını hedef alan çeşitli saldırı teknikleri, 18. bölümde açıklanmaktadır.</p>
-	
 	<p><b>NOTE: NULL baytlarının işlenmesini istismar eden saldırılar, web uygulama güvenliği alanında birçok alanda ortaya çıkar. NULL baytının 
 	bir dize ayırıcı olarak işlev gördüğü bağlamlarda, bir dosya adını veya bir back-end bileşenine yönelik bir sorguyu sonlandırmak 
 	için kullanılabilir. NULL baytlarının hoş görüldüğü ve yok sayıldığı bağlamlarda (örneğin, bazı tarayıcılarda HTML içinde), 
-	engellenen ifadelerin içine rasgele NULL baytları eklenerek bazı karaliste tabanlı filtrelerin etkisiz hale getirilmesi mümkündür. 
-	Bu tür saldırılar daha sonraki bölümlerde detaylı olarak ele alınmaktadır.</b></p>
+	engellenen ifadelerin içine rasgele NULL baytları eklenerek bazı karaliste tabanlı filtrelerin etkisiz hale getirilmesi mümkündür.</b></p>
 	
 	<h2>Bilinenleri Kabul Et</h2>
 	<p>Bu yaklaşım, yalnızca zararsız girdilerle eşleşen bir dizi belirli dize veya deseni veya kriterleri içeren bir beyaz liste kullanır. 
-	Doğrulama mekanizması, beyaz listeye uyan verileri kabul eder ve diğer her şeyi engeller. Örneğin, bir uygulama, istemci tarafından 
+	Doğrulama mekanizması, beyaz listeye uyan verileri kabul eder ve diğer her şeyi engeller. Örneğin, bir uygulama, client tarafından 
 	girilen bir ürün kodunu veritabanında aramadan önce yalnızca alfasayısal karakterler içerdiğini ve tam olarak altı karakter uzunluğunda 
 	olduğunu doğrulayabilir. Ürün kodu üzerinde yapılacak sonraki işleme göre, geliştiriciler girişin bu testi geçmesi durumunda herhangi 
 	bir soruna yol açamayacağını bilmektedir.</p>
@@ -244,7 +240,7 @@
 	
 	<p>Veri temizleme üzerine kurulu yaklaşımlar genellikle son derece etkilidir ve birçok durumda kötü niyetli girişlerin genel bir 
 	çözümü olarak güvenebilirsiniz. Örneğin, cross-site scripting saldırılarına karşı alınan yaygın savunma, tehlikeli karakterlerin 
-	HTML kodlanarak uygulama sayfalarına gömülmeden önce kodlanmasıdır (bkz. Bölüm 12). Bununla birlikte, etkili bir temizleme işlemi, 
+	HTML kodlanarak uygulama sayfalarına gömülmeden önce kodlanmasıdır. Bununla birlikte, etkili bir temizleme işlemi, 
 	potansiyel olarak zararlı verilerin bir giriş öğesinin içinde barındırılması gereken durumlarda zor olabilir. Bu durumda, daha sonra 
 	açıklanacak olan bir sınır doğrulama yaklaşımı tercih edilir.</p>
 	
@@ -252,7 +248,7 @@
 	<p>Birçok web uygulaması açığı, kullanıcı tarafından sağlanan verinin güvensiz şekilde işlenmesinden kaynaklanır. Bu açıklar genellikle, 
 	girişi doğrulayarak değil, üzerinde gerçekleştirilen işlemenin doğal olarak güvenli olduğunu sağlayarak önlenebilir. Bazı durumlarda, 
 	yaygın sorunları önlemek için güvenli programlama yöntemleri kullanılabilir. Örneğin, SQL enjeksiyon saldırıları, veritabanı erişimi 
-	için parametreli sorguların doğru şekilde kullanılmasıyla önlenebilir (bkz. Bölüm 9). Diğer durumlarda, uygulama işlevselliği, kullanıcı 
+	için parametreli sorguların doğru şekilde kullanılmasıyla önlenebilir. Diğer durumlarda, uygulama işlevselliği, kullanıcı 
 	girişinin bir işletim sistemi komut yorumlayıcısına iletilmesi gibi doğal olarak güvensiz uygulamalardan kaçınacak şekilde tasarlanabilir.</p>
 	
 	<p>Bu yaklaşım, web uygulamalarının gerçekleştirmesi gereken her türlü göreve uygulanamaz. Ancak kullanılabilir olduğu durumlarda, 

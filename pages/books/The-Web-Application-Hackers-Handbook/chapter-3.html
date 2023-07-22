@@ -17,18 +17,18 @@
 	Totty'nin "HTTP: The Definitive Guide" kitabını (O'Reilly, 2002) ve Dünya Çapında Ağ Konsorsiyumu'nun www.w3.org web sitesini öneririz.</p>
 	
 	<h2>HTTP Protokolü</h2>
-	<p>Hypertext Transfer Protocol (HTTP), Dünya Çapında Ağına erişmek için kullanılan temel iletişim protokolüdür ve günümüz web 
-	uygulamaları tarafından kullanılır. İlk başta statik metin tabanlı kaynakları almak için geliştirilen basit bir protokoldür. 
-	Daha sonra farklı şekillerde genişletilmiş ve kullanılmıştır, böylece günümüzde yaygın olan karmaşık dağıtık uygulamaları 
-	destekleyebilmektedir.</p>
+	<p>Hypertext Transfer Protocol (HTTP), World Wide Web'e erişmek için kullanılan temel iletişim protokolüdür ve günümüzün tüm web 
+	uygulamaları tarafından kullanılmaktadır. Başlangıçta statik metin tabanlı kaynakları almak için geliştirilmiş basit bir protokoldür. 
+	O zamandan bu yana, günümüzde yaygın olan karmaşık dağıtık uygulamaları destekleyebilmesi için çeşitli şekillerde genişletilmiş ve 
+	güçlendirilmiştir.</p>
 	
-	<p>HTTP, bir istemcinin istek mesajını gönderdiği ve sunucunun bir yanıt mesajı ile karşılık verdiği mesaj tabanlı bir model kullanır. 
-	Protokol temel olarak bağlantısızdır: HTTP, taşıma mekanizması olarak stateful TCP protokolünü kullanmasına rağmen, her istek ve yanıt 
-	alışverişi özel bir işlem olarak kabul edilir ve farklı bir TCP bağlantısı kullanabilir.</p>
+	<p>HTTP, bir istemcinin bir istek mesajı gönderdiği ve sunucunun bir yanıt mesajı döndürdüğü mesaj tabanlı bir model kullanır. 
+	Protokol esasen bağlantısızdır: HTTP aktarım mekanizması olarak durum bilgisi içeren TCP protokolünü kullansa da, her istek ve 
+	yanıt alışverişi özel bir işlemdir ve farklı bir TCP bağlantısı kullanabilir.</p>
 	
-	<h2>HTTP İstekleri</h2>
-	<p>Tüm HTTP mesajları (request ve response), her biri ayrı bir satırda olan bir veya daha fazla başlıktan oluşur, bunu zorunlu 
-	boş bir satır izler ve ardından isteğe bağlı bir mesaj gövdesi gelir. Tipik bir HTTP isteği aşağıdaki gibi olabilir:</p>
+	<h2>HTTP Request</h2>
+	<p>Tüm HTTP mesajları (request ve response), her biri ayrı bir satırda bulunan bir veya daha fazla başlıktan, ardından zorunlu bir 
+	boş satırdan ve ardından isteğe bağlı bir mesaj gövdesinden oluşur. Tipik bir HTTP isteği aşağıdaki gibidir:</p>
 	
 	<dl>
 		<dt><code>GET /auth/488/YourDetails.ashx?uid=129 HTTP/1.1</code></dt>
@@ -45,36 +45,35 @@
 		<dt><code>Cookie: SessionId=5B70C71F3FD4968935CDB6682E545476</code></dt>
 	</dl>
 	
-	<p>Her HTTP isteğinin ilk satırı, boşluklarla ayrılan üç öğeden oluşur:</p>
+	<p>Her HTTP isteğinin ilk satırı, boşluklarla ayrılmış üç öğeden oluşur:</p>
 	
 	<ul>
-		<li>HTTP yöntemini belirten bir fiil. En yaygın kullanılan yöntem GET'tir ve web sunucusundan bir kaynağı almak için kullanılır. 
-		GET isteklerinin mesaj gövdesi olmadığından, mesaj başlıklarından sonra boş satırı takip eden başka veri bulunmaz.</li>
-		<li>İstenen URL genellikle istenen kaynağın adı olarak işlev görür ve istemcinin kaynağa ilettiği isteğe bağlı parametreleri içeren 
-		bir sorgu dizesi içerir. Sorgu dizesi, URL'deki ? karakteri ile belirtilir. Örnekte uid adında ve değeri 129 olan tek bir parametre 
-		bulunmaktadır.</li>
-		<li>Kullanılan HTTP sürümü. İnternette yaygın olarak kullanılan tek HTTP sürümleri 1.0 ve 1.1'dir ve çoğu tarayıcı varsayılan olarak 1.1 
-		sürümünü kullanır. Bu iki sürümün özellikleri arasında birkaç fark vardır; ancak, web uygulamalarını hedeflerken karşılaşabileceğiniz 
-		tek fark, 1.1 sürümünde Host istek başlığının zorunlu olmasıdır.</li>
+		<li>HTTP yöntemini belirten bir fiil. En yaygın kullanılan yöntem, işlevi web sunucusundan bir kaynağı almak olan <code>GET</code> yöntemidir. 
+		<code>GET</code> isteklerinin bir mesaj gövdesi yoktur, bu nedenle mesaj başlıklarından sonraki boş satırdan sonra başka veri gelmez</li>
+		<li>URL tipik olarak, istemcinin bu kaynağa aktardığı parametreleri içeren isteğe bağlı bir sorgu dizesiyle birlikte istenen kaynak 
+		için bir ad işlevi görür. Sorgu dizesi URL'deki <code>?</code> karakteri tarafından gösterilir. Örnek, <code>uid</code> adında ve <code>129</code> değerinde tek bir parametre içerir.</li>
+		<li>İnternette yaygın olarak kullanılan HTTP sürümleri 1.0 ve 1.1'dir ve çoğu tarayıcı varsayılan olarak 1.1 sürümünü kullanır. Bu 
+		iki sürümün özellikleri arasında birkaç fark vardır; ancak, web uygulamalarına saldırırken karşılaşmanız muhtemel tek fark, 1.1 
+		sürümünde <code>host</code> request başlığının zorunlu olmasıdır.</li>
 	</ul>
 	
-	<p>Örnek isteğin diğer ilginç noktaları şunlardır:</p>
+	<p>Örnek istekte dikkat çeken diğer bazı noktalar şunlardır:</p>
 	
 	<ul>
-		<li><b>Referer</b> isteğin kaynaklandığı URL'yi belirtmek için kullanılır (örneğin, kullanıcı o sayfadaki bir bağlantıya tıkladığı 
-		için). Bu başlık, orijinal HTTP spesifikasyonunda yanlış yazılmıştır ve yanlış yazılmış hali o zamandan beri korunmaktadır.</li>
-		<li><b>User-Agent</b> isteği oluşturan tarayıcı veya diğer istemci yazılımı hakkında bilgi sağlamak için kullanılır. Çoğu tarayıcı, 
-		tarihsel nedenlerle Mozilla önekinde bulunan User-Agent dizisini içerir. Bu, başlangıçta dominant olan Netscape tarayıcısının kullandığı 
-		User-Agent dizesiydi ve diğer tarayıcılar, uyumlu olduklarını web sitelerine beyan etmek istediler. Bilgisayar tarihinden gelen birçok 
-		garip durum gibi, o kadar yerleşik hale gelmiştir ki, örnekte gösterilen Internet Explorer'ın mevcut sürümünde bile korunmaktadır.</li>
-		<li><b>Host</b> erişilen tam URL'de yer alan ana bilgisayarı belirtir. Bu, aynı sunucuda birden çok web sitesi barındırıldığında gereklidir, 
-		çünkü isteğin ilk satırında gönderilen URL genellikle bir ana bilgisayar adı içermez. (Sanal olarak barındırılan web siteleri hakkında 
-		daha fazla bilgi için Bölüm 17'ye bakın.)</li>
-		<li><b>Cookie</b> sunucunun istemciye verdiği ek parametreleri göndermek için kullanılır (bu bölümde daha detaylı olarak açıklanmıştır).</li>
+		<li><code>Referer</code> isteğin kaynaklandığı URL'yi belirtmek için kullanılır (örneğin, kullanıcı o sayfadaki bir bağlantıya tıkladığı için). 
+		Bu başlığın orijinal HTTP spesifikasyonunda yanlış yazıldığını ve o zamandan beri yanlış yazılmış versiyonun korunduğunu unutmayın.</li>
+		<li><code>User-Agent</code> isteği oluşturan tarayıcı veya diğer istemci yazılımı hakkında bilgi sağlamak için kullanılır. 
+		Çoğu tarayıcının tarihsel nedenlerden dolayı Mozilla önekini içerdiğini unutmayın. Bu, başlangıçta baskın olan Netscape tarayıcısı 
+		tarafından kullanılan <code>User-Agent</code> dizesiydi ve diğer tarayıcılar web sitelerine bu standartla uyumlu olduklarını 
+		belirtmek istediler. Bilgisayar tarihindeki pek çok tuhaflıkta olduğu gibi, o kadar yerleşik hale geldi ki, örnekte gösterilen 
+		isteği yapan Internet Explorer'ın mevcut sürümünde bile hala korunuyor.</li>
+		<li><code>Host</code> erişilen tam URL'de görünen ana bilgisayar adını belirtir. Bu, aynı sunucuda birden fazla web sitesi barındırıldığında gereklidir, 
+		çünkü isteğin ilk satırında gönderilen URL genellikle bir ana bilgisayar adı içermez. </li>
+		<li><code>Çerez</code> sunucunun istemciye verdiği ek parametreleri göndermek için kullanılır.</li>
 	</ul>
 	
-	<h2>HTTP Yanıtları</h2>
-	<p>Tipik bir HTTP yanıtı aşağıdaki gibidir:</p>
+	<h2>HTTP Response</h2>
+	<p>Tipik bir HTTP response şu şekildedir:</p>
 	
 	<dl>
 		<dt><code>HTTP/1.1 200 OK</code></dt>
@@ -95,112 +94,150 @@
 		<dt><code>...</code></dt>
 	</dl>
 	
-	<p>Her HTTP yanıtının ilk satırı, boşluklarla ayrılmış üç öğeden oluşur:</p>
+	<p>Her HTTP response ilk satırı boşluklarla ayrılmış üç öğeden oluşur:</p>
 	
 	<ul>
 		<li>Kullanılan HTTP sürümü.</li>
-		<li>İsteğin sonucunu gösteren sayısal bir durum kodu. En yaygın durum kodu 200'dür; bu, isteğin başarılı olduğunu ve istenen 
-		kaynağın döndürüldüğünü gösterir.</li>
-		<li>Yanıtın durumunu daha ayrıntılı olarak açıklayan metinsel bir "neden ifadesi". Bu herhangi bir değere sahip olabilir ve mevcut 
-		tarayıcılar tarafından herhangi bir amaçla kullanılmaz.</li>
+		<li>İsteğin sonucunu gösteren sayısal bir durum kodu. 200 en yaygın durum kodudur; isteğin başarılı olduğu ve istenen 
+		kaynağın döndürüldüğü anlamına gelir.</li>
+		<li>Yanıtın durumunu daha ayrıntılı olarak açıklayan metinsel bir "reason phrase". Bu herhangi bir değere sahip 
+		olabilir ve mevcut tarayıcılar tarafından herhangi bir amaç için kullanılmaz</li>
 	</ul>
 	
-	<p>İsteme ait diğer ilgi çekici noktalar şunlardır:</p>
+	<p>Response dikkat çeken diğer bazı noktalar şunlardır:</p>
 	
 	<ul>
-		<li><b>Server</b> kullanılan web sunucusu yazılımını ve bazen yüklü modülleri ve sunucu işletim sistemini belirten bir banner içerir. 
-		İçeren bilgiler doğru olabilir veya olmayabilir.</li>
-		<li><b>Set-Cookie</b> tarayıcıya başka bir çerez verir; bu çerez sonraki isteklerde bu sunucuya gönderilirken Cookie başlığında gönderilir.</li>
-		<li><b>Pragma</b> tarayıcıya yanıtı önbelleğe almamasını söyler. <b>Expires</b> yanıt içeriğinin geçmişte süresi dolduğunu ve bu nedenle 
-		önbelleğe alınmaması gerektiğini belirtir. Bu talimatlar genellikle dinamik içerik döndürülürken kullanılır, böylece tarayıcılar sonraki 
-		durumlarda bu içeriğin taze bir sürümünü alır.</li>
-		<li>Neredeyse tüm HTTP yanıtları, başlıklardan sonra boşluk satırının ardından bir mesaj gövdesi içerir. <b>Content-Type</b> bu ileti 
-		gövdesinin bir HTML belgesi içerdiğini belirtir.</li>
-		<li><b>Content-Length</b> mesaj gövdesinin bayt cinsinden uzunluğunu belirtir.</li>
+		<li><code>Server</code> kullanılan web sunucusu yazılımını ve bazen yüklü modüller ve sunucu işletim sistemi gibi diğer ayrıntıları 
+		gösteren bir başlık içerir. İçerdiği bilgiler doğru olabilir veya olmayabilir.</li>
+		<li><code>Set-Cookie</code> tarayıcıya bir çerez daha verir; bu, bu sunucuya yapılan sonraki isteklerin Cookie başlığında geri gönderilir.</li>
+		<li><code>Pragma</code> tarayıcıya yanıtı önbelleğinde saklamaması talimatını verir. <code>Expires</code> yanıt içeriğinin geçmişte sona erdiğini ve bu 
+		nedenle önbelleğe alınmaması gerektiğini belirtir. Bu talimatlar genellikle dinamik içerik döndürüldüğünde, tarayıcıların sonraki durumlarda bu 
+		içeriğin yeni bir sürümünü almasını sağlamak için verilir.</li>
+		<li>Neredeyse tüm HTTP response, başlıklardan sonraki boş satırı izleyen bir mesaj gövdesi içerir. <code>Content-Type</code> bu mesajın gövdesinin bir HTML belgesi içerdiğini belirtir.</li>
+		<li>Content-Length mesaj gövdesinin bayt cinsinden uzunluğunu belirtir.</li>
 	</ul>
 	
 	<h2>HTTP Methodları</h2>
-	<p>Web uygulamalarını hedef alırken, neredeyse sadece en yaygın kullanılan yöntemler olan <code>GET</code> ve <code>POST</code> ile uğraşacaksınız. 
-	Bu yöntemler arasında bazı önemli farklılıkları bilmek önemlidir, çünkü gözden kaçırılırsa bir uygulamanın güvenliğini etkileyebilir.</p>
+	<p>Web uygulamalarına saldırırken, neredeyse yalnızca en yaygın kullanılan yöntemlerle uğraşacaksınız: <code>GET</code> ve <code>POST</code> Bu yöntemler arasındaki bazı önemli farkların farkında olmanız gerekir, 
+	çünkü bunlar gözden kaçırılırsa bir uygulamanın güvenliğini etkileyebilir.</p>
 	
-	<p>GET yöntemi, kaynakları almak için tasarlanmıştır. URL sorgu dizgisi aracılığıyla istenen kaynağa parametre göndermek için kullanılabilir. 
-	Bu, kullanıcıların tekrar kullanabilecekleri bir dinamik kaynak için bir URL'yi yer imi olarak kaydetmelerine olanak tanır. Veya diğer 
-	kullanıcılar sonraki durumlarda (yer imlenen bir arama sorgusu gibi) eşdeğer kaynağı alabilirler. URL'ler ekran üzerinde görüntülenir 
-	ve tarayıcı geçmişinde ve web sunucusunun erişim günlüklerinde kaydedilir. Ayrıca, harici bağlantıları takip ederken <code>Referer</code> başlığında 
-	diğer sitelere iletilir. Bu nedenlerle sorgu dizgisi, herhangi bir hassas bilgi iletimi için kullanılmamalıdır.</p>
+	<p><code>GET</code> yöntemi kaynakları almak için tasarlanmıştır. Göndermek için kullanılabilir parametrelerini URL sorgu dizesinde istenen kaynağa ekler. Bu, kullanıcıların yeniden kullanabilecekleri dinamik bir 
+	kaynak için URL'yi yer imlerine eklemelerini sağlar. Ya da diğer kullanıcılar eşdeğer kaynağı daha sonraki bir durumda (yer imli bir arama sorgusunda olduğu gibi) alabilirler. URL'ler ekranda görüntülenir ve tarayıcı 
+	geçmişi ve web sunucusunun erişim günlükleri gibi çeşitli yerlerde kaydedilir. Ayrıca harici bağlantılar takip edildiğinde <code>Referer</code> başlığında diğer sitelere iletilirler. Bu nedenlerden dolayı, sorgu dizesi herhangi bir hassas bilgiyi iletmek için kullanılmamalıdır.</p>
 	
-	<p>POST yöntemi, eylemleri gerçekleştirmek için tasarlanmıştır. Bu yöntemle, istek parametreleri hem URL sorgu dizgisinde hem de 
-	mesajın gövdesinde gönderilebilir. URL hala yer imi olarak kaydedilebilir, ancak mesaj gövdesinde gönderilen herhangi bir parametre 
-	yer iminden hariç tutulur. Bu parametreler, URL'lerin çeşitli kayıtlarının tutulduğu yerlerden ve Referer başlığından da hariç tutulur. 
-	POST yöntemi eylemler gerçekleştirmek için tasarlandığından, bir kullanıcı bu yöntemle erişilen bir sayfaya dönmek için tarayıcının 
-	Geri düğmesini tıkladığında tarayıcı otomatik olarak isteği yeniden göndermez. Bunun yerine, ne yapacağı konusunda kullanıcıyı uyarır, 
-	Figure 3-1'de gösterildiği gibi. Bu, kullanıcıların yanlışlıkla bir eylemi birden fazla kez gerçekleştirmesini engeller. Bu nedenle, 
-	bir eylem gerçekleştirildiğinde her zaman POST istekleri kullanılmalıdır.</p>
+	<p><code>POST</code> yöntemi eylemleri gerçekleştirmek için tasarlanmıştır. Bu yöntemle, istek parametreleri hem URL sorgu dizesinde hem de mesaj 
+	gövdesinde gönderilebilir. URL yine de yer imine eklenebilir, ancak mesaj gövdesinde gönderilen tüm parametreler yer iminden çıkarılır. 
+	Bu parametreler aynı zamanda URL günlüklerinin tutulduğu çeşitli konumlardan ve <code>Referer</code> başlığından da hariç tutulacaktır. <code>POST</code> 
+	yöntemi eylemleri gerçekleştirmek için tasarlandığından, bir kullanıcı bu yöntem kullanılarak erişilen bir sayfaya geri dönmek 
+	için tarayıcının Geri düğmesine tıklarsa, tarayıcı isteği otomatik olarak yeniden göndermez. Bunun yerine, Şekil 3-1'de gösterildiği 
+	gibi, kullanıcıyı ne yapmak üzere olduğu konusunda uyarır. Bu, kullanıcıların farkında olmadan bir eylemi birden fazla kez 
+	gerçekleştirmesini önler. Bu nedenle, bir eylem gerçekleştirilirken her zaman <code>POST</code> istekleri kullanılmalıdır.</p>
 	
 	<center>
 		<img src="img/3.1.png" alt="">
-		<p><b>Şekil 3.1</b> Tarayıcılar, kullanıcılar tarafından yapılan POST isteklerini otomatik olarak yeniden göndermez çünkü bu, bir 
-		eylemin birden fazla kez gerçekleştirilmesine neden olabilir.</p>
+		<p><b>Şekil 3.1</b> Tarayıcılar, kullanıcılar tarafından yapılan POST isteklerini otomatik olarak yeniden yayınlamaz, çünkü 
+		bunlar bir eylemin birden fazla kez gerçekleştirilmesine neden olabilir</p>
 	</center>
 	
-	<p>GET ve POST yöntemlerinin yanı sıra, HTTP protokolü belirli amaçlar için oluşturulmuş birçok başka yöntemi de destekler. Aşağıda, 
-	bilgi sahibi olmanız gereken diğer yöntemler yer almaktadır:</p>
+	<p><code>GET</code> ve <code>POST</code> yöntemlerine ek olarak, HTTP protokolü belirli amaçlar için oluşturulmuş çok sayıda başka yöntemi de destekler. 
+	İşte büyük olasılıkla bilgi sahibi olmanız gereken diğer yöntemler:</p>
 	
 	<ul>
-		<li>HEAD, GET isteği gibi çalışır, ancak sunucu yanıtında bir ileti gövdesi döndürmemelidir. Sunucu, ilgili GET isteği için döndüreceği 
-		aynı başlıkları döndürmelidir. Bu nedenle, bir kaynağın mevcut olup olmadığını kontrol etmek için bu yöntem kullanılabilir.</li>
-		<li>TRACE, teşhis amaçlı tasarlanmıştır. Sunucu, yanıt gövdesinde aldığı istek ileti içeriğini tam olarak döndürmelidir. Bu, istemci ve 
-		sunucu arasında isteği manipüle edebilen herhangi bir proxy sunucunun etkisini tespit etmek için kullanılabilir.</li>
-		<li>OPTIONS, belirli bir kaynak için mevcut olan HTTP yöntemlerini bildirmek için sunucuya bir istekte bulunur. Sunucu genellikle, mevcut 
-		yöntemleri listeleyen bir Allow başlığı içeren bir yanıt döndürür.</li>
-		<li>PUT, belirtilen kaynağı istekteki gövde içeriğini kullanarak sunucuya yüklemeye çalışır. Bu yöntem etkinleştirildiyse, uygulamaya saldırmak 
-		için kullanabilirsiniz, örneğin keyfi bir komut dosyasını sunucuda yükleyip çalıştırabilirsiniz.</li>
+		<li><code>HEAD</code>, sunucunun yanıtında bir mesaj gövdesi döndürmemesi dışında <code>GET</code> isteği ile aynı şekilde çalışır. 
+		Sunucu, ilgili GET isteğine döndüreceği başlıkların aynısını döndürmelidir. Dolayısıyla, bu yöntem bir kaynak için 
+		<code>GET</code> isteği yapmadan önce o kaynağın mevcut olup olmadığını kontrol etmek için kullanılabilir.</li>
+		<li><code>TRACE</code> tanılama amacıyla tasarlanmıştır. Sunucu, aldığı istek mesajının tam içeriğini yanıt gövdesinde döndürmelidir. Bu, 
+		istemci ile sunucu arasında isteği değiştirebilecek herhangi bir proxy sunucusunun etkisini tespit etmek için kullanılabilir.</li>
+		<li><code>OPTIONS</code>, sunucudan belirli bir kaynak için mevcut olan HTTP yöntemlerini bildirmesini ister. Sunucu genellikle mevcut 
+		yöntemleri listeleyen bir <code>Allow</code> başlığı içeren bir yanıt döndürür.</li>
+		<li><code>PUT</code>, isteğin gövdesinde bulunan içeriği kullanarak belirtilen kaynağı sunucuya yüklemeye çalışır. Bu yöntem etkinleştirilirse, 
+		rastgele bir komut dosyası yükleyip sunucuda çalıştırmak gibi uygulamaya saldırmak için bu yöntemden yararlanabilirsiniz.</li>
 	</ul>
 	
-	<p>Web uygulamalarına saldırmakla doğrudan ilgili olmayan birçok başka HTTP yöntemi mevcuttur. Bununla birlikte, bir web sunucusu, 
-	belirli tehlikeli yöntemler kullanılabilirse saldırıya açık hale gelebilir. Bu yöntemler hakkında daha fazla bilgi ve bunları saldırıda 
-	nasıl kullanacağınıza dair örnekler için Lütfen Bölüm 18'e bakınız.</p>
+	<p>Saldırıyla doğrudan ilgili olmayan başka birçok HTTP yöntemi mevcuttur web uygulamaları. Bununla birlikte, bir web sunucusu belirli durumlarda 
+	kendisini saldırıya maruz bırakabilir tehlikeli yöntemler mevcuttur.</p>
 	
 	<h2>URL</h2>
-	<p>Uniform Resource Locator (URL), bir web kaynağının benzersiz bir tanımlayıcısıdır ve bu kaynağın alınabileceği bir araçtır. 
-	Çoğu URL'nin formatı aşağıdaki gibidir:</p>
+	<p>Uniform Resource Locator (URL), bir web kaynağı için benzersiz bir tanımlayıcıdır bu kaynağın alınabileceği. Çoğu URL'nin biçimi aşağıdaki gibidir:</p>
 	
 	<code>protocol://hostname[:port]/[path/]file[?param=value]</code>
 	
-	<p>Bu düzende birkaç bileşen isteğe bağlıdır. Port numarası genellikle ilgili protokol tarafından kullanılan varsayılan porttan farklıysa 
+	<p>Bu şemadaki birkaç bileşen isteğe bağlıdır. Bağlantı noktası numarası genellikle yalnızca ilgili protokol tarafından kullanılan varsayılandan farklıysa 
 	dahil edilir. Daha önce gösterilen HTTP isteğini oluşturmak için kullanılan URL aşağıdaki gibidir:</p>
 	
 	<code>https://mdsec.net/auth/488/YourDetails.ashx?uid=129</code>
 	
-	<p>Bu mutlak formun yanı sıra, URL'ler belirli bir ana bilgisayara göre göreceli olarak veya o ana bilgisayardaki belirli bir yol üzerine 
-	göreceli olarak belirtilebilir. Örnekler şu şekildedir:</p>
+	<p>Bu mutlak biçime ek olarak, URL'ler belirli bir URL'ye göreli olarak da belirtilebilir ana bilgisayara veya o ana bilgisayardaki belirli bir yola göre. Örneğin:</p>
 	
 	<dl>
 		<dt><code>/auth/488/YourDetails.ashx?uid=129</code></dt>
 		<dt><code>YourDetails.ashx?uid=129</code></dt>
 	</dl>
 	
-	<p>Bu göreceli formlar genellikle web sayfalarında, web sitesi veya uygulama içindeki gezinmeyi tanımlamak için kullanılır.</p>
+	<p>Bu göreli formlar genellikle web sayfalarında gezinmeyi tanımlamak için kullanılır web sitesinin veya uygulamanın kendisi.</p>
 	
-	<p><b>NOT: URL (Uniform Resource Locator) terimi yerine URI (Uniform Resource Identifier) terimiyle karşılaşabilirsiniz, 
-	ancak URI terimi genellikle resmi spesifikasyonlarda ve ayrıntıcılıklarını sergilemek isteyen kişiler tarafından kullanılır.</b></p>
+	<p><b>NOT: URL yerine URI (Uniform Resource Identifier) teriminin kullanıldığını görebilirsiniz, ancak bu terim gerçekten 
+	sadece resmi şartnamelerde ve bilgiçliklerini sergilemek isteyenler tarafından kullanılır</b></p>
 	
 	<h2>REST</h2>
-	<p>Temsil durum aktarımı (REST), dağıtık sistemler için bir mimari stildir. Bu stilde, istekler ve yanıtlar sistemdeki kaynakların mevcut 
-	durumunu temsil eden veriler içerir. Dünya Geniş Web'i (World Wide Web) kapsayan temel teknolojiler, HTTP protokolü ve URL formatı da 
-	REST mimari stiline uygundur.</p>
+	<p>Representational State Transfer (REST), dağıtık sistemler için bir mimari tarzıdır. isteklerin ve yanıtların mevcut durumun temsillerini içerdiği sistemler sistem 
+	kaynaklarının durumu. Dünya'da kullanılan temel teknolojiler HTTP protokolü ve URL'lerin biçimi de dahil olmak üzere World Wide Web REST mimari tarzı.</p>
 	
-	<p>URL'lerin sorgu dizisi içinde parametreler içermesi REST kısıtlamalarına uygun olmasına rağmen, "REST tarzı URL" terimi, parametrelerini 
-	URL dosya yolunda içeren bir URL'yi ifade etmek için sıkça kullanılır. Örneğin, aşağıdaki sorgu dizesi içeren URL:</p>
+	<p>Sorgu dizesi içinde parametreler içeren URL'lerin kendileri REST kısıtlamalarına uygun olsa da, "REST-style URL" terimi genellikle aşağıdakileri belirtmek için kullanılır 
+	yerine, parametrelerini URL dosya yolu içinde içeren bir URL sorgu dizesi. Örneğin, bir sorgu dizesi içeren aşağıdaki URL:</p>
 	
 	<code>http://wahh-app.com/search?make=ford&model=pinto</code>
 	
-	<p>Aşağıdaki "REST tarzı" parametrelere sahip URL'ye karşılık gelir:</p>
+	<p>"REST-style" parametreler içeren aşağıdaki URL'ye karşılık gelir:</p>
 	
 	<code>http://wahh-app.com/search/ford/pinto</code>
 	
-	<p>Bu farklı parametre stillerini dikkate almanız gerektiğini ve bir uygulamanın içeriğini ve işlevselliğini haritalarken ve ana saldırı 
-	yüzeyini belirlerken Chapter 4'de anlatıldığı anlatılmaktadır.</p>
+	<p>Bir uygulamanın içeriğini ve işlevselliğini eşlerken ve temel saldırı yüzeyini belirlerken bu farklı parametre stillerini nasıl göz önünde bulundurmanız gerektiği açıklanmaktadır.</p>
+	
+	<h2>HTTP Headers</h2>
+	<p>HTTP, bazıları belirli olağandışı amaçlar için tasarlanmış olan çok sayıda başlığı destekler. Bazı başlıklar hem istekler hem de yanıtlar için kullanılabilirken, diğerleri bu mesaj 
+	türlerinden birine özgüdür. Aşağıdaki bölümlerde web uygulamalarına saldırırken karşılaşmanız muhtemel başlıklar açıklanmaktadır.</p>
+	
+	<h2>Genel Header</h2>
+	<ul>
+		<li><code>Connection</code>, iletişimin diğer ucuna, HTTP iletimi tamamlandıktan sonra TCP bağlantısını kapatması veya başka mesajlar için açık tutması gerektiğini söyler.</li>
+		<li><code>Content-Encoding</code>, mesaj gövdesinde bulunan içerik için ne tür bir kodlama kullanıldığını belirtir, örneğin bazı uygulamalar tarafından daha hızlı iletim için yanıtları sıkıştırmak için kullanılan <code>gzip</code> gibi.</li>
+		<li><code>Content-Length</code> mesaj gövdesinin uzunluğunu bayt cinsinden belirtir (<code>HEAD</code> isteklerine verilen yanıtlarda, ilgili <code>GET</code> isteğine verilen yanıttaki gövdenin uzunluğunu belirtmesi durumu hariç).</li>
+		<li><code>Content-Type</code>, HTML belgeleri için <code>text/html</code> gibi mesaj gövdesinde bulunan içeriğin türünü belirtir.</li>
+		<li><code>Transfer-Encoding</code>, HTTP üzerinden aktarımını kolaylaştırmak için mesaj gövdesinde gerçekleştirilen herhangi bir kodlamayı belirtir. Normalde, bu kullanıldığında yığın kodlamayı belirtmek için kullanılır.</li>
+	</ul>
+	
+	<h2>Request Headers</h2>
+	<ul>
+		<li><code>Accept</code>, sunucuya istemcinin ne tür içerikleri kabul etmeye istekli olduğunu bildirir, görüntü türleri, ofis belgesi biçimleri vb. gibi.</li>
+		<li><code>Accept-Encoding</code>, sunucuya istemcinin ne tür içerik kodlamalarını kabul etmeye istekli olduğunu söyler</li>
+		<li><code>Authorization</code>, yerleşik sistemlerden biri için kimlik bilgilerini sunucuya gönderir HTTP kimlik doğrulama türleri.</li>
+		<li><code>Cookie</code>, sunucunun daha önce yayınladığı çerezleri sunucuya gönderir.</li>
+		<li><code>Host</code>, istenen tam URL'de görünen ana bilgisayar adını belirtir</li>
+		<li><code>If-Modified-Since</code>, tarayıcının istenen kaynağı en son ne zaman aldığını belirtir. Kaynak o zamandan beri değişmediyse, sunucu istemciye 304 durum kodlu 
+		bir yanıt kullanarak önbelleğe alınmış kopyasını kullanmasını söyleyebilir.</li>
+		<li><code>If-None-Match</code>, mesaj gövdesinin içeriğini belirten bir tanımlayıcı olan bir varlık etiketi belirtir. Tarayıcı, sunucunun istenen kaynakla birlikte en son alındığında yayınladığı varlık etiketini gönderir. 
+		Sunucu, tarayıcının kaynağın önbelleğe alınmış kopyasını kullanıp kullanamayacağını belirlemek için varlık etiketini kullanabilir.</li>
+		<li><code>Origin</code>, cross-domain Ajax isteklerinde isteğin kaynaklandığı alanı belirtmek için kullanılır</li>
+		<li><code>Referer</code>, geçerli isteğin kaynaklandığı URL'yi belirtir</li>
+		<li><code>User-Agent</code>, isteği oluşturan tarayıcı veya diğer istemci yazılımı hakkında bilgi sağlar.</li>
+	</ul>
+	
+	<h2>Response Headers</h2>
+	<ul>
+		<li><code>Access-Control-Allow-Origin</code>, kaynağın etki alanları arası Ajax istekleri yoluyla alınıp alınamayacağını belirtir</li>
+		<li><code>Cache-Control</code> passes caching directives to the browser (for example, <code>no-cache</code>).</li>
+		<li><code>ETag</code> bir varlık etiketini belirtir. İstemciler, tarayıcının önbelleğinde kaynağın hangi sürümünü tuttuğunu sunucuya bildirmek için <code>If-None-Match</code> üstbilgisinde aynı kaynak için gelecekteki isteklerde bu tanımlayıcıyı gönderebilir.</li>
+		<li><code>Expires</code>, tarayıcıya mesaj gövdesinin içeriğinin ne kadar süreyle geçerli olduğunu bildirir. Tarayıcı bu süreye kadar bu kaynağın önbelleğe alınmış kopyasını kullanabilir.</li>
+		<li><code>Location</code>, yeniden yönlendirme yanıtlarında (3 ile başlayan bir durum koduna sahip olanlar) yönlendirmenin hedefini belirtmek için kullanılır.</li>
+		<li><code>Pragma</code> önbellekleme yönergelerini tarayıcıya iletir (örneğin, <code>no-cache</code>)</li>
+		<li><code>Server</code>, kullanılan web sunucusu yazılımı hakkında bilgi sağlar.</li>
+		<li><code>Set-Cookie</code>, tarayıcıya sonraki isteklerde sunucuya geri göndereceği çerezler verir.</li>
+		<li><code>WWW-Authenticate</code>, 401 durum koduna sahip yanıtlarda, sunucunun desteklediği kimlik doğrulama tür(ler)i hakkında ayrıntı sağlamak için kullanılır.</li>
+		<li><code>X-Frame-Options</code>, geçerli yanıtın bir tarayıcı çerçevesi içinde yüklenip yüklenemeyeceğini ve nasıl yüklenebileceğini belirtir</li>
+	</ul>
+	
+	
 	
 </body>
 </html>
