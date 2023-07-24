@@ -237,13 +237,75 @@
 		<li><code>X-Frame-Options</code>, geçerli yanıtın bir tarayıcı çerçevesi içinde yüklenip yüklenemeyeceğini ve nasıl yüklenebileceğini belirtir</li>
 	</ul>
 	
+	<h2>Cookies</h2>
+	<p>Çerezler, çoğu web uygulamasının dayandığı HTTP protokolünün önemli bir parçasıdır. Sıklıkla güvenlik açıklarından faydalanmak için bir araç olarak kullanılabilirler. Çerez mekanizması, sunucunun istemciye veri öğeleri göndermesini ve istemcinin bunları saklayıp sunucuya yeniden göndermesini sağlar. Diğer istek parametresi türlerinden (URL sorgu dizesi veya mesaj gövdesi içinde yer alanlar) farklı olarak, çerezler uygulama veya kullanıcı tarafından herhangi bir özel işlem gerektirmeden sonraki her istekte yeniden gönderilmeye devam eder.</p>
 	
+	<p>Bir sunucu, gördüğünüz gibi <code>Set-Cookie</code> yanıt başlığını kullanarak bir çerez yayınlar:</p>
 	
+	<code>Set-Cookie: tracking=tI8rk7joMx44S2Uu85nSWc</code>
+	
+	<p>Kullanıcının tarayıcısı daha sonra otomatik olarak aşağıdaki başlığı ekler isteklerini aynı sunucuya geri gönderir:</p>
+	
+	<code>Cookie: tracking=tI8rk7joMx44S2Uu85nSWc</code>
+	
+	<p>Çerezler normalde gösterildiği gibi bir name/value çiftinden oluşur, ancak boşluk içermeyen herhangi bir dizeden de oluşabilir. Sunucunun yanıtında birden fazla <code>Set-Cookie</code> başlığı kullanılarak birden fazla çerez oluşturulabilir. Bunlar, farklı çerezleri ayıran bir noktalı virgül ile aynı <code>Cookie</code> başlığında sunucuya geri gönderilir.</p>
+	<p>Çerezin gerçek değerine ek olarak, <code>Set-Cookie</code> başlığı, tarayıcının çerezi nasıl işleyeceğini kontrol etmek için kullanılabilecek aşağıdaki isteğe bağlı niteliklerden herhangi birini içerebilir:</p>
+
+	<ul>
+		<li><code>expires</code> — Çerezin geçerli olacağı bir tarih belirler. Bu, tarayıcının çerezi kalıcı depolama alanına kaydetmesine neden olur ve son kullanma tarihine ulaşılana kadar sonraki tarayıcı oturumlarında yeniden kullanılır. Bu özellik ayarlanmazsa, çerez yalnızca geçerli tarayıcı oturumunda kullanılır.</li>
+		<li><code>domain</code> — Çerezin geçerli olduğu etki alanını belirtir. Bu, çerezin alındığı etki alanıyla aynı veya bir üst etki alanı olmalıdır.</li>
+		<li><code>path</code> — Çerezin geçerli olduğu URL yolunu belirtir.</li>
+		<li><code>secure</code> — Bu özellik ayarlanırsa, çerez yalnızca HTTPS isteklerinde gönderilir.</li>
+		<li><code>HttpOnly</code> — Bu öznitelik ayarlanırsa, çerez client tarafı JavaScript aracılığıyla doğrudan erişilemez.</li>
+	</ul>
+	
+	<p>Bu çerez özelliklerinin her biri uygulamanın güvenliğini etkileyebilir. Birincil etki, saldırganın uygulamanın diğer kullanıcılarını doğrudan hedef alabilmesidir.</p>
+
+	<h2>Status Codes</h2>
+	<p>Her HTTP response mesajı, ilk satırında isteğin sonucunu belirten bir durum kodu içermelidir. Durum kodları, kodun ilk rakamına göre beş gruba ayrılır:</p>
+	
+	<ul>
+		<li><b>1xx</b> — Bilgilendirici.</li>
+		<li><b>2xx</b> — İstek başarılı oldu.</li>
+		<li><b>3xx</b> — Client farklı bir kaynağa yönlendirilir.</li>
+		<li><b>4xx</b> — İstek bir çeşit hata içeriyor.</li>
+		<li><b>5xx</b> — Sunucu, isteği yerine getirirken bir hatayla karşılaştı.</li>
+	</ul>
+	
+	<p>Birçoğu yalnızca özel durumlarda kullanılan çok sayıda özel durum kodu vardır. İşte bir web uygulamasına saldırırken karşılaşma olasılığınızın en yüksek olduğu durum kodları ve bunlarla ilişkili olağan neden ifadeleri:</p>
+	
+	<ul>
+		<li><code>100 Continue</code>, Client gövde içeren bir istek gönderdiğinde bazı durumlarda gönderilir. Response, istek başlıklarının alındığını ve istemcinin gövdeyi göndermeye devam etmesi gerektiğini belirtir. İstek tamamlandığında sunucu ikinci bir response döndürür.</li>
+		<li><code>200 OK</code>, isteğin başarılı olduğunu ve response gövdesinin isteğin sonucunu içerdiğini gösterir</li>
+		<li><code>201 Created</code>, isteğin başarılı olduğunu belirtmek için bir <code>PUT</code> isteğine yanıt olarak döndürülür.</li>
+		<li><code>301 Moved Permanently</code>, tarayıcıyı kalıcı olarak <code>Location</code> başlığında belirtilen farklı bir URL'ye yönlendirir. Client gelecekte orijinal URL yerine yeni URL'yi kullanmalıdır.</li>
+		<li><code>302 Found</code>, tarayıcıyı geçici olarak Location başlığında belirtilen farklı bir URL'ye yönlendirir. İstemci, sonraki isteklerde orijinal URL'ye geri dönmelidir.</li>
+		<li><code>304 Not Modified</code>, tarayıcıya istenen kaynağın önbelleğe alınmış kopyasını kullanması talimatını verir. Sunucu, istemcinin kaynağın en son sürümüne sahip olup olmadığını belirlemek için <code>If-Modified-Since</code> ve <code>If-None-Match</code> istek başlıklarını kullanır.</li>
+		<li><code>400 Bad Request</code>, istemcinin geçersiz bir HTTP isteği gönderdiğini gösterir. Muhtemelen, URL'ye bir boşluk karakteri yerleştirmek gibi bazı geçersiz yollarla bir isteği değiştirdiğinizde bu durumla karşılaşırsınız</li>
+		<li><code>401 Unauthorized</code>, sunucunun isteğin kabul edilmesinden önce HTTP kimlik doğrulaması gerektirdiğini belirtir. <code>WWW-Authenticate</code> başlığı desteklenen kimlik doğrulama tür(ler)ine ilişkin ayrıntıları içerir.</li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	
+
+
 </body>
 </html>
 
 
-
+<!-- https://www.deepl.com/translator -->
 
 
 

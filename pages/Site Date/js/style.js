@@ -7,8 +7,7 @@ function setcountup(theyear,themonth,theday)
 	
 setcountup(2022, 08, 26);
 	
-// var displaymessage = "(we are growing every second)";
-var displaymessage = "(Melek Şentürk - Farktör Yazılım Danışmanlık)";
+var displaymessage = "(we are growing every second)";
 var countupwidth = '95%';
 var countupheight = '20px';
 var countupbgcolor = 'alt1';
