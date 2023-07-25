@@ -283,24 +283,32 @@
 		<li><code>304 Not Modified</code>, tarayıcıya istenen kaynağın önbelleğe alınmış kopyasını kullanması talimatını verir. Sunucu, istemcinin kaynağın en son sürümüne sahip olup olmadığını belirlemek için <code>If-Modified-Since</code> ve <code>If-None-Match</code> istek başlıklarını kullanır.</li>
 		<li><code>400 Bad Request</code>, istemcinin geçersiz bir HTTP isteği gönderdiğini gösterir. Muhtemelen, URL'ye bir boşluk karakteri yerleştirmek gibi bazı geçersiz yollarla bir isteği değiştirdiğinizde bu durumla karşılaşırsınız</li>
 		<li><code>401 Unauthorized</code>, sunucunun isteğin kabul edilmesinden önce HTTP kimlik doğrulaması gerektirdiğini belirtir. <code>WWW-Authenticate</code> başlığı desteklenen kimlik doğrulama tür(ler)ine ilişkin ayrıntıları içerir.</li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
+		<li><code>403 Forbidden</code>, kimlik doğrulamasına bakılmaksızın hiç kimsenin istenen kaynağa erişmesine izin verilmediğini gösterir.</li>
+		<li><code>404 Not Found</code>, istenen kaynağın mevcut olmadığını gösterir.</li>
+		<li><code>405 Method Not Allowed</code>, istekte kullanılan yöntemin belirtilen URL için desteklenmediğini gösterir. Örneğin, desteklenmediği bir yerde <code>PUT</code> yöntemini kullanmaya çalışırsanız bu durum kodunu alabilirsiniz.</li>
+		<li><code>413 Request Entity Too Large</code>, Yerel koddaki arabellek taşması açıklarını araştırıyorsanız ve bu nedenle uzun veri dizeleri gönderiyorsanız, bu, isteğinizin gövdesinin sunucunun işleyemeyeceği kadar büyük olduğunu gösterir.</li>
+		<li><code>414 Request URI Too Long</code>, 413 yanıtına benzer. İstekte kullanılan URL'nin sunucunun işleyemeyeceği kadar büyük olduğunu gösterir.</li>
+		<li><code>500 Internal Server Error</code>, sunucunun isteği yerine getirirken bir hatayla karşılaştığını gösterir. Bu normalde, uygulamanın işlenmesinde bir yerde işlenmemiş bir hataya neden olan beklenmedik bir girdi gönderdiğinizde ortaya çıkar. Hatanın niteliğini gösteren herhangi bir ayrıntı için sunucunun yanıtının tüm içeriğini yakından incelemelisiniz.</li>
+		<li><code>503 Service Unavailable</code> normalde web sunucusunun çalıştığını ve isteklere yanıt verebildiğini, ancak sunucu üzerinden erişilen uygulamanın yanıt vermediğini gösterir. Bunun gerçekleştirdiğiniz herhangi bir eylemin sonucu olup olmadığını doğrulamanız gerekir.</li>
 	</ul>
 	
+	<h2>HTTPS</h2>
+	<p>HTTP protokolü, taşıma mekanizması olarak şifrelenmemiş ve bu nedenle ağ üzerinde uygun şekilde konumlanmış bir saldırgan tarafından ele geçirilebilen düz TCP kullanır. HTTPS esasen HTTP ile aynı uygulama katmanı protokolüdür ancak güvenli taşıma mekanizması olan Secure Sockets Layer (SSL) üzerinden aktarılır. Bu, ağ üzerinden geçen verilerin gizliliğini ve bütünlüğünü korur ve invazif olmayan müdahale saldırıları olasılığını azaltır. HTTP istekleri ve yanıtları, SSL'in aktarım için kullanılıp kullanılmadığına bakılmaksızın tamamen aynı şekilde çalışır.</p>
+	
+	<p><b>NOT: SSL'in yerini kesinlikle Transport Layer Security (TLS) almıştır, ancak ikincisine genellikle hala eski adı kullanılarak atıfta bulunulur</b></p>
 
-
+	<h2>HTTP Proxies</h2>
+	<p>HTTP proxy, istemci tarayıcısı ile hedef web sunucusu arasında erişime aracılık eden bir sunucudur. Bir tarayıcı bir proxy sunucusu kullanacak şekilde yapılandırıldığında, tüm isteklerini bu sunucuya yapar. Proxy, istekleri ilgili web sunucularına iletir ve yanıtları tarayıcıya geri iletir. Çoğu proxy ayrıca önbelleğe alma, kimlik doğrulama ve erişim kontrolü gibi ek hizmetler de sağlar.</p>
+	
+	<p>Bir proxy sunucusu kullanıldığında HTTP'nin nasıl çalıştığına ilişkin iki farklılığın farkında olmalısınız:</p>
+	
+	<ul>
+		<li>Bir tarayıcı bir proxy sunucusuna şifrelenmemiş bir HTTP isteği gönderdiğinde, <code>http://</code> protokol öneki, sunucunun ana bilgisayar adı ve standart değilse bağlantı noktası numarası dahil olmak üzere tam URL'yi isteğe yerleştirir. Proxy sunucu ana bilgisayar adını ve bağlantı noktasını alır ve isteği doğru hedef web sunucusuna yönlendirmek için bunları kullanır.</li>
+		<li>HTTPS kullanıldığında, tarayıcı proxy sunucusuyla SSL el sıkışması gerçekleştiremez, çünkü bu güvenli tüneli bozar ve iletişimi durdurma saldırılarına karşı savunmasız bırakır. Bu nedenle, tarayıcı proxy sunucusunu, tarayıcı ile hedef web sunucusu arasında her iki yönde de tüm ağ verilerini geçiren ve tarayıcının normal şekilde SSL el sıkışması gerçekleştirdiği saf TCP düzeyinde bir aktarıcı olarak kullanmalıdır. Bu aktarımı sağlamak için tarayıcı, <code>CONNECT</code> yöntemini kullanarak ve hedef ana bilgisayar adını ve bağlantı noktası numarasını URL olarak belirterek proxy sunucusuna bir HTTP isteği gönderir. Proxy isteğe izin verirse, 200 durumuyla bir HTTP yanıtı döndürür, TCP bağlantısını açık tutar ve bu noktadan sonra hedef web sunucusuna saf TCP düzeyinde bir aktarıcı olarak hareket eder.</li>
+	</ul>
+	
+	<p>Bir ölçüye göre, web uygulamalarına saldırırken araç setinizdeki en kullanışlı öğe, tarayıcınız ile hedef web sitesi arasında yer alan ve HTTPS kullananlar da dahil olmak üzere tüm istek ve yanıtları engellemenize ve değiştirmenize olanak tanıyan özel bir proxy sunucu türüdür. Bu tür bir aracı nasıl kullanabileceğinizi bir sonraki bölümde incelemeye başlayacağız.</p>
+	
 </body>
 </html>
 
