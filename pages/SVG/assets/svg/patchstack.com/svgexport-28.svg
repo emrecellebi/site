@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24" version="1.1">
+    <title>Group</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.686275 0 0 0 0 0.901961 0 0 0 0 0.078431 0 0 0 1.000000 0"/>
+        </filter>
+    </defs>
+    <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Pricing" transform="translate(-557.000000, -980.000000)">
+            <g id="Group-9" transform="translate(557.000000, 932.000000)">
+                <g id="Group" transform="translate(0.000000, 48.000000)">
+                    <circle id="Oval" fill-opacity="0.1" fill="#AFE614" cx="12" cy="12" r="12"/>
+                    <g transform="translate(4.000000, 4.000000)" id="Icon/UI/Tick" filter="url(#filter-1)">
+                        <g>
+                            <path d="M6.965688,11.76568 L14.16568,4.565688 C14.47808,4.253264 14.47808,3.746736 14.16568,3.434312 C13.85328,3.121896 13.34672,3.121896 13.03432,3.434312 L6.4,10.06864 L2.965688,6.634312 C2.653264,6.321896 2.146736,6.321896 1.834312,6.634312 C1.521896,6.946736 1.521896,7.45328 1.834312,7.76568 L5.834312,11.76568 C6.146736,12.07808 6.653264,12.07808 6.965688,11.76568 Z" id="Tick" fill="#17191E"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
