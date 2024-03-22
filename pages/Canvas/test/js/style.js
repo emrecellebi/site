@@ -9,6 +9,16 @@ var ctx = canvas.getContext("2d");
 
 const colors = ['#2185C5', '#7ECEFD', '#FFF6E5', '#FF7F66'];
 
+const mouse = {
+	x: WIDTH / 2,
+	y: HEIGHT / 2
+};
+
+addEventListener('mousemove', (event) => {
+	mouse.x = event.clientX;
+	mouse.y = event.clientY;
+});
+
 addEventListener('resize', () => {
 	WIDTH = canvas.width = window.innerWidth;
 	HEIGHT = canvas.height = window.innerHeight;
@@ -16,7 +26,7 @@ addEventListener('resize', () => {
 	init();
 });
 
-class Objects
+class Object
 {
 	constructor(x, y, radius, color)
 	{
@@ -47,17 +57,19 @@ function init()
 	objects = [];
 	for(var i = 0; i < 400; i++)
 	{
-		// objects.push(new Objects(0, 0, 0, ''));
+		// objects.push(new Object(0, 0, 0, ''));
 	}
 }
 
 function animate()
 {
 	requestAnimationFrame(animate);
+	ctx.clearRect(0, 0, WIDTH, HEIGHT);
+	ctx.fillText('HTML CANVAS BOILERPLATE', mouse.x, mouse.y);
 	
-	objects.forEach((object) => {
-		object.update();
-	});
+	// objects.forEach((object) => {
+		// object.update();
+	// });
 }
 
 init();
