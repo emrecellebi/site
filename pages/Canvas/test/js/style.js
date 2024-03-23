@@ -14,18 +14,9 @@ const mouse = {
 	y: HEIGHT / 2
 };
 
-addEventListener('mousemove', (event) => {
-	mouse.x = event.clientX;
-	mouse.y = event.clientY;
-});
 
-addEventListener('resize', () => {
-	WIDTH = canvas.width = window.innerWidth;
-	HEIGHT = canvas.height = window.innerHeight;
-	
-	init();
-});
 
+/***************************** Class *****************************/
 class Object
 {
 	constructor(x, y, radius, color)
@@ -51,6 +42,9 @@ class Object
 	}
 }
 
+
+
+/***************************** Functions *****************************/
 var objects;
 function init()
 {
@@ -72,5 +66,22 @@ function animate()
 	// });
 }
 
+
+
+/***************************** Events *****************************/
+addEventListener('mousemove', (event) => {
+	mouse.x = event.clientX;
+	mouse.y = event.clientY;
+});
+
+addEventListener('resize', () => {
+	WIDTH = canvas.width = window.innerWidth;
+	HEIGHT = canvas.height = window.innerHeight;
+	
+	init();
+});
+
+
+/***************************** Started *****************************/
 init();
 animate();

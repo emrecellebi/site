@@ -1,0 +1,32 @@
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<title>Canvas Game</title>
+	<link rel="stylesheet" href="css/style.css" />
+	<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+	
+</head>
+<body>
+
+	<div class="fixed text-white text-sm ml-2 mt-1 select-none">
+		<span>Score: </span>
+		<span id="score">0</span>
+	</div>
+	
+	<div class="fixed inset-0 flex items-center justify-center" id="model">
+		<div class="bg-white max-w-md w-full p-6 text-center">
+			<h1 class="text-4xl font-bold leading-none" id="bigScore">0</h1>
+			<p class="text-sm text-gray-700 mb-4">Points</p>
+			<div>
+				<button class="bg-blue-500 text-white w-full py-3 rounded-full text-sm" id="btnStartGame">Start Game</button>
+			</div>
+		</div>
+	</div>
+	
+	<canvas></canvas>
+	<script src="js/style.js"></script>
+	
+</body>
+</html>
