@@ -1,0 +1,48 @@
+body
+{
+	margin: 0;
+	padding: 0;
+}
+
+.sec1, .sec2, .sec3
+{
+	width: 100%;
+	height: 400px;
+}
+
+.sec1
+{
+	background: #262626;
+	position: relative;
+}
+
+.sec2
+{
+	background: #ffeb3b;
+	position: relative;
+}
+
+.sec3
+{
+	background: #262626;
+	position: relative;
+}
+
+.sec2:before
+{
+	content: '';
+	position: absolute;
+	border-bottom: 100px solid #ffeb3b;
+	border-left: 99.1vw solid transparent;
+	top: -100px;
+}
+
+.sec2:after
+{
+	content: '';
+	position: absolute;
+	border-top: 100px solid #ffeb3b;
+	border-right: 99.1vw solid transparent;
+	bottom: -100px;
+	z-index: 1;
+}
