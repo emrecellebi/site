@@ -48,11 +48,11 @@ var circleArray = [];
 
 for(var i = 0; i < 100; i++)
 {
+	var radius = 30;
 	var x = Math.random() * (WIDTH - radius * 2) + radius;
 	var y = Math.random() * (HEIGHT - radius * 2) + radius;
 	var dx = (Math.random() - 0.5) * 8;
 	var dy = (Math.random() - 0.5) * 8;
-	var radius = 30;
 	circleArray.push(new Circle(x, y, dx, dy, radius));
 }
 
